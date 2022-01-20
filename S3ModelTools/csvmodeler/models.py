@@ -81,7 +81,7 @@ class Datamodel(models.Model):
     author = models.CharField('Author', max_length = 250, help_text = "")
     definition_url = models.CharField('Defining URL', max_length = 500, help_text = "")
     namespaces = models.TextField(verbose_name = ('Additional Namespaces'), help_text = "")
-    xml_store = models.ForeignKey(XMLstore,on_delete=models.CASCADE)
+    xml_store = models.ForeignKey(XMLstore, on_delete=models.CASCADE)
     rdf_store = models.ForeignKey(RDFstore, on_delete=models.CASCADE)
     json_store = models.ForeignKey(JSONstore, on_delete=models.CASCADE)
     dmid = models.CharField('Data Model ID', max_length = 40, help_text = "")
@@ -116,7 +116,7 @@ class Component(models.Model):
     units = models.CharField('Units', max_length = 50, help_text = "")
     mcid = models.CharField('Component ID', max_length = 40, help_text = "")
     adid = models.CharField('Adapter ID', max_length = 40, help_text = "")
-    model_link = models.ForeignKey(Datamodel)
+    model_link = models.ForeignKey(Datamodel, on_delete=models.CASCADE)
 
     def __str__(self):
         return (self.header)
@@ -127,7 +127,7 @@ class Validation(models.Model):
     The log column is a CSV file:
     """
 
-    model_id = models.ForeignKey(Datamodel)
+    model_id = models.ForeignKey(Datamodel, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(verbose_name = ('Time Stamp'), auto_now_add=True, help_text = "")
     log =  models.TextField(verbose_name = ('CSV Log'), help_text = "")
     
