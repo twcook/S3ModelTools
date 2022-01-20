@@ -19,7 +19,6 @@ S3Model Tools
    Form_Modeler
    IoT_Modeler
    Setup
-   Glossary
 
 Indices and tables
 ==================
