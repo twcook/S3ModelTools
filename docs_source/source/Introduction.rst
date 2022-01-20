@@ -2,7 +2,7 @@
 S3Model Tools Introduction
 ==========================
 
-S3Model Tools is a suite of applications that all building of S3Model components and combine those components into complete data models. 
+S3Model Tools is a suite of applications that allow building of S3Model components and combine those components into complete data models. 
 
 - The **CSV Modeler** application allows importing and CSV file and creating a complete data model with semantics and validation for the imported file.   
 

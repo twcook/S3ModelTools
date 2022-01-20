@@ -11,6 +11,14 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import configparser
+import os
+
+print(os.getcwd())
+
+# Setup config info
+config = configparser.ConfigParser()
+config.read('S3ModelTools/S3ModelTools.cfg')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,10 +35,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'auth.User'
 
 # Application definition
 
 INSTALLED_APPS = [
+    'django_select2',
+    'tools',
+    'componentmodeler.apps.ComponentmodelerConfig',
+    'formmodeler.apps.FormmodelerConfig',
+    'iotmodeler.apps.IotmodelerConfig',
     'csvmodeler.apps.CsvmodelerConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'S3ModelTools.urls'
@@ -123,3 +138,20 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.8/howto/static-files/
+
+STATIC_ROOT = Path(BASE_DIR.parent, "static")
+STATIC_URL = '/static/'
+
+MEDIA_ROOT = Path(BASE_DIR.parent, "media")
+DATA_LIB = Path(BASE_DIR.parent, "data")
+
+# S3M settings
+RMVERSION = config['SYSTEM']['s3mrm']
+DM_LIB = Path(BASE_DIR.parent, "dmlib")
+DM_PKG = Path(BASE_DIR.parent, "dmpkgs")
+S3MTVERSION = config['SYSTEM']['version']
+RM_URI = "https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd"
+RM_DIR = "../RM/3_1_0"
