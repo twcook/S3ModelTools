@@ -6,8 +6,6 @@ S3Model Tools
 
 **CURRENTLY UNDER CONSTRUCTION**
 
-S3Model Tools
-=============
 
 .. toctree::
    :maxdepth: 3
