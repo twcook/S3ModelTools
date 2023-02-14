@@ -1,0 +1,1 @@
+CHANGES.md was first introduced in the 4.0.0 release.
