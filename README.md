@@ -14,3 +14,11 @@
 5. Reduced User Input: The ability to convert structured data into a knowledge graph with minimal user input means that it can be done quickly and efficiently, reducing the time and effort required to manually create a knowledge graph.
 
 In summary, a generic pipeline that can convert structured data into a knowledge graph can provide improved data management, better data integration, increased data reusability, improved data query capabilities, and reduced user input, making it a valuable tool for organizations looking to leverage the benefits of knowledge graphs.
+
+## Development
+
+1. Build the virtual environment using dev_requirements.txt
+
+2. Admin page username:password is admin:password
+
+3. 
