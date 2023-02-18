@@ -4,7 +4,7 @@ Form definitions.
 from cuid import cuid
 
 from django.utils.translation import gettext_lazy as _
-from s3mtools.settings import BASE_DIR
+from s3modeltools.settings import BASE_DIR
 
 # ModelMultipleChoiceField(queryset=Thing.objects.all(), widget=Select2MultipleWidget)
 

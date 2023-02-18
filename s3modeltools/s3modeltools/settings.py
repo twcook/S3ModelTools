@@ -9,8 +9,18 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import os
+import configparser
+from unipath import Path
 
-from pathlib import Path
+BASE_DIR = Path.cwd()
+
+
+# Setup config info
+config = configparser.ConfigParser()
+config.read('../s3mtools.cfg')
+S3MTVERSION = config['SYSTEM']['version']
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +35,9 @@ SECRET_KEY = 'django-insecure-e6&a%ovv1gsy*cw)id@o#c#k5+17s7ly9omen!t$f9ocv1r(s*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+AUTH_USER_MODEL = 'auth.User'
 
 
 # Application definition
@@ -37,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dmgen', 
 ]
 
 MIDDLEWARE = [
@@ -76,7 +89,7 @@ WSGI_APPLICATION = 's3modeltools.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'data/s3modeltools.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 's3modeltools.sqlite3'),
     }
 }
 
@@ -116,8 +129,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = Path(BASE_DIR.parent, "static")
+
+MEDIA_ROOT = Path(BASE_DIR.parent, "media")
+DATA_LIB = Path(BASE_DIR.parent, "data")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# S3M settings
+RMVERSION = config['SYSTEM']['s3mrm']
+DM_LIB = Path(BASE_DIR.parent, "dmlib")
+DM_PKG = Path(BASE_DIR.parent, "dmpkgs")
+RM_DIR = "../rm"
+RM_URI = "https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd"

@@ -23,7 +23,7 @@ from cuid import cuid
 from xml.sax.saxutils import escape
 from django.contrib import messages
 
-from s3mtools.settings import RM_URI
+from s3modeltools.settings import RM_URI
 
 
 def reset_publication(self):

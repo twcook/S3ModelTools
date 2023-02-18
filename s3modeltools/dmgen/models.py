@@ -17,7 +17,7 @@ from .publisher import (publish_XdBoolean, publish_XdLink, publish_XdString, pub
                         publish_ReferenceRange, publish_SimpleReferenceRange, publish_XdOrdinal, publish_XdCount, publish_XdQuantity, publish_XdFloat,
                         publish_XdRatio, publish_XdTemporal, publish_Party, publish_Participation, publish_Audit, publish_Attestation,
                         publish_Cluster, publish_DM)
-from s3mtools.settings import AUTH_USER_MODEL
+from s3modeltools.settings import AUTH_USER_MODEL
 
 DEFAULT_AUTO_FIELD = models.BigAutoField()
 

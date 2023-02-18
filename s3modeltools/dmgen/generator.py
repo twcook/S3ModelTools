@@ -2,12 +2,12 @@
 The S3Model Reference Model code to write DM schemas.
 """
 import os
-from datetime import date
+# from datetime import date
 import hashlib
 import zipfile
 from shutil import copy, rmtree
 from xml.sax.saxutils import escape
-from urllib.parse import quote
+# from urllib.parse import quote
 import json
 import xmltodict
 from lxml import etree
@@ -15,7 +15,7 @@ from lxml import etree
 from django.core.files.base import ContentFile
 from django.contrib import messages
 
-from s3mtools.settings import DM_LIB, DM_PKG, MEDIA_ROOT, RMVERSION, RM_URI
+from s3modeltools.settings import DM_LIB, DM_PKG, MEDIA_ROOT, RMVERSION, RM_URI
 
 from dmgen.models import NS, get_rcode
 from dmgen.publisher import publish_DM
