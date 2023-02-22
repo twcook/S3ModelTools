@@ -1,11 +1,11 @@
 # S3Model Tools
 
 
-**S3Model Tools** is a generic pipeline that can convert any structured data into a knowledge graph with minimal user input and offers several benefits or value propositions:
+**S3Model Tools** is a generic web tool and pipeline that can convert any structured data into a knowledge graph with minimal user input and offers several benefits or value propositions:
 
 1. Improved Data Management: A knowledge graph can provide a clear and intuitive representation of complex structured data, making it easier to manage and understand.
 
-2. Better Data Integration: By converting structured data into a knowledge graph, multiple data sources can be integrated and linked in a meaningful way, providing a more comprehensive and interconnected view of the data.
+2. Better Data Integration: By converting structured data into a knowledge graph, multiple data sources can be integrated and linked meaningfully, providing a more comprehensive and interconnected view of the data.
 
 3. Increased Data Reusability: Knowledge graphs are highly reusable and can be leveraged across multiple use cases and applications. This reuse can save time and resources compared to manually transforming and integrating data for each use case.
 
@@ -19,6 +19,6 @@ In summary, a generic pipeline converting structured data into a knowledge graph
 
 1. Build the virtual environment using dev_requirements.txt
 
-2. Admin page username and password are; *admin:password*.
+2. 
 
 3. 
