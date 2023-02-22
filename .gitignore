@@ -128,8 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-S3ModelTools.wpr
-S3ModelTools.wpu
+S3ModelTools.xpr
 
 S3ModelTools.code-workspace
 
