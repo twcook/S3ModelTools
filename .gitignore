@@ -130,11 +130,11 @@ dmypy.json
 
 # S3ModelTools
 S3ModelTools.xpr
-xmldir/
-s3model/
-rdfdir/
-dmlib/
-conf/
-catalogs/
+# xmldir/
+# s3model/
+# rdfdir/
+# dmlib/
+# conf/
+# catalogs/
 
 S3ModelTools.code-workspace
