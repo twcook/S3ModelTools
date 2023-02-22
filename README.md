@@ -25,6 +25,13 @@ python
 >>> from S3MPython import project
 >>> project.init()
 ```
+Due to a [bug](https://github.com/twcook/S3M_Python/issues/6) in the current version of S3MPython, in catalogs/catalog.xml change the uri attribute.
+
+```bash
+
+    from: 's3model/s3model_3_1_0.xsd'  to  './s3model/s3model_3_1_0.xsd'
+
+```
 
 3. Run the following command to start the server:
 
