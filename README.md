@@ -17,8 +17,17 @@ In summary, a generic pipeline converting structured data into a knowledge graph
 
 ## Development
 
-1. Build the virtual environment using dev_requirements.txt
+1. Build and activate the virtual environment using dev_requirements.txt
 
-2. 
+2. Initialize S3MPython.
+```bash
+python
+>>> from S3MPython import project
+>>> project.init()
+```
+
+3. Run the following command to start the server:
+
+
 
 3. 
