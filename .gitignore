@@ -128,8 +128,13 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# S3ModelTools
 S3ModelTools.xpr
+xmldir/
+s3model/
+rdfdir/
+dmlib/
+conf/
+catalogs/
 
 S3ModelTools.code-workspace
-
-*.sqlite3
