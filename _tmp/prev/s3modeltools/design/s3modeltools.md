@@ -1,2 +1,0 @@
-The s3modeltools package contains all of the setup, configuration, and API definitions. 
-This package is built on FastAPI served via uvicorn. If S3Model.db doesn't exist, it will be created during setup. 

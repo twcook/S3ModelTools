@@ -1,7 +1,0 @@
-DROP TABLE IF EXISTS projects;
-
-CREATE TABLE projects (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  prj_name TEXT UNIQUE NOT NULL,
-  description TEXT NOT NULL
-);
