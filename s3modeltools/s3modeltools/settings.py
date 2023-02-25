@@ -19,12 +19,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ************************************************************************************************
 # S3Model Python configuration file
 
-S3MPYTHON_CONF = os.path.join(BASE_DIR, 'conf', 'S3MPython.conf')
+S3MPYTHON_CONF = os.path.join(BASE_DIR, '../conf', 'S3MPython.conf')
+
 if os.path.isfile(S3MPYTHON_CONF):
     config = configparser.ConfigParser()
     config.read(S3MPYTHON_CONF)
 else:
-    print('\n\nNo S3MPython configuration file found.\n\n')
+    print('\n\nsettings.py: No S3MPython configuration file found.\n\n')
     exit()
 
 
@@ -36,9 +37,12 @@ ACSFILE = config['S3MPython']['acsfile']
 XML_CATALOG_DIR = config['S3MPython']['catalog']
 # Used by libxml2 (lxml)
 os.environ['XML_CATALOG_FILES'] = XML_CATALOG_DIR
+RM_URI = "https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd"
+RM_DIR = "../s3model/3_1_0"
 
 # ************************************************************************************************
 
+AUTH_USER_MODEL = 'auth.User'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -61,6 +65,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'component',
+    'csvmodeler',
+    'formmodeler',
+    'iotmodeler',
+    'tools',
 ]
 
 MIDDLEWARE = [
