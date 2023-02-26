@@ -582,48 +582,6 @@ class XdFloat(XdQuantified):
         verbose_name_plural = "Floats"
         ordering = ['project', 'label']
 
-# TODO: Remove XdRatio and update the database structure. It is no longer in the RM.
-class XdRatio(XdQuantified):
-    """
-    Models a ratio of values, i.e. where the numerator and denominator are both pure numbers. Should not
-    be used to represent things like blood pressure which are often written using a ‘/’ character, giving the misleading
-    impression that the item is a ratio, when in fact it is a structured value. Similarly, visual acuity, often written as
-    (e.g.) “6/24” in clinical notes is not a ratio but an ordinal (which includes non-numeric symbols like CF = count
-    fingers etc). Should not be used for formulations.
-    """
-    RATIO_CHOICES = (('ratio', ('Ratio')), ('proportion',('Proportion')), ('rate', ('Rate')))
-    ratio_type = models.CharField(('ratio type'), max_length=10, choices=RATIO_CHOICES)
-    num_min_inclusive = models.IntegerField(('numerator minimum inclusive'), help_text=("Enter the minimum (inclusive) value for the numerator."), null=True, blank=True)
-    num_max_inclusive = models.IntegerField(('numerator maximum inclusive'), help_text=("Enter the maximum (inclusive) value for the numerator."), null=True, blank=True)
-    num_min_exclusive = models.IntegerField(('numerator minimum exclusive'), help_text=("Enter the minimum (exclusive) value for the numerator."), null=True, blank=True)
-    num_max_exclusive = models.IntegerField(('numerator maximum exclusive'), help_text=("Enter the maximum (exclusive) value for the numerator."), null=True, blank=True)
-    den_min_inclusive = models.IntegerField(('denominator minimum inclusive'), help_text=("Enter the minimum (inclusive) value for the denominator."), null=True, blank=True)
-    den_max_inclusive = models.IntegerField(('denominator maximum inclusive'), help_text=("Enter the maximum (inclusive) value for the denominator."), null=True, blank=True)
-    den_min_exclusive = models.IntegerField(('denominator minimum exclusive'), help_text=("Enter the minimum (exclusive) value for the denominator."), null=True, blank=True)
-    den_max_exclusive = models.IntegerField(('denominator maximum exclusive'), help_text=("Enter the maximum (exclusive) value for the denominator."), null=True, blank=True)
-    num_units = models.ForeignKey(Units, verbose_name=('units'), related_name='%(class)s_related_num_units', null=True, blank=True, help_text=("Choose a units of measurement of this concept."), on_delete=models.SET_NULL,)
-    den_units = models.ForeignKey(Units, verbose_name=('units'), related_name='%(class)s_related_den_units', null=True, blank=True, help_text=("Choose a units of measurement of this concept."), on_delete=models.SET_NULL,)
-    ratio_units = models.ForeignKey(Units, verbose_name=('units'), related_name='%(class)s_related_ratio_units', null=True, blank=True, help_text=("Choose a units of measurement of this concept."), on_delete=models.SET_NULL,)
-
-    def publish(self, request):
-        if self.schema_code == '':
-            msg = publish_XdRatio(self)
-            if len(self.schema_code) > 100:
-                self.published = True
-                self.save()
-            else:
-                self.published = False
-                self.schema_code = ''
-                self.save()
-        else:
-            msg = (self.label.strip() + ' was not published because code already exists.', messages.ERROR)
-
-        return msg
-
-    class Meta:
-        verbose_name = "Ratio"
-        ordering = ['project', 'label']
-
 
 class XdTemporal(XdOrdered):
     """
@@ -793,7 +751,6 @@ class Cluster(Common):
     xdcount = models.ManyToManyField(XdCount, verbose_name='Count', related_name='%(class)s_related', help_text="Select zero or more counts to include in this Cluster.", blank=True)
     xdquantity = models.ManyToManyField(XdQuantity, verbose_name='Quantity', related_name='%(class)s_related', help_text="Select zero or more quantity items to include in this Cluster.", blank=True)
     xdfloat = models.ManyToManyField(XdFloat, verbose_name='Float', related_name='%(class)s_related', help_text="Select zero or more floats to include in this Cluster.", blank=True)
-    xdratio = models.ManyToManyField(XdRatio, verbose_name='Ratio', related_name='%(class)s_related', help_text="Select zero or more ratios to include in this Cluster.", blank=True)
     xdtemporal = models.ManyToManyField(XdTemporal, verbose_name='Temporal', related_name='%(class)s_related', help_text="Select zero or more temporal items to include in this Cluster.", blank=True)
 
     def publish(self, request):
