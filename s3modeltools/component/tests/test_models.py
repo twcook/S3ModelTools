@@ -76,49 +76,75 @@ class XdLinkModelTest(TestCase):
 
 class XdStringModelTest(TestCase):
     
-        def test_xdstring_string_representation(self):
-            project = Project.objects.create(prj_name="My Project Name")
-            user=User.objects.create(username="TestUser", password="passw0rd")
-            modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
-            xdstring = XdString.objects.create(label="XdString Name", project=project, creator=modeler)
-            self.assertEqual(str(xdstring), xdstring.project.prj_name + ' : ' + xdstring.label)
-    
-        def test_xdstring_default_values(self):
-            project = Project.objects.create(prj_name="My Project Name")
-            user=User.objects.create(username="TestUser", password="passw0rd")
-            modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
-            xdstring = XdString.objects.create(label="XdString Name", project=project, creator=modeler, \
-                                               max_length=25, min_length=3, str_fmt="^[a-zA-Z0-9_]*$")
-            self.assertNotEqual(xdstring.ct_id, "")
-            self.assertNotEqual(xdstring.created, None)
-            self.assertEqual(xdstring.published, False)
-            self.assertNotEqual(xdstring.adapter_ctid, "")
-            self.assertEqual(xdstring.ui_type, 'Choose UI Type:')
-            self.assertEqual(xdstring.max_length, 25)
-            self.assertEqual(xdstring.min_length, 3)
-            self.assertEqual(xdstring.str_fmt, "^[a-zA-Z0-9_]*$")
+    def test_xdstring_string_representation(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        xdstring = XdString.objects.create(label="XdString Name", project=project, creator=modeler)
+        self.assertEqual(str(xdstring), xdstring.project.prj_name + ' : ' + xdstring.label)
+
+    def test_xdstring_default_values(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        xdstring = XdString.objects.create(label="XdString Name", project=project, creator=modeler, \
+                                            max_length=25, min_length=3, str_fmt="^[a-zA-Z0-9_]*$")
+        self.assertNotEqual(xdstring.ct_id, "")
+        self.assertNotEqual(xdstring.created, None)
+        self.assertEqual(xdstring.published, False)
+        self.assertNotEqual(xdstring.adapter_ctid, "")
+        self.assertEqual(xdstring.ui_type, 'Choose UI Type:')
+        self.assertEqual(xdstring.max_length, 25)
+        self.assertEqual(xdstring.min_length, 3)
+        self.assertEqual(xdstring.str_fmt, "^[a-zA-Z0-9_]*$")
 
 class UnitsModelTest(TestCase):
-        
-            def test_units_string_representation(self):
-                project = Project.objects.create(prj_name="My Project Name")
-                user=User.objects.create(username="TestUser", password="passw0rd")
-                modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
-                units = Units.objects.create(label="Units Name", project=project, creator=modeler)
-                self.assertEqual(str(units), units.project.prj_name + ' : ' + units.label)
-        
-            def test_units_default_values(self):
-                project = Project.objects.create(prj_name="My Project Name")
-                user=User.objects.create(username="TestUser", password="passw0rd")
-                modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
-                units = Units.objects.create(label="Units Name", project=project, creator=modeler, \
-                                            enums="m\ncm", \
-                                            definitions="http://www.ontology-of-units-of-measure.org/resource/om-2/meter\n" \
-                                                "http://www.ontology-of-units-of-measure.org/resource/om-2/centimeter")                
-                self.assertNotEqual(units.ct_id, "")
-                self.assertNotEqual(units.created, None)
-                self.assertEqual(units.published, False)
-                self.assertNotEqual(units.adapter_ctid, "")
-                self.assertEqual(units.ui_type, 'Choose UI Type:')
-                self.assertEqual(units.enums, "m\ncm")
-                self.assertEqual(units.definitions, "http://www.ontology-of-units-of-measure.org/resource/om-2/meter\nhttp://www.ontology-of-units-of-measure.org/resource/om-2/centimeter")
+
+    def test_units_string_representation(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        units = Units.objects.create(label="Units Name", project=project, creator=modeler)
+        self.assertEqual(str(units), units.project.prj_name + ' : ' + units.label)
+
+    def test_units_default_values(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        units = Units.objects.create(label="Units Name", project=project, creator=modeler, \
+                                    enums="m\ncm", \
+                                    definitions="http://www.ontology-of-units-of-measure.org/resource/om-2/meter\n" \
+                                        "http://www.ontology-of-units-of-measure.org/resource/om-2/centimeter")                
+        self.assertNotEqual(units.ct_id, "")
+        self.assertNotEqual(units.created, None)
+        self.assertEqual(units.published, False)
+        self.assertNotEqual(units.adapter_ctid, "")
+        self.assertEqual(units.ui_type, 'Choose UI Type:')
+        self.assertEqual(units.enums, "m\ncm")
+        self.assertEqual(units.definitions, "http://www.ontology-of-units-of-measure.org/resource/om-2/meter\nhttp://www.ontology-of-units-of-measure.org/resource/om-2/centimeter")
+
+class XdFileModelTest(TestCase):
+    
+    def test_xdfile_string_representation(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        xdfile = XdFile.objects.create(label="XdFile Name", project=project, creator=modeler)
+        self.assertEqual(str(xdfile), xdfile.project.prj_name + ' : ' + xdfile.label)
+
+    def test_xdfile_default_values(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        xdfile = XdFile.objects.create(label="XdFile Name", project=project, creator=modeler, \
+                                        media_type="text/html\njson")
+
+        self.assertEqual(xdfile.label, "XdFile Name")
+        self.assertNotEqual(xdfile.ct_id, "")
+        self.assertNotEqual(xdfile.created, None)
+        self.assertEqual(xdfile.published, False)
+        self.assertNotEqual(xdfile.adapter_ctid, "")
+        self.assertEqual(xdfile.content_mode, 'Select Mode:')
+        self.assertEqual(xdfile.alt_txt, '')
+        self.assertEqual(xdfile.encoding, 'utf-8')
+        self.assertEqual(xdfile.language, "en-US")
