@@ -379,10 +379,12 @@ class ReferenceRange(XdAny):
 class SimpleReferenceRange(XdAny):
     """
     Defines a ReferenceRange with one and only one Interval included.
+    The Interval is a simple type from the XSD type system. This is the most common type of ReferenceRange.
     """
 
-    definition = models.CharField(("Definition"), max_length=110, help_text=("Enter the term that indicates the status of this range, e.g. 'normal', 'critical', 'therapeutic' etc."))
     INTERVAL_TYPES = (('None', 'Select Type:'), ('int', 'Count data (xs:int)'), ('decimal', 'Real set numbers (xs:decimal)'), ('float', 'Floating Point (xs:float)'), ('dateTime', 'Date/Time (YYYY-MM-DDTHH:mm:ss)'), ('date', 'Date (YYYY-MM-DD)'), ('time', 'Time (HH:mm:ss)'), ('duration', 'Duration (xs:duration)'))
+
+    definition = models.CharField(("Definition"), max_length=110, help_text=("Enter the term that indicates the status of this range, e.g. 'normal', 'critical', 'therapeutic' etc."))
     lower = models.CharField(("Lower Value"), max_length=110, blank=True, null=True, help_text=('Enter the lower value of the interval. This will be used to set the minInclusive facet.'))
     upper = models.CharField(("Upper Value"), max_length=110, blank=True, null=True, help_text=('Enter the upper value of the interval. This will be used to set the maxInclusive facet.'))
     interval_type = models.CharField(("Interval Type"), default='Select Type:', help_text=("The XML Schema datatype of the upper and lower values."), choices=INTERVAL_TYPES, max_length=20)
@@ -390,10 +392,8 @@ class SimpleReferenceRange(XdAny):
     upper_included = models.BooleanField(('Upper Included?'), default=True, help_text=('Uncheck this box if the upper value is excluded in the interval'))
     lower_bounded = models.BooleanField(('Lower Bounded?'), default=True, help_text=("Uncheck this box if the lower value is unbounded. If unchecked, instances must be set to xsi:nil='true'"))
     upper_bounded = models.BooleanField(('Upper Bounded?'), default=True, help_text=("Uncheck this box if the lower value is unbounded. If unchecked, instances must be set to xsi:nil='true'"))
-
     units_name = models.CharField(("Units Name"), max_length=60, blank=True, null=True, help_text=('OPTIONAL: Enter the common name or abbreviation for these units.'))
     units_uri = models.URLField(("Units URI"), max_length=2000, blank=True, null=True, help_text=('Enter the URL pointing to the definition for these units. This is mandatory if you entered a Units Name.'))
-
     is_normal = models.BooleanField(('Is Normal?'), default=False, help_text=("Is this considered the normal range?"))
 
     def publish(self, request):
@@ -470,6 +470,45 @@ class XdOrdinal(XdOrdered):
 
     class Meta:
         verbose_name = "Ordinal"
+        ordering = ['project', 'label']
+
+
+class XdTemporal(XdOrdered):
+    """
+    Class defining the concept of date and time types.
+    Must be constrained in DMs to be one or more of the allowed types.
+    This gives the modeller the ability to optionally allow partial dates at run time.
+    If one of the duration types is selected then no other type is allowed.
+    All types are considered optional (minOccurs='0') by default.
+    If you need to make on mandatory then an assert statement is required and only one type should be allowed.
+    """
+    allow_duration = models.BooleanField(('allow duration'), default=False, help_text=("If Duration is allowed, no other types will be permitted."))
+    allow_date = models.BooleanField(('allow date'), default=False, help_text=('Check this box if complete date entry is allowed.'))
+    allow_time = models.BooleanField(('allow time'), default=False, help_text=('Check this box if time only entry is allowed.'))
+    allow_datetime = models.BooleanField(('allow datetime'), default=False, help_text=('Check this box if complete dates and times are allowed.'))
+    allow_day = models.BooleanField(('allow day'), default=False, help_text=('Check this box if day only is allowed.'))
+    allow_month = models.BooleanField(('allow month'), default=False, help_text=('Check this box if month only is allowed.'))
+    allow_year = models.BooleanField(('allow year'), default=False, help_text=('Check this box if year only entry is allowed.'))
+    allow_year_month = models.BooleanField(('allow year month'), default=False, help_text=('Check this box if combination of years and months are allowed.'))
+    allow_month_day = models.BooleanField(('allow month day'), default=False, help_text=('Check this box if combination of months and days are allowed.'))
+
+    def publish(self, request):
+        if self.schema_code == '':
+            msg = publish_XdTemporal(self)
+            if len(self.schema_code) > 100:
+                self.published = True
+                self.save()
+            else:
+                self.published = False
+                self.schema_code = ''
+                self.save()
+        else:
+            msg = (self.label.strip() + ' was not published because code already exists.', messages.ERROR)
+
+        return msg
+
+    class Meta:
+        verbose_name = "Temporal"
         ordering = ['project', 'label']
 
 
@@ -580,45 +619,6 @@ class XdFloat(XdQuantified):
     class Meta:
         verbose_name = "Float"
         verbose_name_plural = "Floats"
-        ordering = ['project', 'label']
-
-
-class XdTemporal(XdOrdered):
-    """
-    Class defining the concept of date and time types.
-    Must be constrained in DMs to be one or more of the allowed types.
-    This gives the modeller the ability to optionally allow partial dates at run time.
-    If one of the duration types is selected then no other type is allowed.
-    All types are considered optional (minOccurs='0') by default.
-    If you need to make on mandatory then an assert statement is required and only one type should be allowed.
-    """
-    allow_duration = models.BooleanField(('allow duration'), default=False, help_text=("If Duration is allowed, no other types will be permitted."))
-    allow_date = models.BooleanField(('allow date'), default=False, help_text=('Check this box if complete date entry is allowed.'))
-    allow_time = models.BooleanField(('allow time'), default=False, help_text=('Check this box if time only entry is allowed.'))
-    allow_datetime = models.BooleanField(('allow datetime'), default=False, help_text=('Check this box if complete dates and times are allowed.'))
-    allow_day = models.BooleanField(('allow day'), default=False, help_text=('Check this box if day only is allowed.'))
-    allow_month = models.BooleanField(('allow month'), default=False, help_text=('Check this box if month only is allowed.'))
-    allow_year = models.BooleanField(('allow year'), default=False, help_text=('Check this box if year only entry is allowed.'))
-    allow_year_month = models.BooleanField(('allow year month'), default=False, help_text=('Check this box if combination of years and months are allowed.'))
-    allow_month_day = models.BooleanField(('allow month day'), default=False, help_text=('Check this box if combination of months and days are allowed.'))
-
-    def publish(self, request):
-        if self.schema_code == '':
-            msg = publish_XdTemporal(self)
-            if len(self.schema_code) > 100:
-                self.published = True
-                self.save()
-            else:
-                self.published = False
-                self.schema_code = ''
-                self.save()
-        else:
-            msg = (self.label.strip() + ' was not published because code already exists.', messages.ERROR)
-
-        return msg
-
-    class Meta:
-        verbose_name = "Temporal"
         ordering = ['project', 'label']
 
 
