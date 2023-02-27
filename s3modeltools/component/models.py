@@ -96,7 +96,7 @@ class Common(models.Model):
     public = models.BooleanField(("Is Public?"), default=True, help_text=("Public components are available to every other modeller. If not public then the component is only visible within the project it was defined in."))
     label = models.CharField(('label'), max_length=110, help_text=("A human readable label used to identify this model in DMGEN. This will also be use in generated app UI."))
     ct_id = models.CharField(("CUID"), max_length=40, default=get_cuid, editable=False, unique=True, help_text=('The unique identifier for the MC.'))
-    created = models.DateTimeField(('created'), auto_now_add=True, help_text=('The dateTime that the MC was created.'))
+    created = models.DateTimeField(('created'), auto_now_add=True, blank=False, help_text=('The dateTime that the MC was created.'))
     updated = models.DateTimeField(('last updated'), auto_now=True, help_text=("Last update."))
     published = models.BooleanField(("published"), default=False, help_text=("Published must be a green check icon in order to use this in a DM. This is not user editable. It is managed by the publication process."))
     description = models.TextField(('description'), help_text=("Enter a free text description for this complexType. Include a usage statement and any possible misuses. This is used as the annotation for the MC and as help text in the UI."), null=True)
