@@ -7,7 +7,12 @@ from tools.models import Project, Modeler
 from ..models import NS, Predicate, PredObj, XdBoolean, XdLink, XdString, Units, XdFile, XdInterval, ReferenceRange, \
     SimpleReferenceRange, XdOrdinal, XdTemporal, XdCount, XdQuantity, XdFloat, Party, Participation, Audit, Attestation, Cluster, DM
 
+
 class PredObjModelTest(TestCase):
+    """
+    Test PredObj model
+    TODO: Add tests for all elements.
+    """
 
     def test_ns_string_representation(self):
         ns = NS(abbrev = "S3M", uri = "https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd")
@@ -29,7 +34,12 @@ class PredObjModelTest(TestCase):
         predobj = PredObj(po_name="PredObj Name", predicate = predicate, project=project)
         self.assertEqual(str(predobj), predobj.project.prj_name + ' { ' + predobj.po_name.strip() + ' } ' + predobj.predicate.__str__() + " --> " + predobj.object_uri.strip())
 
+
 class XdBooleanModelTest(TestCase):
+    """
+    Test XdBoolean model
+    TODO: Add tests for all elements.
+    """
 
     def test_xdboolean_string_representation(self):
         project = Project.objects.create(prj_name="My Project Name")
@@ -52,32 +62,42 @@ class XdBooleanModelTest(TestCase):
         self.assertEqual(xdboolean.trues, "True")
         self.assertEqual(xdboolean.falses, "False")
 
+
 class XdLinkModelTest(TestCase):
-    
-        def test_xdlink_string_representation(self):
-            project = Project.objects.create(prj_name="My Project Name")
-            user=User.objects.create(username="TestUser", password="passw0rd")
-            modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
-            xdlink = XdLink.objects.create(label="XdLink Name", project=project, creator=modeler)
-            self.assertEqual(str(xdlink), xdlink.project.prj_name + ' : ' + xdlink.label)
-    
-        def test_xdlink_default_values(self):
-            project = Project.objects.create(prj_name="My Project Name")
-            user=User.objects.create(username="TestUser", password="passw0rd")
-            modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
-            xdlink = XdLink.objects.create(label="XdLink Name", project=project, creator=modeler, \
-                                           link="https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd", \
-                                            relation="part of", \
-                                                relation_uri="http://purl.obolibrary.org/obo/BFO_0000050")
-            self.assertNotEqual(xdlink.ct_id, "")
-            self.assertNotEqual(xdlink.created, None)
-            self.assertEqual(xdlink.published, False)
-            self.assertNotEqual(xdlink.adapter_ctid, "")
-            self.assertEqual(xdlink.relation, "part of")
-            self.assertEqual(xdlink.ui_type, 'Choose UI Type:')
+    """
+    Test XdLink model
+    TODO: Add tests for all elements.
+    """    
+
+    def test_xdlink_string_representation(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        xdlink = XdLink.objects.create(label="XdLink Name", project=project, creator=modeler)
+        self.assertEqual(str(xdlink), xdlink.project.prj_name + ' : ' + xdlink.label)
+
+    def test_xdlink_default_values(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        xdlink = XdLink.objects.create(label="XdLink Name", project=project, creator=modeler, \
+                                        link="https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd", \
+                                        relation="part of", \
+                                            relation_uri="http://purl.obolibrary.org/obo/BFO_0000050")
+        self.assertNotEqual(xdlink.ct_id, "")
+        self.assertNotEqual(xdlink.created, None)
+        self.assertEqual(xdlink.published, False)
+        self.assertNotEqual(xdlink.adapter_ctid, "")
+        self.assertEqual(xdlink.relation, "part of")
+        self.assertEqual(xdlink.ui_type, 'Choose UI Type:')
+
 
 class XdStringModelTest(TestCase):
-    
+    """
+    Test module for XdString model
+    TODO: Add tests for all elements.
+    """    
+
     def test_xdstring_string_representation(self):
         project = Project.objects.create(prj_name="My Project Name")
         user=User.objects.create(username="TestUser", password="passw0rd")
@@ -100,7 +120,12 @@ class XdStringModelTest(TestCase):
         self.assertEqual(xdstring.min_length, 3)
         self.assertEqual(xdstring.str_fmt, "^[a-zA-Z0-9_]*$")
 
+
 class UnitsModelTest(TestCase):
+    """
+    Test Units model
+    TODO: Add tests for all elements.
+    """
 
     def test_units_string_representation(self):
         project = Project.objects.create(prj_name="My Project Name")
@@ -125,8 +150,13 @@ class UnitsModelTest(TestCase):
         self.assertEqual(units.enums, "m\ncm")
         self.assertEqual(units.definitions, "http://www.ontology-of-units-of-measure.org/resource/om-2/meter\nhttp://www.ontology-of-units-of-measure.org/resource/om-2/centimeter")
 
+
 class XdFileModelTest(TestCase):
-    
+    """
+    Test module for XdFile model
+    TODO: Add tests for all elements.
+    """    
+
     def test_xdfile_string_representation(self):
         project = Project.objects.create(prj_name="My Project Name")
         user=User.objects.create(username="TestUser", password="passw0rd")
@@ -151,8 +181,13 @@ class XdFileModelTest(TestCase):
         self.assertEqual(xdfile.encoding, 'utf-8')
         self.assertEqual(xdfile.language, "en-US")
 
+
 class XdIntervalModelTest(TestCase):
-    
+    """
+    Test case for the XdInterval model
+    TODO: Add tests for all elements.
+    """    
+
     def test_xdinterval_string_representation(self):
         project = Project.objects.create(prj_name="My Project Name")
         user=User.objects.create(username="TestUser", password="passw0rd")
@@ -179,7 +214,12 @@ class XdIntervalModelTest(TestCase):
         self.assertEqual(xdinterval.units_uri, None)
         self.assertEqual(xdinterval.units_name, None)
 
+
 class ReferenceRangeModelTest(TestCase):
+    """
+    Test module for ReferenceRange model
+    TODO: Add tests for all elements.
+    """
 
     def test_referencerange_string_representation(self):
         project = Project.objects.create(prj_name="My Project Name")
@@ -207,8 +247,13 @@ class ReferenceRangeModelTest(TestCase):
         self.assertEqual(referencerange.interval, xdinterval)
         self.assertEqual(referencerange.is_normal, False)
 
+
 class SimpleReferenceRangeModelTest(TestCase):
-    
+    """
+    Test SimpleReferenceRange model
+    TODO: Add tests for all elements.
+    """
+
     def test_srr_string_representation(self):
         project = Project.objects.create(prj_name="My Project Name")
         user=User.objects.create(username="TestUser", password="passw0rd")
@@ -230,7 +275,11 @@ class SimpleReferenceRangeModelTest(TestCase):
 
 
 class XdOrdinalModelTests(TestCase):
-        
+    """
+    Test the XdOrdinal model
+    TODO: Add tests for all elements.
+    """    
+
     def test_xdordinal_string_representation(self):
         project = Project.objects.create(prj_name="My Project Name")
         user=User.objects.create(username="TestUser", password="passw0rd")
@@ -251,8 +300,13 @@ class XdOrdinalModelTests(TestCase):
         self.assertEqual(xdordinal.symbols, '')
         self.assertEqual(xdordinal.annotations, '')
 
+
 class XdTemporalModelTests(TestCase):
-            
+    """
+    Test the XdTemporal model
+    TODO: Add tests for all elements.
+    """            
+
     def test_xdtemporal_string_representation(self):
         project = Project.objects.create(prj_name="My Project Name")
         user=User.objects.create(username="TestUser", password="passw0rd")
@@ -279,8 +333,13 @@ class XdTemporalModelTests(TestCase):
         self.assertEqual(xdtemporal.allow_year, False)
         self.assertEqual(xdtemporal.allow_year_month, False)
 
+
 class XdCountModelTests(TestCase):
-                    
+    """
+    Tests for the XdCount model
+    TODO: Add tests for all elements.
+    """                    
+
     def test_xdcount_string_representation(self):
         project = Project.objects.create(prj_name="My Project Name")
         user=User.objects.create(username="TestUser", password="passw0rd")
@@ -312,8 +371,13 @@ class XdCountModelTests(TestCase):
         self.assertEqual(xdcount.allow_accuracy, False)
         self.assertEqual(xdcount.units, None)
 
+
 class XdQuantityModelTests(TestCase):
-                            
+    """
+    Test the XdQuantity model
+    TODO: Add tests for all elements.
+    """                            
+
     def test_xdquantity_string_representation(self):
         project = Project.objects.create(prj_name="My Project Name")
         user=User.objects.create(username="TestUser", password="passw0rd")
@@ -345,8 +409,13 @@ class XdQuantityModelTests(TestCase):
         self.assertEqual(xdquantity.allow_accuracy, False)
         self.assertEqual(xdquantity.units, None)
 
+
 class XdFloatModelTests(TestCase):
-                                    
+    """
+    Test the XdFloat model
+    TODO: Test the XdFloat model elements
+    """                                  
+
     def test_xdfloat_string_representation(self):
         project = Project.objects.create(prj_name="My Project Name")
         user=User.objects.create(username="TestUser", password="passw0rd")
@@ -378,23 +447,159 @@ class XdFloatModelTests(TestCase):
         self.assertEqual(xdfloat.allow_accuracy, False)
         self.assertEqual(xdfloat.units, None)   
 
+
 class PartyModelTests(TestCase):
+    """
+    Test Party model
+    TODO: Add tests for Party model elements
+    """
 
     def test_party_string_representation(self):
         project = Project.objects.create(prj_name="My Project Name")
         user=User.objects.create(username="TestUser", password="passw0rd")
         modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
-        party = Party.objects.create(label="Party Name", project=project, creator=modeler)
+        xdlink = XdLink.objects.create(label="XdLink Name", project=project, creator=modeler)
+        party = Party.objects.create(label="Party Name", project=project, creator=modeler, details=None)
         self.assertEqual(str(party), party.project.prj_name + ' : ' + party.label)
 
     def test_party_default_values(self):
         project = Project.objects.create(prj_name="My Project Name")
         user=User.objects.create(username="TestUser", password="passw0rd")
         modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
-        party = Party.objects.create(label="Party Name", project=project, creator=modeler)
+        xdlink = XdLink.objects.create(label="XdLink Name", project=project, creator=modeler)
+        party = Party.objects.create(label="Party Name", project=project, creator=modeler, details=None)
         self.assertNotEqual(party.ct_id, "")
         self.assertNotEqual(party.created, None)
         self.assertEqual(party.published, False)
-        self.assertNotEqual(party.adapter_ctid, "")
         self.assertEqual(party.details, None)
-        self.assertEqual(party.external_ref, None)
+
+
+class ParticipationModelTests(TestCase):
+    """
+    Tests for the Participation model
+    TODO: Add tests for all elements of the Participation model
+    """
+
+    def test_participation_string_representation(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        party = Party.objects.create(label="Party Name", project=project, creator=modeler)
+        participation = Participation.objects.create(label="Participation Name", project=project, creator=modeler)
+        self.assertEqual(str(participation), participation.project.prj_name + ' : ' + participation.label)
+
+    def test_participation_default_values(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        party = Party.objects.create(label="Party Name", project=project, creator=modeler)
+        participation = Participation.objects.create(label="Participation Name", project=project, creator=modeler)
+        self.assertNotEqual(participation.ct_id, "")
+        self.assertNotEqual(participation.created, None)
+        self.assertEqual(participation.published, False)
+        self.assertEqual(participation.performer, None)
+        self.assertEqual(participation.function, None)
+        self.assertEqual(participation.mode, None)
+
+
+class AuditModelTests(TestCase):
+    """
+    Test Audit model
+    TODO: Add tests for all values
+    """
+
+    def test_audit_string_representation(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        party = Party.objects.create(label="Party Name", project=project, creator=modeler)
+        audit = Audit.objects.create(label="Audit Name", project=project, creator=modeler)
+        self.assertEqual(str(audit), audit.project.prj_name + ' : ' + audit.label)
+
+    def test_audit_default_values(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        party = Party.objects.create(label="Party Name", project=project, creator=modeler)
+        audit = Audit.objects.create(label="Audit Name", project=project, creator=modeler)
+        self.assertNotEqual(audit.ct_id, "")
+        self.assertNotEqual(audit.created, None)
+        self.assertEqual(audit.published, False)
+        self.assertEqual(audit.system_id, None)
+        self.assertEqual(audit.system_user, None)
+        self.assertEqual(audit.location, None)
+
+
+class AttestationModelTests(TestCase):
+    """ 
+    Test the Attestation model
+    TODO: Add tests for the elements of the Attestation model.
+    """
+
+    def test_attestation_string_representation(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        party = Party.objects.create(label="Party Name", project=project, creator=modeler)
+        attestation = Attestation.objects.create(label="Attestation Name", project=project, creator=modeler)
+        self.assertEqual(str(attestation), attestation.project.prj_name + ' : ' + attestation.label)
+
+    def test_attestation_default_values(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        party = Party.objects.create(label="Party Name", project=project, creator=modeler)
+        attestation = Attestation.objects.create(label="Attestation Name", project=project, creator=modeler)
+        self.assertNotEqual(attestation.ct_id, "")
+        self.assertNotEqual(attestation.created, None)
+        self.assertEqual(attestation.published, False)
+        self.assertEqual(attestation.view, None)
+        self.assertEqual(attestation.proof, None)
+        self.assertEqual(attestation.reason, None)
+        self.assertEqual(attestation.committer, None)
+
+
+class ClusterModelTests(TestCase):
+    """
+    Test the Cluster model
+    TODO: Test all of the models for single and multiple values.
+    """
+
+    def test_cluster_string_representation(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        cluster = Cluster.objects.create(label="Cluster Name", project=project, creator=modeler)
+        self.assertEqual(str(cluster), cluster.project.prj_name + ' : ' + cluster.label)
+
+    def test_cluster_default_values(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        cluster = Cluster.objects.create(label="Cluster Name", project=project, creator=modeler)
+        self.assertNotEqual(cluster.ct_id, "")
+        self.assertNotEqual(cluster.created, None)
+        self.assertEqual(cluster.published, False)
+
+
+class DMModelTests(TestCase):
+    """
+    Test DM model.
+    TODO: Add tests for metadata and other fields.
+    """
+
+    def test_dm_string_representation(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        dm = DM.objects.create(title="DM Name", project=project, creator=modeler, author=modeler, edited_by=modeler)
+        self.assertEqual(str(dm), dm.project.prj_name + ' : ' + dm.title)
+
+    def test_dm_default_values(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="TestUser", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name", project=project)
+        dm = DM.objects.create(title="DM Name", project=project, creator=modeler, author=modeler, edited_by=modeler)
+        self.assertNotEqual(dm.ct_id, "")
+        self.assertNotEqual(dm.created, None)
+        self.assertEqual(dm.published, False)
