@@ -17,9 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from tools.views import AboutView, IndexView
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     path('', IndexView.as_view(), name='home'),
     path('about/', AboutView.as_view(), name='about'),
     ]
