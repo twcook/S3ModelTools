@@ -854,7 +854,7 @@ class DM(models.Model):
         return(msg)
 
     class Meta:
-        verbose_name = "DM"
+        verbose_name = "DataModel"
         ordering = ['project', 'title']
         indexes = [models.Index(fields=['project', 'title']),]
 

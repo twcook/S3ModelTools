@@ -1,0 +1,146 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>S3Model Tools</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <h1 align="center">S3Model Tools</h1>
+      <h2 align="center">Tools for building Data Models for S3Model</h2>
+    </header>
+    <div class="sidebar">
+        <table>
+            <caption style="color: aliceblue; text-decoration: underline; height: 14px; padding-bottom: 20px;">Components</caption>
+            <tbody>
+                <tr>
+                    <td>Attestations</td> 
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Audits</td> 
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Booleans</td> 
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Clusters</td> 
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Counts</td> 
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>DataModels</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Files</td> 
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Floats</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Intervals</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Links</td> 
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Namespaces</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Ordinals</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Participations</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Parties</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Predicates</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Quantities</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>RDF Objects</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Ref. Ranges</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Simple Ref. Ranges</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Strings</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Temporals</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Units</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Projects</td>
+                    <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="main">
+      
+        {% block main %}
+        Main Area.
+        {% endblock main %}
+    
+    </div>
+    <footer class="footer">
+      <p align="center">Copyright © 2023 Timothy W. Cook. Report issues <a href="https://github.com/twcook/S3ModelTools/issues">here</a>.</p>
+    </footer>
+  </body>
+</html>
