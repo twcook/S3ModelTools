@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h2 style="text-align: center; text-decoration: underline;">Instructions</h2>
+<div>
+    <ol>
+        <li>
+        This tool is used to build a Data Model for S3Model.  The Data Model is a collection of components that define the data elements of a <b>Concept</b>.  The components are listed in the scrollable menu on the left. 
+        </li>    
+        <li>
+        Click on <em >List</em> button to see a list of the components of that type.  
+        </li>
+        <li>   
+        Click on the <em>Add</em> button to add a new component of that type. 
+        </li>
+        <li>
+        Clusters are grouping components, like a section of a form.
+        </li>
+        <li>
+        DataModels are the wrapper component that creates a package container. In addition to a *data* Cluster, it also carries all of the meta-data describing the use of the model. 
+        </li>
+        <li>
+        DataModels and Clusters are built from the bottom up.  That is, you must first build the components that make up the Cluster, and then build the Cluster.  You must then build the DataModel, and add the Cluster to the DataModel.
+        </li>
+    </ol>
+</div>
+{% endblock main %}

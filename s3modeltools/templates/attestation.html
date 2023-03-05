@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>Attestation</h1>
+    <ul>
+    {% for item in attestations %}
+        <li>{{ item.label }}</li>
+    {% empty %}
+        <li>No items found.</li>
+    {% endfor %}
+    </ul>
+{% endblock main %}

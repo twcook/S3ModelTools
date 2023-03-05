@@ -1,9 +1,11 @@
+{% csrf_token %}
 {% load static %}
 <html>
   <head>
     <meta charset="utf-8">
     <title>S3Model Tools</title>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static '/images/favicon.ico' %}">
   </head>
   <body>
     <header class="header">
@@ -15,8 +17,13 @@
             <caption style="color: aliceblue; text-decoration: underline; height: 14px; padding-bottom: 20px;">Components</caption>
             <tbody>
                 <tr>
-                    <td>Attestations</td> 
+                    <td>Projects</td>
                     <td><button type="submit" class="list-button"> List </button></td>
+                    <td><button type="submit" class="add-button"> Add </button></td>
+                </tr>
+                <tr>
+                    <td>Attestations</td> 
+                    <td><button type="button" class="list-button" > List </button></td>
                     <td><button type="submit" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
@@ -121,11 +128,6 @@
                 </tr>
                 <tr>
                     <td>Units</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
-                </tr>
-                <tr>
-                    <td>Projects</td>
                     <td><button type="submit" class="list-button"> List </button></td>
                     <td><button type="submit" class="add-button"> Add </button></td>
                 </tr>
