@@ -12,7 +12,7 @@ from tools.models import Project, Modeler
 # import all of the publishers.
 from .publisher import (publish_XdBoolean, publish_XdLink, publish_XdString, publish_XdFile, publish_XdInterval,
                         publish_ReferenceRange, publish_SimpleReferenceRange, publish_XdOrdinal, publish_XdCount, publish_XdQuantity, publish_XdFloat,
-                        publish_XdRatio, publish_XdTemporal, publish_Party, publish_Participation, publish_Audit, publish_Attestation,
+                        publish_XdTemporal, publish_Party, publish_Participation, publish_Audit, publish_Attestation,
                         publish_Cluster, publish_DM)
 
 LANGUAGES = [('en-US', 'US English'), ('pt-BR', 'Brazilian Portuguese')]
@@ -32,7 +32,7 @@ def dm_folder(instance, filename):
 # no one should be able to delete a published object
 @receiver(pre_delete)
 def no_delete_test(sender, instance, **kwargs):
-    if sender in [Cluster, XdBoolean, XdString, XdCount, XdString, XdInterval, XdFile, XdOrdinal, XdQuantity, XdFloat, XdRatio, XdString, XdTemporal, XdLink, Participation, Party, ReferenceRange, Units]:
+    if sender in [Cluster, XdBoolean, XdString, XdCount, XdString, XdInterval, XdFile, XdOrdinal, XdQuantity, XdFloat, XdString, XdTemporal, XdLink, Participation, Party, ReferenceRange, Units]:
         if instance.published:
             raise PermissionDenied
 
