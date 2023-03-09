@@ -9,127 +9,127 @@
   </head>
   <body>
     <header class="header">
-      <h1 align="center">S3Model Tools</h1>
+      <h1 align="center"><a href='{% url 'home' %}'>S3Model Tools</a></h1>
       <h2 align="center">Tools for building Data Models for S3Model</h2>
     </header>
     <div class="sidebar">
         <table>
-            <caption style="color: aliceblue; text-decoration: underline; height: 14px; padding-bottom: 20px;">Components</caption>
+            <caption style="color: aliceblue; text-decoration: underline; height: 14px; padding-bottom: 20px;"><a href='{% url 'home' %}'>Components</a></caption>
             <tbody>
                 <tr>
                     <td>Projects</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'project_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'project_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Attestations</td> 
-                    <td><button type="button" class="list-button" > List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'attestation_list' %}'" class="list-button" > List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'attestation_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Audits</td> 
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'audit_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'audit_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Booleans</td> 
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'boolean_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'boolean_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Clusters</td> 
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'cluster_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'cluster_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Counts</td> 
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'count_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'count_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>DataModels</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'datamodel_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'datamodel_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Files</td> 
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'file_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'file_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Floats</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'float_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'float_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Intervals</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'interval_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'interval_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Links</td> 
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'link_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'link_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Namespaces</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'namespace_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'namespace_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Ordinals</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'ordinal_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'ordinal_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Participations</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'participation_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'participation_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Parties</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'party_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'party_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Predicates</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'predicate_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'predicate_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Quantities</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'quantity_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'quantity_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>RDF Objects</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'rdfobject_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'rdfobject_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Ref. Ranges</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'referencerange_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'referencerange_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Simple Ref. Ranges</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'simplereferencerange_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'simplereferencerange_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Strings</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'string_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'string_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Temporals</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'temporal_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'temporal_create' %}'" class="add-button"> Add </button></td>
                 </tr>
                 <tr>
                     <td>Units</td>
-                    <td><button type="submit" class="list-button"> List </button></td>
-                    <td><button type="submit" class="add-button"> Add </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'unit_list' %}'" class="list-button"> List </button></td>
+                    <td><button type="button" onclick="location.href='{% url 'unit_create' %}'" class="add-button"> Add </button></td>
                 </tr>
             </tbody>
         </table>

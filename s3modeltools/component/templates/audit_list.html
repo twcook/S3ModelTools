@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
 {% block main %}
-    <h1>List of Auditss</h1>
+    <h1>List of Audits</h1>
     <ul>
     {% for item in audits %}
         <li>{{ item.label }}</li>
     {% empty %}
-        <li>No items found.</li>
+        <li>No Audits found.</li>
     {% endfor %}
     </ul>
 {% endblock main %}

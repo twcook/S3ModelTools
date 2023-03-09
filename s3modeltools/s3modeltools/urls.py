@@ -22,4 +22,5 @@ urlpatterns = [
     path('', IndexView.as_view(), name='home'),
     path('about/', AboutView.as_view(), name='about'),
     path('component/', include('component.urls')),
+    path('tools/', include('tools.urls')),
     ]
