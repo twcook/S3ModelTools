@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>List of Reference Ranges</h1>
+    <ul>
+    {% for item in referenceranges %}
+        <li>{{ item.label }}</li>
+    {% empty %}
+        <li>No Reference Ranges found.</li>
+    {% endfor %}
+    </ul>
+{% endblock main %}

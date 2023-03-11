@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>List of Intervals</h1>
+    <ul>
+    {% for item in intervals %}
+        <li>{{ item.label }}</li>
+    {% empty %}
+        <li>No Intervals found.</li>
+    {% endfor %}
+    </ul>
+{% endblock main %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>List of Units</h1>
+    <ul>
+    {% for item in units %}
+        <li>{{ item.label }}</li>
+    {% empty %}
+        <li>No Units found.</li>
+    {% endfor %}
+    </ul>
+{% endblock main %}

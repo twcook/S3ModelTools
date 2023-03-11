@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>List of Quantities</h1>
+    <ul>
+    {% for item in quantities %}
+        <li>{{ item.label }}</li>
+    {% empty %}
+        <li>No Quantities found.</li>
+    {% endfor %}
+    </ul>
+{% endblock main %}

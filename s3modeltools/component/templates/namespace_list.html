@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>List of Namespaces</h1>
+    <ul>
+    {% for item in namespaces %}
+        <li>{{ item.label }}</li>
+    {% empty %}
+        <li>No Namespaces found.</li>
+    {% endfor %}
+    </ul>
+{% endblock main %}

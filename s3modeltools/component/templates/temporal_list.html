@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>List of Temporals</h1>
+    <ul>
+    {% for item in temporals %}
+        <li>{{ item.label }}</li>
+    {% empty %}
+        <li>No Temporals found.</li>
+    {% endfor %}
+    </ul>
+{% endblock main %}

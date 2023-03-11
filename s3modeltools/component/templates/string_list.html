@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>List of Strings</h1>
+    <ul>
+    {% for item in strings %}
+        <li>{{ item.label }}</li>
+    {% empty %}
+        <li>No Strings found.</li>
+    {% endfor %}
+    </ul>
+{% endblock main %}

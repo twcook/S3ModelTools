@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>List of Predicates</h1>
+    <ul>
+    {% for item in predicates %}
+        <li>{{ item.label }}</li>
+    {% empty %}
+        <li>No Predicates found.</li>
+    {% endfor %}
+    </ul>
+{% endblock main %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>List of Parties</h1>
+    <ul>
+    {% for item in parties %}
+        <li>{{ item.label }}</li>
+    {% empty %}
+        <li>No Parties found.</li>
+    {% endfor %}
+    </ul>
+{% endblock main %}

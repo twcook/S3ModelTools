@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>List of Ordinals</h1>
+    <ul>
+    {% for item in ordinals %}
+        <li>{{ item.label }}</li>
+    {% empty %}
+        <li>No Ordinals found.</li>
+    {% endfor %}
+    </ul>
+{% endblock main %}
