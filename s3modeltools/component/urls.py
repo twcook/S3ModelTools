@@ -1,7 +1,9 @@
 from django.urls import path
 from .views import AttestationList, AttestationCreate, AttestationUpdate, AuditList, AuditCreate, AuditUpdate, \
     BooleanList, BooleanCreate, BooleanUpdate, ClusterList, ClusterCreate, ClusterUpdate, CountList, CountCreate, CountUpdate, \
-    DataModelList, DataModelCreate, DataModelUpdate, FileList, FileCreate, FileUpdate, FloatList, FloatCreate, FloatUpdate  
+    DataModelList, DataModelCreate, DataModelUpdate, FileList, FileCreate, FileUpdate, FloatList, FloatCreate, FloatUpdate, \
+    IntervalList, IntervalCreate, IntervalUpdate, LinkList, LinkCreate, LinkUpdate, NamespaceList, NamespaceCreate, NamespaceUpdate, \
+    OrdinalList, OrdinalCreate, OrdinalUpdate   
     
 
 
@@ -30,5 +32,17 @@ urlpatterns = [
     path('float/', FloatList.as_view(), name='float_list'),
     path('float/create/', FloatCreate.as_view(), name='float_create'),
     path('float/update/<int:pk>/', FloatUpdate.as_view(), name='float_update'),
+    path('interval/', IntervalList.as_view(), name='interval_list'),
+    path('interval/create/', IntervalCreate.as_view(), name='interval_create'),
+    path('interval/update/<int:pk>/', IntervalUpdate.as_view(), name='interval_update'),
+    path('link/', LinkList.as_view(), name='link_list'),
+    path('link/create/', LinkCreate.as_view(), name='link_create'),
+    path('link/update/<int:pk>/', LinkUpdate.as_view(), name='link_update'),
+    path('namespace/', NamespaceList.as_view(), name='namespace_list'),
+    path('namespace/create/', NamespaceCreate.as_view(), name='namespace_create'),
+    path('namespace/update/<int:pk>/', NamespaceCreate.as_view(), name='namespace_update'),
+    path('ordinal/', OrdinalList.as_view(), name='ordinal_list'),
+    path('ordinal/create/', OrdinalCreate.as_view(), name='ordinal_create'),
+    path('ordinal/update/<int:pk>/', OrdinalUpdate.as_view(), name='ordinal_update'),
     ]
 

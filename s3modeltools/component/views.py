@@ -172,3 +172,87 @@ class FloatUpdate(UpdateView):
     template_name = 'float_update.html'
     context_object_name = 'float'
 
+
+class IntervalList(ListView):
+    model = XdInterval
+    template_name = 'interval_list.html'
+    context_object_name = 'intervals'
+    paginate_by = 15
+
+    
+class IntervalCreate(CreateView):
+    model = XdInterval
+    fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
+    template_name = 'interval_create.html'
+    context_object_name = 'interval'
+
+
+class IntervalUpdate(UpdateView):
+    model = XdInterval
+    fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
+    template_name = 'interval_update.html'
+    context_object_name = 'interval'
+
+
+class LinkList(ListView):
+    model = XdLink
+    template_name = 'link_list.html'
+    context_object_name = 'links'
+    paginate_by = 15
+
+    
+class LinkCreate(CreateView):
+    model = XdLink
+    fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
+    template_name = 'link_create.html'
+    context_object_name = 'link'
+
+
+class LinkUpdate(UpdateView):
+    model = XdLink
+    fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
+    template_name = 'link_update.html'
+    context_object_name = 'link'
+
+
+class NamespaceList(ListView):
+    model = NS
+    template_name = 'namespace_list.html'
+    context_object_name = 'namespaces'
+    paginate_by = 15
+
+    
+class NamespaceCreate(CreateView):
+    model = NS
+    fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
+    template_name = 'namespace_create.html'
+    context_object_name = 'namespace'
+
+
+class NamespaceUpdate(UpdateView):
+    model = NS
+    fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
+    template_name = 'namespace_update.html'
+    context_object_name = 'namespace'
+
+
+class OrdinalList(ListView):
+    model = XdOrdinal
+    template_name = 'ordinal_list.html'
+    context_object_name = 'ordinals'
+    paginate_by = 15
+
+    
+class OrdinalCreate(CreateView):
+    model = XdOrdinal
+    fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
+    template_name = 'ordinal_create.html'
+    context_object_name = 'ordinal'
+
+
+class OrdinalUpdate(UpdateView):
+    model = XdOrdinal
+    fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
+    template_name = 'ordinal_update.html'
+    context_object_name = 'ordinal'
+
