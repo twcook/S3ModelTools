@@ -2,10 +2,12 @@ from django.urls import path
 from .views import AttestationList, AttestationCreate, AttestationUpdate, AuditList, AuditCreate, AuditUpdate, \
     BooleanList, BooleanCreate, BooleanUpdate, ClusterList, ClusterCreate, ClusterUpdate, CountList, CountCreate, CountUpdate, \
     DataModelList, DataModelCreate, DataModelUpdate, FileList, FileCreate, FileUpdate, FloatList, FloatCreate, FloatUpdate, \
-    IntervalList, IntervalCreate, IntervalUpdate, LinkList, LinkCreate, LinkUpdate, NamespaceList, NamespaceCreate, NamespaceUpdate, \
-    OrdinalList, OrdinalCreate, OrdinalUpdate   
+    IntervalList, IntervalCreate, IntervalUpdate, LinkList, LinkCreate, LinkUpdate, \
+    OrdinalList, OrdinalCreate, OrdinalUpdate, ParticipationList, ParticipationCreate, ParticipationUpdate, PartyList, PartyCreate, PartyUpdate, \
+    PredicateList, PredicateCreate, PredicateUpdate, QuantityList, QuantityCreate, QuantityUpdate, RDFObjectList, RDFObjectCreate, RDFObjectUpdate, \
+    ReferenceRangeList, ReferenceRangeCreate, ReferenceRangeUpdate, SimpleReferenceRangeList, SimpleReferenceRangeCreate, SimpleReferenceRangeUpdate, \
+    StringList, StringCreate, StringUpdate, TemporalList, TemporalCreate, TemporalUpdate, UnitsList, UnitsCreate, UnitsUpdate
     
-
 
 urlpatterns = [
     path('attestation/', AttestationList.as_view(), name='attestation_list'),
@@ -38,11 +40,38 @@ urlpatterns = [
     path('link/', LinkList.as_view(), name='link_list'),
     path('link/create/', LinkCreate.as_view(), name='link_create'),
     path('link/update/<int:pk>/', LinkUpdate.as_view(), name='link_update'),
-    path('namespace/', NamespaceList.as_view(), name='namespace_list'),
-    path('namespace/create/', NamespaceCreate.as_view(), name='namespace_create'),
-    path('namespace/update/<int:pk>/', NamespaceCreate.as_view(), name='namespace_update'),
     path('ordinal/', OrdinalList.as_view(), name='ordinal_list'),
     path('ordinal/create/', OrdinalCreate.as_view(), name='ordinal_create'),
     path('ordinal/update/<int:pk>/', OrdinalUpdate.as_view(), name='ordinal_update'),
+    path('participation/', ParticipationList.as_view(), name='participation_list'),
+    path('participation/create/', ParticipationCreate.as_view(), name='participation_create'),
+    path('participation/update/<int:pk>/', ParticipationUpdate.as_view(), name='participation_update'),
+    path('party/', PartyList.as_view(), name='party_list'),
+    path('party/create/', PartyCreate.as_view(), name='party_create'),
+    path('party/update/<int:pk>/', PartyUpdate.as_view(), name='party_update'),
+    path('predicate/', PredicateList.as_view(), name='predicate_list'),
+    path('predicate/create/', PredicateCreate.as_view(), name='predicate_create'),
+    path('predicate/update/<int:pk>/', PredicateUpdate.as_view(), name='predicate_update'),
+    path('quantity/', QuantityList.as_view(), name='quantity_list'),
+    path('quantity/create/', QuantityCreate.as_view(), name='quantity_create'),
+    path('quantity/update/<int:pk>/', QuantityUpdate.as_view(), name='quantity_update'),
+    path('rdfobject/', RDFObjectList.as_view(), name='rdfobject_list'),
+    path('rdfobject/create/', RDFObjectCreate.as_view(), name='rdfobject_create'),
+    path('rdfobject/update/<int:pk>/', RDFObjectUpdate.as_view(), name='rdfobject_update'),
+    path('referencerange/', ReferenceRangeList.as_view(), name='referencerange_list'),
+    path('referencerange/create/', ReferenceRangeCreate.as_view(), name='referencerange_create'),
+    path('referencerange/update/<int:pk>/', ReferenceRangeUpdate.as_view(), name='referencerange_update'),
+    path('simplereferencerange/', SimpleReferenceRangeList.as_view(), name='simplereferencerange_list'),
+    path('simplereferencerange/create/', SimpleReferenceRangeCreate.as_view(), name='simplereferencerange_create'),
+    path('simplereferencerange/update/<int:pk>/', SimpleReferenceRangeUpdate.as_view(), name='simplereferencerange_update'),
+    path('string/', StringList.as_view(), name='string_list'),
+    path('string/create/', StringCreate.as_view(), name='string_create'),
+    path('string/update/<int:pk>/', StringUpdate.as_view(), name='string_update'),
+    path('temporal/', TemporalList.as_view(), name='temporal_list'),
+    path('temporal/create/', TemporalCreate.as_view(), name='temporal_create'),
+    path('temporal/update/<int:pk>/', TemporalUpdate.as_view(), name='temporal_update'),
+    path('units/', UnitsList.as_view(), name='units_list'),
+    path('units/create/', UnitsCreate.as_view(), name='units_create'),
+    path('units/update/<int:pk>/', UnitsUpdate.as_view(), name='units_update'),
     ]
 

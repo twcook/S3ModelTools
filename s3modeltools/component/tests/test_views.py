@@ -2,7 +2,8 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 
 # from component.views import AttestationList, AttestationCreate, AttestationUpdate 
-from ..models import Project, Modeler, Attestation, Audit, XdBoolean
+from ..models import Project, Modeler, Attestation, Audit, XdBoolean, Cluster, XdCount, DM, XdFile, XdFloat, XdInterval, XdLink, \
+    XdOrdinal, Participation, Party, Predicate, XdQuantity, PredObj, ReferenceRange, SimpleReferenceRange, XdString, XdTemporal, Units
 
 
 class AttestationTests(TestCase):
@@ -62,3 +63,366 @@ class BooleanTests(TestCase):
         boolean = XdBoolean.objects.create(project=project, label='test', description='test')
         response = self.client.get('/component/boolean/update/' + str(boolean.pk) + '/')
         self.assertEqual(response.status_code, 200)
+
+
+class ClusterTests(TestCase):
+
+
+    def test_cluster_list(self):
+        response = self.client.get('/component/cluster/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_cluster_create(self):
+        response = self.client.get('/component/cluster/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_cluster_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = Cluster.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/cluster/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+class CountTests(TestCase):
+
+
+    def test_count_list(self):
+        response = self.client.get('/component/count/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_count_create(self):
+        response = self.client.get('/component/count/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_count_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = XdCount.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/count/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+class DataModelTests(TestCase):
+
+
+    def test_datamodel_list(self):
+        response = self.client.get('/component/datamodel/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_datamodel_create(self):
+        response = self.client.get('/component/datamodel/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_datamodel_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = DM.objects.create(project=project, title='test', description='test', author=modeler, creator=modeler, edited_by=modeler)
+        response = self.client.get('/component/datamodel/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+class FileTests(TestCase):
+
+
+    def test_file_list(self):
+        response = self.client.get('/component/file/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_file_create(self):
+        response = self.client.get('/component/file/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_file_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = XdFile.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/file/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+class FloatTests(TestCase):
+
+
+    def test_float_list(self):
+        response = self.client.get('/component/float/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_float_create(self):
+        response = self.client.get('/component/float/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_float_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = XdFloat.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/float/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+class IntervalTests(TestCase):
+
+
+    def test_interval_list(self):
+        response = self.client.get('/component/interval/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_interval_create(self):
+        response = self.client.get('/component/interval/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_interval_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = XdInterval.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/interval/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+class LinkTests(TestCase):
+
+
+    def test_link_list(self):
+        response = self.client.get('/component/link/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_link_create(self):
+        response = self.client.get('/component/link/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_link_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = XdLink.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/link/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+class OrdinalTests(TestCase):
+
+
+    def test_ordinal_list(self):
+        response = self.client.get('/component/ordinal/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_ordinal_create(self):
+        response = self.client.get('/component/ordinal/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_ordinal_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = XdOrdinal.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/ordinal/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+class ParticipationTests(TestCase):
+
+
+    def test_participation_list(self):
+        response = self.client.get('/component/participation/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_participation_create(self):
+        response = self.client.get('/component/participation/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_participation_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = Participation.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/participation/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+class PartyTests(TestCase):
+
+
+    def test_party_list(self):
+        response = self.client.get('/component/party/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_party_create(self):
+        response = self.client.get('/component/party/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_party_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = Party.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/party/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+# class PredicateTests(TestCase):
+
+
+#     def test_predicate_list(self):
+#         response = self.client.get('/component/predicate/')
+#         self.assertEqual(response.status_code, 200)
+
+#     def test_predicate_create(self):
+#         response = self.client.get('/component/predicate/create/')
+#         self.assertEqual(response.status_code, 200)
+
+#     def test_predicate_update(self):
+#         project = Project.objects.create(prj_name="My Project Name")
+#         user=User.objects.create(username="Test User", password="passw0rd")
+#         modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+#         comp = Predicate.objects.create(project=project, label='test', description='test')
+#         response = self.client.get('/component/predicate/update/' + str(comp.pk) + '/')
+#         self.assertEqual(response.status_code, 200)
+
+
+class QuantityTests(TestCase):
+
+
+    def test_quantity_list(self):
+        response = self.client.get('/component/quantity/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_quantity_create(self):
+        response = self.client.get('/component/quantity/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_quantity_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = XdQuantity.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/quantity/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+# class RDFObjectTests(TestCase):
+
+
+#     def test_rdfobject_list(self):
+#         response = self.client.get('/component/rdfobject/')
+#         self.assertEqual(response.status_code, 200)
+
+#     def test_rdfobject_create(self):
+#         response = self.client.get('/component/rdfobject/create/')
+#         self.assertEqual(response.status_code, 200)
+
+#     def test_rdfobject_update(self):
+#         project = Project.objects.create(prj_name="My Project Name")
+#         user=User.objects.create(username="Test User", password="passw0rd")
+#         modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+#         comp = PredObj.objects.create(project=project, label='test', description='test')
+#         response = self.client.get('/component/rdfobject/update/' + str(comp.pk) + '/')
+#         self.assertEqual(response.status_code, 200)
+
+
+class ReferenceRangeTests(TestCase):
+
+
+    def test_referencerange_list(self):
+        response = self.client.get('/component/referencerange/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_referencerange_create(self):
+        response = self.client.get('/component/referencerange/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_referencerange_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        invl = XdInterval.objects.create(project=project, label='test', description='test')
+        comp = ReferenceRange.objects.create(project=project, interval=invl, label='test', description='test')
+        response = self.client.get('/component/referencerange/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+class SimpleReferenceRangeTests(TestCase):
+
+
+    def test_simplereferencerange_list(self):
+        response = self.client.get('/component/simplereferencerange/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_simplereferencerange_create(self):
+        response = self.client.get('/component/simplereferencerange/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_simplereferencerange_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = SimpleReferenceRange.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/simplereferencerange/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+class StringTests(TestCase):
+
+
+    def test_string_list(self):
+        response = self.client.get('/component/string/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_string_create(self):
+        response = self.client.get('/component/string/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_string_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = XdString.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/string/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+class TemporalTests(TestCase):
+
+
+    def test_temporal_list(self):
+        response = self.client.get('/component/temporal/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_temporal_create(self):
+        response = self.client.get('/component/temporal/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_temporal_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = XdTemporal.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/temporal/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+
+class UnitsTests(TestCase):
+
+
+    def test_units_list(self):
+        response = self.client.get('/component/units/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_units_create(self):
+        response = self.client.get('/component/units/create/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_units_update(self):
+        project = Project.objects.create(prj_name="My Project Name")
+        user=User.objects.create(username="Test User", password="passw0rd")
+        modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
+        comp = Units.objects.create(project=project, label='test', description='test')
+        response = self.client.get('/component/units/update/' + str(comp.pk) + '/')
+        self.assertEqual(response.status_code, 200)
+
+

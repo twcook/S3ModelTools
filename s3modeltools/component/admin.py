@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import NS, Predicate, PredObj, XdBoolean, XdLink, XdString, Units, XdFile, XdInterval, ReferenceRange, \
+from .models import Predicate, PredObj, XdBoolean, XdLink, XdString, Units, XdFile, XdInterval, ReferenceRange, \
     SimpleReferenceRange, XdOrdinal, XdTemporal, XdCount, XdQuantity, XdFloat, Party, Participation, Audit, Attestation, Cluster, DM
 
 
@@ -9,7 +9,6 @@ class ComponentAdminSite(admin.AdminSite):
 
 admin_site = ComponentAdminSite(name='componentadmin')
 
-admin.site.register(NS)
 admin.site.register(Predicate)
 admin.site.register(PredObj)
 admin.site.register(XdBoolean)

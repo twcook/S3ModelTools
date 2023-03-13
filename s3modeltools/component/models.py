@@ -37,32 +37,17 @@ def no_delete_test(sender, instance, **kwargs):
             raise PermissionDenied
 
 
-class NS(models.Model):
-    """
-     Provides a set of namespaces & abbreviations that are guaranteed to be referenced in a DM.
-     Along with valid classes from those vocabularies.  ex. rdfs and http://www.w3.org/2000/01/rdf-schema#
-    """
-    abbrev = models.CharField(("NS Abbreviation"), max_length=15, help_text=('Enter a valid namesspace abbreviation.'))
-    uri = models.CharField(("NS URI"), max_length=1024, help_text=('Enter a valid namesspace URI.'))
-
-    class Meta:
-        verbose_name = "Namespace"
-        verbose_name_plural = "Namespaces"
-
-    def __str__(self):
-        return self.abbrev.strip()
-
-
 class Predicate(models.Model):
     """
      Provides a set of pre-defined namespace abbreviations that are guaranteed to be referenced in a DM.
      Along with valid classes from those vocabularies.  ex. rdfs:isDefinedBy
     """
-    ns_abbrev = models.ForeignKey(NS, verbose_name=("NS Abbreviation"), help_text=('Select a valid namesspace abbreviation.'), on_delete=models.CASCADE,)
-    class_name = models.CharField(("Classname"), max_length=30, help_text=('Enter a valid classname from the vocabulary.'))
+    ns_abbrev = models.CharField(("Namespace Abbreviation"), max_length=30, help_text=('Enter a namespace abbreviation.'))
+    ns_uri = models.CharField(("Namespace URI"), default="", max_length=2000, help_text=('Enter the namespace URI for the abbreviation.'))
+    class_name = models.CharField(("Classname"), max_length=50, help_text=('Enter a valid classname from the vocabulary.'))
 
     def __str__(self):
-        return self.ns_abbrev.abbrev + ":" + self.class_name.strip()
+        return self.ns_abbrev + ":" + self.class_name.strip()
 
     class Meta:
         ordering = ['ns_abbrev', 'class_name']
