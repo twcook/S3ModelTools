@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, UpdateView
 
-from component.models import Attestation, Audit, Cluster, DM, Participation, Party, Predicate, PredObj, \
+from component.models import Attestation, Audit, Cluster, DM, Participation, Party, Namespace, SemanticLink, \
      ReferenceRange, SimpleReferenceRange, Units, XdBoolean, XdCount, XdLink, XdFile, XdFloat, XdString, \
      XdInterval, XdOrdinal, XdTemporal, XdQuantity
 
@@ -278,24 +278,24 @@ class PartyUpdate(UpdateView):
     context_object_name = 'party'
 
 
-class PredicateList(ListView):
-    model = Predicate
-    template_name = 'predicate_list.html'
-    context_object_name = 'predicates'
-    paginate_by = 15
+# class PredicateList(ListView):
+#     model = Predicate
+#     template_name = 'predicate_list.html'
+#     context_object_name = 'predicates'
+#     paginate_by = 15
     
-class PredicateCreate(CreateView):
-    model = Predicate
-    fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
-    template_name = 'predicate_create.html'
-    context_object_name = 'predicate'
+# class PredicateCreate(CreateView):
+#     model = Predicate
+#     fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
+#     template_name = 'predicate_create.html'
+#     context_object_name = 'predicate'
 
 
-class PredicateUpdate(UpdateView):
-    model = Predicate
-    fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
-    template_name = 'predicate_update.html'
-    context_object_name = 'predicate'
+# class PredicateUpdate(UpdateView):
+#     model = Predicate
+#     fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
+#     template_name = 'predicate_update.html'
+#     context_object_name = 'predicate'
 
 
 class QuantityList(ListView):
@@ -319,25 +319,25 @@ class QuantityUpdate(UpdateView):
     context_object_name = 'quantity'
 
 
-class RDFObjectList(ListView):
-    model = PredObj
-    template_name = 'rdfobject_list.html'
-    context_object_name = 'rdfobjects'
-    paginate_by = 15
+# class RDFObjectList(ListView):
+#     model = PredObj
+#     template_name = 'rdfobject_list.html'
+#     context_object_name = 'rdfobjects'
+#     paginate_by = 15
 
     
-class RDFObjectCreate(CreateView):
-    model = PredObj
-    fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
-    template_name = 'rdfobject_create.html'
-    context_object_name = 'rdfobject'
+# class RDFObjectCreate(CreateView):
+#     model = PredObj
+#     fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
+#     template_name = 'rdfobject_create.html'
+#     context_object_name = 'rdfobject'
 
 
-class RDFObjectUpdate(UpdateView):
-    model = PredObj
-    fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
-    template_name = 'rdfobject_update.html'
-    context_object_name = 'rdfobject'
+# class RDFObjectUpdate(UpdateView):
+#     model = PredObj
+#     fields = ['project', 'label', 'description', 'public', 'published', 'lang', 'pred_obj', 'seq']
+#     template_name = 'rdfobject_update.html'
+#     context_object_name = 'rdfobject'
 
 
 class ReferenceRangeList(ListView):

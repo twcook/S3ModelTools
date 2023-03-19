@@ -4,7 +4,7 @@ from .views import AttestationList, AttestationCreate, AttestationUpdate, AuditL
     DataModelList, DataModelCreate, DataModelUpdate, FileList, FileCreate, FileUpdate, FloatList, FloatCreate, FloatUpdate, \
     IntervalList, IntervalCreate, IntervalUpdate, LinkList, LinkCreate, LinkUpdate, \
     OrdinalList, OrdinalCreate, OrdinalUpdate, ParticipationList, ParticipationCreate, ParticipationUpdate, PartyList, PartyCreate, PartyUpdate, \
-    PredicateList, PredicateCreate, PredicateUpdate, QuantityList, QuantityCreate, QuantityUpdate, RDFObjectList, RDFObjectCreate, RDFObjectUpdate, \
+    QuantityList, QuantityCreate, QuantityUpdate, \
     ReferenceRangeList, ReferenceRangeCreate, ReferenceRangeUpdate, SimpleReferenceRangeList, SimpleReferenceRangeCreate, SimpleReferenceRangeUpdate, \
     StringList, StringCreate, StringUpdate, TemporalList, TemporalCreate, TemporalUpdate, UnitsList, UnitsCreate, UnitsUpdate
     
@@ -49,15 +49,9 @@ urlpatterns = [
     path('party/', PartyList.as_view(), name='party_list'),
     path('party/create/', PartyCreate.as_view(), name='party_create'),
     path('party/update/<int:pk>/', PartyUpdate.as_view(), name='party_update'),
-    path('predicate/', PredicateList.as_view(), name='predicate_list'),
-    path('predicate/create/', PredicateCreate.as_view(), name='predicate_create'),
-    path('predicate/update/<int:pk>/', PredicateUpdate.as_view(), name='predicate_update'),
     path('quantity/', QuantityList.as_view(), name='quantity_list'),
     path('quantity/create/', QuantityCreate.as_view(), name='quantity_create'),
     path('quantity/update/<int:pk>/', QuantityUpdate.as_view(), name='quantity_update'),
-    path('rdfobject/', RDFObjectList.as_view(), name='rdfobject_list'),
-    path('rdfobject/create/', RDFObjectCreate.as_view(), name='rdfobject_create'),
-    path('rdfobject/update/<int:pk>/', RDFObjectUpdate.as_view(), name='rdfobject_update'),
     path('referencerange/', ReferenceRangeList.as_view(), name='referencerange_list'),
     path('referencerange/create/', ReferenceRangeCreate.as_view(), name='referencerange_create'),
     path('referencerange/update/<int:pk>/', ReferenceRangeUpdate.as_view(), name='referencerange_update'),

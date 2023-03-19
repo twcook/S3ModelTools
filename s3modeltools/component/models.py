@@ -37,40 +37,44 @@ def no_delete_test(sender, instance, **kwargs):
             raise PermissionDenied
 
 
-class Predicate(models.Model):
+class Namespace(models.Model):
     """
-     Provides a set of pre-defined namespace abbreviations that are guaranteed to be referenced in a DM.
-     Along with valid classes from those vocabularies.  ex. rdfs:isDefinedBy
+    Namespace abbreviations and URIs are used to define the relationships between Model Components and the outside world.
+    The namespace abbreviation and the namespace URI are defined in the Namespace table.
     """
-    ns_abbrev = models.CharField(("Namespace Abbreviation"), max_length=30, help_text=('Enter a namespace abbreviation.'))
-    ns_uri = models.CharField(("Namespace URI"), default="", max_length=2000, help_text=('Enter the namespace URI for the abbreviation.'))
-    class_name = models.CharField(("Classname"), max_length=50, help_text=('Enter a valid classname from the vocabulary.'))
+    ns_abbrev = models.CharField(("Namespace Abbreviation"), max_length=30, help_text=('Enter a namespace abbreviation.'), unique=True)
+    ns_uri = models.CharField(("Namespace URI"), default="", max_length=2000, help_text=('Enter the namespace URI for the abbreviation.'), unique=True)
 
     def __str__(self):
-        return self.ns_abbrev + ":" + self.class_name.strip()
+        return self.ns_abbrev + " --> " + self.ns_uri.strip()
 
     class Meta:
-        ordering = ['ns_abbrev', 'class_name']
-        verbose_name = "Predicate"
-        verbose_name_plural = "Predicates"
+        ordering = ['ns_abbrev']
+        verbose_name = "Namespace"
+        verbose_name_plural = "Namespaces"
 
 
-class PredObj(models.Model):
+class SemanticLink(models.Model):
     """
-    Predicate - Object references.
+    Semantic links are used to define the relationships between Model Components and the outside world.
+    They are expressed in the Data Model as RDF triples; Subject, Predicate, Object (SPO).
+    The Subject is the Model Component being defined.
+    The Predicate is the relationship between the Subject and the Object. It consists of a namespace abbreviation and a classname.
+    The Object is the external resource that the Model Component is related to via the predicate.
+    The namespace abbreviation and the namespace URI are defined in the Namespace table.
     """
-    po_name = models.CharField(("Name"), max_length=100, help_text=("Enter a human readable name for this Predicate/URI combination. This is only used to aide selection, it is not part of the MC semantics."), blank=True, default='')
-    predicate = models.ForeignKey(Predicate, verbose_name=("Predicate"), help_text=("Select a predicate to define the RDF triple."), blank=True, null=True, on_delete=models.SET_NULL,)
-    object_uri = models.CharField(("Object URI"), max_length=2000, help_text="Enter an IRI for the object of the RDF triple.", blank=True, default='')
-    project = models.ForeignKey(Project, verbose_name=("Project Name"), to_field="prj_name", help_text=('Choose the name of the Project.'), on_delete=models.CASCADE,)
+    sl_name = models.CharField(("Name"), max_length=100, help_text=("Enter a human readable name for this Semantic Link. This is only used to aide selection, it is not part of the MC semantics."), blank=False, default='')
+    namespace = models.ForeignKey(Namespace, verbose_name=("Namespace"), help_text=("Select a namespace to define the RDF triple."), blank=True, null=True, on_delete=models.SET_NULL,)
+    class_name = models.CharField(("Classname"), max_length=50, help_text=('Enter a valid classname from the vocabulary.'), blank=False, default='')
+    
 
     def __str__(self):
-        return (self.project.prj_name + ' { ' + self.po_name.strip() + ' } ' + self.predicate.__str__() + " --> " + self.object_uri.strip())
+        return self.sl_name.strip()
 
     class Meta:
-        ordering = ['project', 'po_name']
-        verbose_name = "RDF Object"
-        verbose_name_plural = "RDF Objects"
+        ordering = ['sl_name']
+        verbose_name = "Semantic Link"
+        verbose_name_plural = "Semantic Links"
 
 
 class Common(models.Model):
@@ -85,7 +89,7 @@ class Common(models.Model):
     updated = models.DateTimeField(('last updated'), auto_now=True, help_text=("Last update."))
     published = models.BooleanField(("published"), default=False, help_text=("Published must be a green check icon in order to use this in a DM. This is not user editable. It is managed by the publication process."))
     description = models.TextField(('description'), help_text=("Enter a free text description for this complexType. Include a usage statement and any possible misuses. This is used as the annotation for the MC and as help text in the UI."), null=True)
-    pred_obj = models.ManyToManyField(PredObj, verbose_name=("RDF Object"), blank=True, help_text=("Select or create a new set of RDF Objects as semantic links to define this item."))
+    sem_links = models.ManyToManyField(SemanticLink, verbose_name=("Semantic Links"), blank=True, help_text=("Select or create a new set of semantic links to define this item."))
     schema_code = models.TextField(("Schema Code"), help_text="This is only writable from the DMGEN, not via user input. It contains the code required for each component to create an entry in a DM.", blank=True, null=True, default='')
     lang = models.CharField(("language"), max_length=40, choices=LANGUAGES, default='en-US', help_text=('Choose the language of this MC.'))
     creator = models.ForeignKey(Modeler, verbose_name="Creator", blank=True, related_name='%(class)s_related_creator', default=1, on_delete=models.SET_DEFAULT,)
@@ -801,7 +805,7 @@ class DM(models.Model):
     links = models.ManyToManyField(XdLink, verbose_name=('Links'), blank=True, related_name='%(class)s_related_links', default=None, help_text=('Can be used to establish ad-hoc links between concepts.'))
 
     asserts = models.TextField(("asserts"), help_text="XPath assert statements. See the documentation for details. One per line.", blank=True)
-    pred_obj = models.ManyToManyField(PredObj, verbose_name=("RDF Object"), help_text=("Select or create a new set of Predicate Object combinations as semantic links."), blank=True)
+    sem_links = models.ManyToManyField(SemanticLink, verbose_name=("Semantic Links"), help_text=("Select or create a new set of semantic links."), blank=True)
     schema_code = models.TextField(("Schema Code"),  help_text="This is only writable from the DMGEN, not via user input. It contains the code required for each component to create an entry in a DM.", default='', blank=True, null=True, editable=True)
     doc_code = models.TextField(("Documentation Code"), help_text="This is only writable from the DMGEN, not via user input. It contains the HTML code to document the DM.", null=True,  blank=True)
     app_code = models.TextField(("App Code"), help_text="This is only writable from the DMGEN, not via user input. It contains the code required to create the User App.", blank=True, null=True, default='')
