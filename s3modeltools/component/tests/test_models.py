@@ -4,7 +4,7 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 
 from tools.models import Project, Modeler
-from ..models import Predicate, PredObj, XdBoolean, XdLink, XdString, Units, XdFile, XdInterval, ReferenceRange, \
+from ..models import XdBoolean, XdLink, XdString, Units, XdFile, XdInterval, ReferenceRange, Namespace, SemanticLink, \
     SimpleReferenceRange, XdOrdinal, XdTemporal, XdCount, XdQuantity, XdFloat, Party, Participation, Audit, Attestation, Cluster, DM
 
 

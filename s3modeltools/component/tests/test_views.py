@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # from component.views import AttestationList, AttestationCreate, AttestationUpdate 
 from ..models import Project, Modeler, Attestation, Audit, XdBoolean, Cluster, XdCount, DM, XdFile, XdFloat, XdInterval, XdLink, \
-    XdOrdinal, Participation, Party, Predicate, XdQuantity, PredObj, ReferenceRange, SimpleReferenceRange, XdString, XdTemporal, Units
+    XdOrdinal, Participation, Party, XdQuantity, ReferenceRange, SimpleReferenceRange, XdString, XdTemporal, Units, Namespace, SemanticLink
 
 
 class AttestationTests(TestCase):
@@ -265,26 +265,6 @@ class PartyTests(TestCase):
         self.assertEqual(response.status_code, 200)
 
 
-# class PredicateTests(TestCase):
-
-
-#     def test_predicate_list(self):
-#         response = self.client.get('/component/predicate/')
-#         self.assertEqual(response.status_code, 200)
-
-#     def test_predicate_create(self):
-#         response = self.client.get('/component/predicate/create/')
-#         self.assertEqual(response.status_code, 200)
-
-#     def test_predicate_update(self):
-#         project = Project.objects.create(prj_name="My Project Name")
-#         user=User.objects.create(username="Test User", password="passw0rd")
-#         modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
-#         comp = Predicate.objects.create(project=project, label='test', description='test')
-#         response = self.client.get('/component/predicate/update/' + str(comp.pk) + '/')
-#         self.assertEqual(response.status_code, 200)
-
-
 class QuantityTests(TestCase):
 
 
@@ -303,26 +283,6 @@ class QuantityTests(TestCase):
         comp = XdQuantity.objects.create(project=project, label='test', description='test')
         response = self.client.get('/component/quantity/update/' + str(comp.pk) + '/')
         self.assertEqual(response.status_code, 200)
-
-
-# class RDFObjectTests(TestCase):
-
-
-#     def test_rdfobject_list(self):
-#         response = self.client.get('/component/rdfobject/')
-#         self.assertEqual(response.status_code, 200)
-
-#     def test_rdfobject_create(self):
-#         response = self.client.get('/component/rdfobject/create/')
-#         self.assertEqual(response.status_code, 200)
-
-#     def test_rdfobject_update(self):
-#         project = Project.objects.create(prj_name="My Project Name")
-#         user=User.objects.create(username="Test User", password="passw0rd")
-#         modeler = Modeler.objects.create(user=user, name="Test Modeler Name")
-#         comp = PredObj.objects.create(project=project, label='test', description='test')
-#         response = self.client.get('/component/rdfobject/update/' + str(comp.pk) + '/')
-#         self.assertEqual(response.status_code, 200)
 
 
 class ReferenceRangeTests(TestCase):
