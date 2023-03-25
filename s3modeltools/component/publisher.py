@@ -83,9 +83,9 @@ def publish_XdBoolean(self):
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#XdBooleanType'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dt_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dt_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     dt_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     dt_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     dt_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -170,9 +170,9 @@ def publish_XdLink(self):
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#XdLinkType'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dt_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dt_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     dt_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     dt_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     dt_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -264,9 +264,9 @@ def publish_XdString(self):
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#XdStringType'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dt_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dt_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     dt_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     dt_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     dt_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -416,9 +416,9 @@ def publish_XdFile(self):
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#XdFileType'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dt_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dt_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     dt_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     dt_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     dt_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -556,9 +556,9 @@ def publish_XdInterval(self):
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#XdIntervalType'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dt_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dt_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     dt_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     dt_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     dt_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -698,9 +698,9 @@ def publish_ReferenceRange(self):
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#ReferenceRangeType'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dt_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dt_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     dt_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     dt_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     dt_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -818,9 +818,9 @@ def publish_SimpleReferenceRange(self):
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#ReferenceRangeType'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dt_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dt_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     dt_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     dt_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     dt_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -858,9 +858,9 @@ def publish_SimpleReferenceRange(self):
     dt_str += padding.rjust(indent + 2) + ("<rdfs:Class rdf:about='mc-" + dvi_id + "'>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#XdIntervalType'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dt_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dt_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     dt_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     dt_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     dt_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -997,9 +997,9 @@ def publish_XdOrdinal(self):
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#XdOrdinalType'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dt_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dt_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     dt_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     dt_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     dt_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -1122,9 +1122,9 @@ def publish_XdCount(self):
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#XdCountType'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dt_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dt_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
 
     dt_str += padding.rjust(indent + 6) + '<sh:property>\n'
     dt_str += padding.rjust(indent + 8) + '<rdf:Description>\n'
@@ -1278,9 +1278,9 @@ def publish_XdQuantity(self):
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#XdQuantityType'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dt_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dt_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     dt_str += padding.rjust(indent + 6) + '<sh:property>\n'
     dt_str += padding.rjust(indent + 8) + '<rdf:Description>\n'
     dt_str += padding.rjust(indent + 8) + '<sh:path rdf:resource="mc-' + self.ct_id + '/xdquantity-value"/>\n'
@@ -1432,9 +1432,9 @@ def publish_XdFloat(self):
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#XdFloatType'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dt_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dt_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     dt_str += padding.rjust(indent + 6) + '<sh:property>\n'
     dt_str += padding.rjust(indent + 8) + '<rdf:Description>\n'
     dt_str += padding.rjust(indent + 8) + '<sh:path rdf:resource="mc-' + self.ct_id + '/xdfloat-value"/>\n'
@@ -1574,9 +1574,9 @@ def publish_XdTemporal(self):
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#XdTemporalType'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     dt_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dt_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dt_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     dt_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     dt_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     dt_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -1708,9 +1708,9 @@ def publish_Party(self):
     party_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#PartyType'/>\n")
     party_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     party_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            party_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            party_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     party_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     party_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     party_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -1778,9 +1778,9 @@ def publish_Audit(self):
     aud_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#AuditType'/>\n")
     aud_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     aud_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            aud_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            aud_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     aud_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     aud_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     aud_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -1856,9 +1856,9 @@ def publish_Attestation(self):
     att_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#AttestationType'/>\n")
     att_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     att_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            att_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            att_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     att_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     att_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     att_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -1937,9 +1937,9 @@ def publish_Participation(self):
     ptn_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#ParticipationType'/>\n")
     ptn_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     ptn_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            ptn_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            ptn_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     ptn_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     ptn_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     ptn_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -2031,9 +2031,9 @@ def publish_Cluster(self):
     cl_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#ClusterType'/>\n")
     cl_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     cl_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.label.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            cl_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            cl_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     cl_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     cl_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     cl_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")
@@ -2177,9 +2177,9 @@ def publish_DM(self):
     dm_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='" + RM_URI + "#DMType'/>\n")
     dm_str += padding.rjust(indent + 2) + ("<rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>\n")
     dm_str += padding.rjust(indent + 2) + ("<rdfs:label>" + escape(self.title.strip()) + "</rdfs:label>\n")
-    if len(self.pred_obj.all()) != 0:
-        for po in self.pred_obj.all():
-            dm_str += padding.rjust(indent + 2) + ("<" + po.predicate.ns_abbrev.__str__() + ":" + po.predicate.class_name.strip() + " rdf:resource='" + quote(po.object_uri) + "'/>\n")
+    if len(self.sem_links.all()) != 0:
+        for sl in self.sem_links.all():
+            dm_str += padding.rjust(indent + 2) + ("<" + sl.namespace.ns_abbrev.__str__() + ":" + sl.class_name.strip() + " rdf:resource='" + quote(sl.namespace.ns_uri.strip()) + "'/>\n")
     dm_str += padding.rjust(indent + 2) + ("</rdfs:Class>\n")
     dm_str += padding.rjust(indent + 2) + ('</xs:appinfo>\n')
     dm_str += padding.rjust(indent + 2) + ("</xs:annotation>\n")

@@ -773,7 +773,7 @@ class DM(models.Model):
     edited_by = models.ForeignKey(Modeler, verbose_name='Last Edited By', related_name='%(class)s_related_edited_by', on_delete=models.CASCADE,)
     published = models.BooleanField(("Generated"), default=False, help_text=("Once this <em>Generated</em> box has been checked, DM generation has been completed and no further edits are allowed."))
     project = models.ForeignKey(Project, verbose_name=("Project name"), to_field="prj_name", help_text=('Choose a Project for this Data Model (DM)'), on_delete=models.CASCADE,)
-    about = models.CharField(('About'), default="http://dmgen.s3model.com/dmlib/", max_length=255, help_text=("The URL to the DM after publication. The DM ID will be added after the trailing slash in the format of 'dm-{dm_id}.xsd' This provides a full path and filename for the dm as a unique identifier."), blank=True)
+    about = models.CharField(('About'), default="https://s3model.com/dmlib/", max_length=255, help_text=("The URL to the DM after publication. The DM ID will be added after the trailing slash in the format of 'dm-{dm_id}.xsd' This provides a full path and filename for the dm as a unique identifier."), blank=True)
     title = models.CharField(('Title'), unique=True, max_length=255, help_text=("Enter the name of this Data Model (DM)."))
     author = models.ForeignKey(Modeler, verbose_name=("Author"), help_text=("Select the author of the DM"), related_name='%(class)s_related_author', blank=True, on_delete=models.CASCADE,)
     contrib = models.ManyToManyField(Modeler, verbose_name=("Contributors"), help_text=("Select the contributors (if any) to this DM"), related_name='%(class)s_related_contrib', blank=True)
