@@ -1,0 +1,53 @@
+# S3ModelTools Requirements
+# Django 5.2 LTS (Released April 2025, Support until April 2028)
+
+# --- Core Django & Utilities ---
+Django~=5.2.0                      # Core Django Framework
+python-dotenv~=1.0.1               # For loading .env files for settings
+dj-database-url~=2.1.0             # For parsing DATABASE_URL from .env
+psycopg2-binary~=2.9.9             # PostgreSQL adapter (recommended for production)
+# mysqlclient~=2.2.4                 # Alternative: MySQL adapter
+# For SQLite, no external package is typically needed.
+gunicorn~=22.0.0                   # WSGI HTTP Server for UNIX production environments
+unipath~=1.1                       # Used in your current settings.py for paths (note: Python's built-in pathlib is now standard)
+
+# --- API Development ---
+djangorestframework~=3.15.1        # For building REST APIs (replacing Tastypie)
+django-cors-headers~=4.3.1         # For Cross-Origin Resource Sharing with APIs
+
+# --- Asynchronous Tasks ---
+celery~=5.4.0                      # Distributed Task Queue (for background processing)
+redis~=5.0.4                       # Client for Redis (common Celery message broker)
+# flower~=2.0.1                      # Optional: Celery monitoring tool
+
+# --- User Authentication & Management ---
+django-allauth~=0.62.0             # Comprehensive authentication (local, social, email verification)
+# AUTH_USER_MODEL will be 'apps.accounts.User'
+
+# --- Payments ---
+django-payments~=0.16.0            # Payment processing abstraction (for PayPal initially)
+
+# --- Unique IDs ---
+cuid2~=1.1.0                       # For CUID2 generation (replacing CUIDv1)
+
+# --- Forms & UI Enhancements ---
+django-autocomplete-light~=3.11.0  # For autocomplete widgets (check Django 5.2 compatibility)
+django-countries~=7.6.1            # Provides country choices for forms/models
+django-select2~=8.1.2              # Enhanced select widgets for Django forms (check Django 5.2 compatibility)
+
+# --- Data Parsing/Handling (from your dmgen and translator app dependencies) ---
+xmltodict~=0.13.0                   # For converting XML to Python dictionaries (used in generator.py)
+lxml~=5.2.1                        # For XML/HTML processing (used in rdfgen.py and generator.py)
+exrex~=0.11.0                      # For generating strings from regular expressions (used in ig.py)
+# Pillow~=10.3.0                     # Image processing library (consider if XdFile or other parts handle images)
+# pandas~=2.2.2                      # For advanced CSV/data manipulation (if needed for complex imports)
+
+# --- Django Admin Docs (Optional) ---
+# 'django.contrib.admindocs' is in INSTALLED_APPS, ensure it's used or remove if not.
+
+# --- Potentially to be removed (from your old settings.py if migrating) ---
+# tastypie                           # If fully migrating to Django REST Framework
+
+# It's good practice to periodically run `pip freeze > requirements.txt`
+# in your activated virtual environment to capture exact versions after testing.
+# For a new project, starting with tilde (~) specifiers allows compatible patch updates.
