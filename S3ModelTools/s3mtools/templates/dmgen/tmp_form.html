@@ -1,0 +1,84 @@
+{% extends "dmgen/dmgen_form_base.html" %}
+{% block content %}
+<h1>Temporal Details</h1>
+
+<form action="" method="post">
+	{% csrf_token %}
+    <p>
+    <h2>System Info</h2>	
+ 	{% block system %}
+	 	 <p>
+	    {% if form.published.value == True %}
+	      <b>{{ form.label.value }}: is Published and cannot be edited.</b>
+	    {% elif form.label.value is None %}
+	      <b>Creating a new Float model</b>  
+	    {% endif %}
+	    </p>
+	    {{ form.project.label }}: {{ form.project.help_text }} 
+	    <br/>
+	    {{ form.project }} 
+	    <br/>
+	    {{ form.seq.label }}: {{ form.seq.help_text }}
+	    <br/>
+	    {{ form.seq }}
+	    <br/>
+	    {{ form.ui_type.label }}: {{ form.ui_type.help_text }}
+	    <br/>
+	    {{ form.ui_type }}
+    {% endblock %}
+    </p>
+
+     <h2>Metadata</h2>
+    {% block metadata %}
+        <b>{{ form.label.label }}:</b> {{ form.label.help_text }} <br/>	     
+		{{ form.label }}<br/>
+        <b>{{ form.description.label }}:</b> {{ form.description.help_text }} <br/>	     
+		{{ form.description }}<br/>
+        <b>{{ form.pred_obj.label }}:</b> {{ form.pred_obj.help_text }} <br/>	     
+		{{ form.pred_obj }}<br/>
+    {% endblock %}
+    
+    <h2>Details</h2>
+    {% block details %}
+        <b>{{ form.require_vtb.label }}:</b> {{ form.require_vtb.help_text }} <br/>	     
+		{{ form.require_vtb }}<br/>
+        <b>{{ form.require_vte.label }}:</b> {{ form.require_vte.help_text }} <br/>	     
+		{{ form.require_vte }}<br/>
+        <b>{{ form.require_tr.label }}:</b> {{ form.require_tr.help_text }} <br/>	     
+		{{ form.require_tr }}<br/>
+        <b>{{ form.require_mod.label }}:</b> {{ form.require_mod.help_text }} <br/>	     
+		{{ form.require_mod }}<br/>
+        <b>{{ form.require_location.label }}:</b> {{ form.require_location.help_text }} <br/>	     
+		{{ form.require_location }}<br/>
+        <b>{{ form.require_act.label }}:</b> {{ form.require_act.help_text }} <br/>	     
+		{{ form.require_act }}<br/>
+
+        <b>{{ form.normal_status.label }}:</b> {{ form.normal_status.help_text }} <br/>	     
+		{{ form.normal_status }}<br/>
+        <b>{{ form.reference_ranges.label }}:</b> {{ form.reference_ranges.help_text }} <br/>	     
+		{{ form.reference_ranges }}<br/>
+
+        <b>{{ form.allow_duration.label }}:</b> {{ form.allow_duration.help_text }} <br/>	     
+		{{ form.allow_duration }}<br/>
+        <b>{{ form.allow_date.label }}:</b> {{ form.allow_date.help_text }} <br/>	     
+		{{ form.allow_date }}<br/>
+        <b>{{ form.allow_time.label }}:</b> {{ form.allow_time.help_text }} <br/>	     
+		{{ form.allow_time }}<br/>
+        <b>{{ form.allow_datetime.label }}:</b> {{ form.allow_datetime.help_text }} <br/>	     
+		{{ form.allow_datetime }}<br/>
+        <b>{{ form.allow_day.label }}:</b> {{ form.allow_day.help_text }} <br/>	     
+		{{ form.allow_day }}<br/>
+        <b>{{ form.allow_month.label }}:</b> {{ form.allow_month.help_text }} <br/>	     
+		{{ form.allow_month }}<br/>
+        <b>{{ form.allow_year.label }}:</b> {{ form.allow_year.help_text }} <br/>	     
+		{{ form.allow_year }}<br/>
+        <b>{{ form.allow_year_month.label }}:</b> {{ form.allow_year_month.help_text }} <br/>	     
+		{{ form.allow_year_month }}<br/>
+        <b>{{ form.allow_month_day.label }}:</b> {{ form.allow_month_day.help_text }} <br/>	     
+		{{ form.allow_month_day }}<br/>
+    {% endblock %}
+
+    <input type="submit" value="Save" />
+</form>
+
+{% endblock %}

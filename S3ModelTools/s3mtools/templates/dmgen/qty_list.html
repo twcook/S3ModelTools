@@ -1,0 +1,62 @@
+{% extends "dmgen/dmgen_base.html" %}
+
+{% block content %}
+<h2> {{ quantitys|length }} Quantity Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'qty_create' %}">Create New Quantity Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for qty in quantitys %}
+            <tr>
+                <td>{{ qty.project }}</td>
+                <td>
+                    <a href="{% url 'qty_form' pk=qty.id %}">{{ qty.label }}</a>
+                </td> 
+                <td class="list-delete-btn">
+                    <a href="{% url 'qty_delete' pk=qty.id %}">Delete</a>
+                </td>
+                {% if not qty.published %}
+                  <td>
+                      <a href="{% url 'qty_publish' pk=qty.id %}">Publish</a> 
+                    </td>  
+                {% else %}
+                  <td >
+                      <b>
+                          <i>Published</i>
+                        </b>
+                    </td>
+                {% endif %}
+                 <td>
+                     <a href="{% url 'qty_copy' pk=qty.id %}">Copy</a> 
+                    </td> 
+                <td>{{ qty.updated }}</td>
+                <td>{{ qty.edited_by }}</td>
+                <td>{{ qty.created }}</td>
+                <td>{{ qty.creator }}</td>
+                <td>{{ qty.ct_id }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

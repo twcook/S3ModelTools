@@ -1,0 +1,62 @@
+{% extends "dmgen/dmgen_base.html" %}
+
+{% block content %}
+<h2> {{ audits|length }} Audit Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'aud_create' %}">Create New Audit Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for aud in audits %}
+            <tr>
+                <td>{{ aud.project }}</td>
+                <td>
+                    <a href="{% url 'aud_form' pk=aud.id %}">{{ aud.label }}</a>
+                </td> 
+                <td class="list-delete-btn">
+                    <a href="{% url 'aud_delete' pk=aud.id %}">Delete</a>
+                </td>
+                {% if not aud.published %}
+                    <td>
+                        <a href="{% url 'aud_publish' pk=aud.id %}">Publish</a> 
+                    </td>  
+                {% else %}
+                    <td >
+                        <b>
+                            <i>Published</i>
+                        </b>
+                    </td>
+                {% endif %}
+                <td>
+                    <a href="{% url 'aud_copy' pk=aud.id %}">Copy</a> 
+                </td> 
+                <td>{{ aud.updated }}</td>
+                <td>{{ aud.edited_by }}</td>
+                <td>{{ aud.created }}</td>
+                <td>{{ aud.creator }}</td>
+                <td>{{ aud.ct_id }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

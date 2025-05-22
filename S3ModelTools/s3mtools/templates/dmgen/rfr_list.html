@@ -1,0 +1,62 @@
+{% extends "dmgen/dmgen_base.html" %}
+
+{% block content %}
+<h2> {{ referenceranges|length }} Reference Range Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'rfr_create' %}">Create New Reference Range Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for rfr in referenceranges %}
+            <tr>
+                <td>{{ rfr.project }}</td>
+                <td>
+                    <a href="{% url 'rfr_form' pk=rfr.id %}">{{ rfr.label }}</a>
+                </td> 
+                <td class="list-delete-btn">
+                    <a href="{% url 'rfr_delete' pk=rfr.id %}">Delete</a>
+                </td>
+                {% if not rfr.published %}
+                  <td>
+                      <a href="{% url 'rfr_publish' pk=rfr.id %}">Publish</a> 
+                    </td>  
+                {% else %}
+                  <td >
+                      <b>
+                          <i>Published</i>
+                        </b>
+                    </td>
+                {% endif %}
+                 <td>
+                     <a href="{% url 'rfr_copy' pk=rfr.id %}">Copy</a> 
+                    </td> 
+                <td>{{ rfr.updated }}</td>
+                <td>{{ rfr.edited_by }}</td>
+                <td>{{ rfr.created }}</td>
+                <td>{{ rfr.creator }}</td>
+                <td>{{ rfr.ct_id }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

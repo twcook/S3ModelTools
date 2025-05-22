@@ -1,0 +1,106 @@
+{% extends "dmgen/dmgen_form_base.html" %}
+{% block content %}
+<div class="dmgen-form-info">
+		<h3>Attestation Model Details</h3>
+		{% if form.published.value == True %}
+		<b>{{ form.label.value }}: is Published and cannot be edited.</b>
+		{% elif form.label.value is None %}
+		<b>Creating a new Attestation model</b>
+		{% else %}
+		<span>
+			<b>Editing: </b>{{ form.label.value }}
+		</span> {% endif %}
+	</div>
+	<div class="dmgen-header">
+		<ul>
+			<li>
+				<a href="{% url 'home' %}">Home</a>
+			</li>
+			<li>
+				<a href="{% url 'tools' %}">Tools</a>
+			</li>
+			<li>
+				<a href="{% url 'att_list' %}">List of Attestation Models</a>
+			</li>
+		</ul>
+	</div>
+	
+	
+<form action="" method="post">
+	{% csrf_token %}
+
+	<h3>System Info</h3>	
+ 	{% block system %}
+	 <div class="dmgen-form-sysinfo">
+
+		<div class="tooltip">
+			{{ form.project.label }}: {{ form.project }}
+			<span class="tooltiptext">{{ form.project.help_text }}</span>
+		</div>
+	</div>
+	{% endblock %}
+	<hr/>
+
+	<h3>Metadata</h3>
+	{% block metadata %}
+	<div class="dmgen-form-metadata">
+		<span class="tooltip">
+			<b>{{ form.label.label }}:</b> {{ form.label }}
+			<span class="tooltiptext">{{ form.label.help_text }}</span>
+		</span>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.description.label }}:</b>
+			</span>
+			{{ form.description }}
+			<span class="tooltiptext">{{ form.description.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.pred_obj.label }}:</b>
+			</span>
+			{{ form.pred_obj }}
+			<span class="tooltiptext">{{ form.pred_obj.help_text }}</span>
+		</div>
+	</div>
+	{% endblock %}
+
+	<hr/>
+	<h3>Component Details</h3>
+	{% block details %}
+	<div class="tooltip">
+		<span style="display: block">
+			<b>{{ form.view.label }}:</b>
+		</span>
+		{{ form.view }}
+		<span class="tooltiptext">{{ form.view.help_text }}</span>
+	</div>
+	<div class="tooltip">
+		<span style="display: block">
+			<b>{{ form.proof.label }}:</b>
+		</span>
+		{{ form.proof }}
+		<span class="tooltiptext">{{ form.proof.help_text }}</span>
+	</div>
+	<div class="tooltip">
+		<span style="display: block">
+			<b>{{ form.reason.label }}:</b>
+		</span>
+		{{ form.reason }}
+		<span class="tooltiptext">{{ form.reason.help_text }}</span>
+	</div>
+	<div class="tooltip">
+		<span style="display: block">
+			<b>{{ form.committer.label }}:</b>
+		</span>
+		{{ form.committer }}
+		<span class="tooltiptext">{{ form.committer.help_text }}</span>
+	</div>
+    {% endblock %}
+	<br/>
+	<input type="submit" value="Save" />
+</form>
+
+{% endblock %}

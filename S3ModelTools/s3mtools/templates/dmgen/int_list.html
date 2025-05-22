@@ -1,0 +1,62 @@
+{% extends "dmgen/dmgen_base.html" %}
+
+{% block content %}
+<h2> {{ intervals|length }} Interval Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'int_create' %}">Create New Interval Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for int in intervals %}
+        <tr>
+            <td>{{ int.project }}</td>
+            <td>
+                <a href="{% url 'int_form' pk=int.id %}">{{ int.label }}</a>
+            </td> 
+            <td class="list-delete-btn">
+                <a href="{% url 'int_delete' pk=int.id %}">Delete</a>
+            </td>
+            {% if not int.published %}
+                <td>
+                    <a href="{% url 'int_publish' pk=int.id %}">Publish</a> 
+                </td>  
+            {% else %}
+                <td >
+                    <b>
+                        <i>Published</i>
+                    </b>
+                </td>
+            {% endif %}
+                <td>
+                    <a href="{% url 'int_copy' pk=int.id %}">Copy</a> 
+                </td> 
+            <td>{{ int.updated }}</td>
+            <td>{{ int.edited_by }}</td>
+            <td>{{ int.created }}</td>
+            <td>{{ int.creator }}</td>
+            <td>{{ int.ct_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

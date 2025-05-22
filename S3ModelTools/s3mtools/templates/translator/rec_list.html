@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<link href="{% static 'dmgen/css/main.css' %}" rel="stylesheet">
+{% block content %}
+    <h2>DMD Records</h2>
+    <a href="{% url 'rec_create' %}">Create a new dmd record.</a>
+    <table>
+    	<tr><th>DMD</th><th>Label</th><th>Action</th></tr>
+        {% for rec in recs %}
+            <tr>
+            	<th>{{ rec.dmd }}</th>
+            	<th><a href="{% url 'rec_form' pk=rec.id %}">{{ rec.label }}</a></th> 
+            	<th><a href="{% url 'rec_delete' pk=rec.id %}">Delete</a></th>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

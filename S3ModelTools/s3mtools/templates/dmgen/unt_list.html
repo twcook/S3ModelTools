@@ -1,0 +1,62 @@
+{% extends "dmgen/dmgen_base.html" %}
+
+{% block content %}
+<h2> {{ units|length }} Unit Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'unt_create' %}">Create New Unit Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for unt in units %}
+            <tr>
+                <td>{{ unt.project }}</td>
+                <td>
+                    <a href="{% url 'unt_form' pk=unt.id %}">{{ unt.label }}</a>
+                </td> 
+                <td class="list-delete-btn">
+                    <a href="{% url 'unt_delete' pk=unt.id %}">Delete</a>
+                </td>
+                {% if not unt.published %}
+                  <td>
+                      <a href="{% url 'unt_publish' pk=unt.id %}">Publish</a> 
+                    </td>  
+                {% else %}
+                  <td >
+                      <b>
+                          <i>Published</i>
+                        </b>
+                    </td>
+                {% endif %}
+                 <td>
+                     <a href="{% url 'unt_copy' pk=unt.id %}">Copy</a> 
+                    </td> 
+                <td>{{ unt.updated }}</td>
+                <td>{{ unt.edited_by }}</td>
+                <td>{{ unt.created }}</td>
+                <td>{{ unt.creator }}</td>
+                <td>{{ unt.ct_id }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

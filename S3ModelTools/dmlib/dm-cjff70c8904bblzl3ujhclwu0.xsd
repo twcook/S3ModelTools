@@ -1,0 +1,1823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="dm-description.xsl"?>
+<xs:schema
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:sawsdlrdf="http://www.w3.org/ns/sawsdl#"
+  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:s3m="https://www.s3model.com/ns/s3m/"
+  xmlns:sh="http://www.w3.org/ns/shacl"
+  targetNamespace="https://www.s3model.com/ns/s3m/"
+  xml:lang="en-US">
+  
+<!-- Include the RM Schema -->
+  <xs:include schemaLocation="https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd"/>
+
+  <!-- Metadata -->
+  <xs:annotation><xs:appinfo><rdf:RDF><rdf:Description
+    rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+    <dc:title>Demo Data Model</dc:title>
+    <dc:creator>Timothy Cook</dc:creator>
+    <dc:contributor>admin</dc:contributor>
+    <dc:dc_subject>Demo;Test</dc:dc_subject>
+    <dc:rights>CC-BY http://creativecommons.org/licenses/by/3.0/</dc:rights>
+    <dc:relation>None</dc:relation>
+    <dc:coverage>Universal</dc:coverage>
+    <dc:type>S3Model Data Model (DM)</dc:type>
+    <dc:identifier>dm-cjff70c8904bblzl3ujhclwu0</dc:identifier>
+    <dc:description>Demo data model for testing. Including the webcomponent frontend.</dc:description>
+    <dc:publisher>Data Insights, Inc.</dc:publisher>
+    <dc:date>2018-10-09 12:11:49.493116+00:00</dc:date>
+    <dc:format>text/xml</dc:format>
+    <dc:language>en-US</dc:language>
+  </rdf:Description></rdf:RDF></xs:appinfo></xs:annotation>
+  
+<!-- Complex Type Definitions -->
+  <xs:element name='dm-cjff70c8904bblzl3ujhclwu0' substitutionGroup='s3m:DM' type='s3m:mc-cjff70c8904bblzl3ujhclwu0'/> 
+  <xs:complexType name='mc-cjff70c8904bblzl3ujhclwu0'> 
+    <xs:annotation>
+    <xs:documentation>
+      Demo data model for testing. Including the webcomponent frontend.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjff70c8904bblzl3ujhclwu0'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#DMType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Demo Data Model</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='http%3A//www.w3.org/ns/shacl'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:DMType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Demo Data Model"/>
+          <xs:element maxOccurs='1' minOccurs='1' name='dm-language' type='xs:language' fixed='en-US'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='dm-encoding' type='xs:string' fixed='utf-8'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='current-state' type='xs:string' default=''/>
+          <xs:element maxOccurs='1' minOccurs='1' ref='s3m:ms-cji1yqp7q003wlkl39ge4nc11'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='subject' type='s3m:mc-cjifyy22m003as5l3vj25wrtm'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='provider' type='s3m:mc-cji1yqq62003zlkl36cpaus61'/> 
+          <xs:element maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cji1yqqod004clkl3tkc165sw'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='protocol' type='s3m:mc-cjifyy08d000rs5l3m7c2nkyx'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='workflow' type='s3m:mc-cji1yqnpb0023lkl37horu6jm'/>
+          <!-- No acs model -->
+          <xs:element maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cji1yqqsd004elkl3kmdwzvaz'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='attestation' type='s3m:mc-cji1yqqq7004dlkl3d82s6cn7'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cji1yqnn60021lkl3wvadadzf'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cji1yqnn60021lkl3wvadadzf' xml:lang='en-US'>
+    <xs:annotation>
+    <xs:documentation>
+      A Test link with a relation of 'occurs in' defined by  http://purl.obolibrary.org/obo/BFO_0000066
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cji1yqnn60021lkl3wvadadzf'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdLinkType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>DM External Link</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='http%3A//www.w3.org/ns/shacl'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdLinkType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="DM External Link"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type="s3m:lattype" nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type="s3m:lontype" nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='link' type='xs:anyURI' fixed='https://datainsights.tech/'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='relation' type='xs:string' fixed='occurs   in'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='relation-uri' type='xs:anyURI' fixed='http://purl.obolibrary.org/obo/BFO_0000066'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cji1yqp7q003wlkl39ge4nc11'> 
+    <xs:annotation>
+    <xs:documentation>
+      demo
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cji1yqp7q003wlkl39ge4nc11'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#ClusterType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Demo - Cluster</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='http%3A//www.w3.org/ns/shacl'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:ClusterType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Demo - Cluster"/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyxzl00004s5l3yakli9a9'/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cji1yqntc0028lkl3z4r4lber'/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy0mb001cs5l3gnn3iz16'/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy0os001es5l32xsu8x85'/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy0q0001gs5l3sc8wqpzd'/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy0r9001is5l3zwytdypk'/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy1da002ms5l331oh4sgn'/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy1i5002ss5l3czua0qo6'/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy1js002us5l3pcp52bs0'/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy1lz002ws5l3qnu5d2sk'/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy1nf002ys5l3tyehnzgn'/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy1oy0030s5l3pbj6hbvc'/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy1u10038s5l3vo1hdzy6'/>
+        </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cjifyxzkz0003s5l3wsz79e1t' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      Test Boolean with two options each. All optionals are required.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyxzkz0003s5l3wsz79e1t'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdBooleanType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Boolean Test</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdBooleanType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Boolean Test"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type="s3m:lattype" nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type="s3m:lontype" nillable='true'/>
+          <xs:choice maxOccurs='1' minOccurs='1'>
+          <xs:element name='true-value'>
+            <xs:simpleType>
+              <xs:restriction base='xs:string'>
+                  <xs:enumeration value='Yes'/>
+                  <xs:enumeration value='True'/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name='false-value'>
+            <xs:simpleType>
+              <xs:restriction base='xs:string'>
+                  <xs:enumeration value='No'/>
+                  <xs:enumeration value='False'/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          </xs:choice>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:element name='ms-cjifyxzl00004s5l3yakli9a9' substitutionGroup='s3m:Items' type='s3m:mc-cjifyxzl00004s5l3yakli9a9'/>
+  <xs:complexType name='mc-cjifyxzl00004s5l3yakli9a9'> <!-- Adapter for: Boolean Test -->
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdAdapterType'>
+        <xs:sequence>
+          <xs:element  maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cjifyxzkz0003s5l3wsz79e1t'/> <!-- Reference to: Boolean Test -->
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name='mc-cji1yqntc0027lkl3i7govfgy' xml:lang='en-US'>
+    <xs:annotation>
+    <xs:documentation>
+      OBO-RO Part of http://purl.obolibrary.org/obo/BFO_0000050
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cji1yqntc0027lkl3i7govfgy'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdLinkType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test Link in a Cluster</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='http%3A//purl.obolibrary.org/obo/BFO_0000050'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdLinkType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test Link in a Cluster"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='link' type='xs:anyURI' fixed='https://datainsights.tech/'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='relation' type='xs:string' fixed='part of'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='relation-uri' type='xs:anyURI' fixed='http://purl.obolibrary.org/obo/BFO_0000050'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:element name='ms-cji1yqntc0028lkl3z4r4lber' substitutionGroup='s3m:Items' type='s3m:mc-cji1yqntc0028lkl3z4r4lber'/>
+  <xs:complexType name='mc-cji1yqntc0028lkl3z4r4lber'> <!-- Adapter for: Test Link in a Cluster -->
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdAdapterType'>
+        <xs:sequence>
+          <xs:element  maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cji1yqntc0027lkl3i7govfgy'/> <!-- Reference to: Test Link in a Cluster -->
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name='mc-cjifyy0m9001bs5l33ekvwsem' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      Enumerated string test.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy0m9001bs5l33ekvwsem'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdStringType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test - Enumerated String</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdStringType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test - Enumerated String"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='xdstring-value'>
+              <xs:simpleType>
+                <xs:restriction base='xs:string'>
+                  <xs:enumeration value='One'>
+                  <xs:annotation>
+                    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy0m9001bs5l33ekvwsem/xdstring-value/One'>
+      <rdfs:subPropertyOf rdf:resource='mc-cjifyy0m9001bs5l33ekvwsem'/>
+      <rdfs:label>One</rdfs:label>
+      <rdfs:isDefinedBy>https://www.s3model.com/test/One</rdfs:isDefinedBy>
+    </rdfs:Class>
+                    </xs:appinfo>
+                  </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value='Two'>
+                  <xs:annotation>
+                    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy0m9001bs5l33ekvwsem/xdstring-value/Two'>
+      <rdfs:subPropertyOf rdf:resource='mc-cjifyy0m9001bs5l33ekvwsem'/>
+      <rdfs:label>Two</rdfs:label>
+      <rdfs:isDefinedBy>https://www.s3model.com/test/Two</rdfs:isDefinedBy>
+    </rdfs:Class>
+                    </xs:appinfo>
+                  </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value='Three'>
+                  <xs:annotation>
+                    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy0m9001bs5l33ekvwsem/xdstring-value/Three'>
+      <rdfs:subPropertyOf rdf:resource='mc-cjifyy0m9001bs5l33ekvwsem'/>
+      <rdfs:label>Three</rdfs:label>
+      <rdfs:isDefinedBy>https://www.s3model.com/test/Three</rdfs:isDefinedBy>
+    </rdfs:Class>
+                    </xs:appinfo>
+                  </xs:annotation>
+                  </xs:enumeration>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdstring-language' type='xs:language' default='en-US'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:element name='ms-cjifyy0mb001cs5l3gnn3iz16' substitutionGroup='s3m:Items' type='s3m:mc-cjifyy0mb001cs5l3gnn3iz16'/>
+  <xs:complexType name='mc-cjifyy0mb001cs5l3gnn3iz16'> <!-- Adapter for: Test - Enumerated String -->
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdAdapterType'>
+        <xs:sequence>
+          <xs:element  maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cjifyy0m9001bs5l33ekvwsem'/> <!-- Reference to: Test - Enumerated String -->
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name='mc-cjifyy0or001ds5l3nxas23ma' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      Simple String
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy0or001ds5l3nxas23ma'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdStringType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test - Simple String</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdStringType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test - Simple String"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='xdstring-value' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdstring-language' type='xs:language' default='en-US'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:element name='ms-cjifyy0os001es5l32xsu8x85' substitutionGroup='s3m:Items' type='s3m:mc-cjifyy0os001es5l32xsu8x85'/>
+  <xs:complexType name='mc-cjifyy0os001es5l32xsu8x85'> <!-- Adapter for: Test - Simple String -->
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdAdapterType'>
+        <xs:sequence>
+          <xs:element  maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cjifyy0or001ds5l3nxas23ma'/> <!-- Reference to: Test - Simple String -->
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name='mc-cjifyy0pz001fs5l3uk2fg75k' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      String w/Exact Length
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy0pz001fs5l3uk2fg75k'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdStringType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test - String w/Exact Length</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdStringType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test - String w/Exact Length"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='xdstring-value'>
+              <xs:simpleType>
+                <xs:restriction base='xs:string'>
+                  <xs:length value='9'/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdstring-language' type='xs:language' default='en-US'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:element name='ms-cjifyy0q0001gs5l3sc8wqpzd' substitutionGroup='s3m:Items' type='s3m:mc-cjifyy0q0001gs5l3sc8wqpzd'/>
+  <xs:complexType name='mc-cjifyy0q0001gs5l3sc8wqpzd'> <!-- Adapter for: Test - String w/Exact Length -->
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdAdapterType'>
+        <xs:sequence>
+          <xs:element  maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cjifyy0pz001fs5l3uk2fg75k'/> <!-- Reference to: Test - String w/Exact Length -->
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name='mc-cjifyy0r8001hs5l3zbstr8ct' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      String w/Min/Max Length
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy0r8001hs5l3zbstr8ct'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdStringType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test - String w/Min/Max Length</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdStringType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test - String w/Min/Max Length"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='xdstring-value'>
+              <xs:simpleType>
+                <xs:restriction base='xs:string'>
+                  <xs:minLength value='3'/>
+                  <xs:maxLength value='15'/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdstring-language' type='xs:language' default='en-US'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:element name='ms-cjifyy0r9001is5l3zwytdypk' substitutionGroup='s3m:Items' type='s3m:mc-cjifyy0r9001is5l3zwytdypk'/>
+  <xs:complexType name='mc-cjifyy0r9001is5l3zwytdypk'> <!-- Adapter for: Test - String w/Min/Max Length -->
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdAdapterType'>
+        <xs:sequence>
+          <xs:element  maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cjifyy0r8001hs5l3zbstr8ct'/> <!-- Reference to: Test - String w/Min/Max Length -->
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name='mc-cjifyy1d9002ls5l3fut3m4j3' xml:lang='en-US'> 
+    <xs:annotation>
+      <xs:documentation>
+      A test ordinal demonstrating use of severity of a sign or symptom.
+      </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy1d9002ls5l3fut3m4j3'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdOrdinalType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test Ordinal #1</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdOrdinalType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test Ordinal #1"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy1au002js5l3jqkl2th0'/> 
+            <xs:element maxOccurs='1' minOccurs='1' name='ordinal'>
+              <xs:simpleType>
+              <xs:restriction base='xs:decimal'>
+                <xs:enumeration value='0'/>
+                <xs:enumeration value='1'/>
+                <xs:enumeration value='2'/>
+                <xs:enumeration value='3'/>
+              </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element maxOccurs='1' minOccurs='1' name='symbol'>
+              <xs:simpleType>
+                <xs:restriction base='xs:string'>
+                  <xs:enumeration value='Severe'>
+                  <xs:annotation>
+                    <xs:appinfo>
+                    <rdfs:Class rdf:about='mc-cjifyy1d9002ls5l3fut3m4j3/symbol/Severe'>
+                      <rdfs:isDefinedBy rdf:resource='http%3A//purl.bioontology.org/ontology/SNOMEDCT/24484000'/>
+                    </rdfs:Class>
+                    </xs:appinfo>
+                  </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value='Serious'>
+                  <xs:annotation>
+                    <xs:appinfo>
+                    <rdfs:Class rdf:about='mc-cjifyy1d9002ls5l3fut3m4j3/symbol/Serious'>
+                      <rdfs:isDefinedBy rdf:resource='http%3A//purl.bioontology.org/ontology/SNOMEDCT/42745003'/>
+                    </rdfs:Class>
+                    </xs:appinfo>
+                  </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value='Moderate'>
+                  <xs:annotation>
+                    <xs:appinfo>
+                    <rdfs:Class rdf:about='mc-cjifyy1d9002ls5l3fut3m4j3/symbol/Moderate'>
+                      <rdfs:isDefinedBy rdf:resource='http%3A//purl.bioontology.org/ontology/SNOMEDCT/6736007'/>
+                    </rdfs:Class>
+                    </xs:appinfo>
+                  </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value='Minor'>
+                  <xs:annotation>
+                    <xs:appinfo>
+                    <rdfs:Class rdf:about='mc-cjifyy1d9002ls5l3fut3m4j3/symbol/Minor'>
+                      <rdfs:isDefinedBy rdf:resource='http%3A//purl.bioontology.org/ontology/SNOMEDCT/255606000'/>
+                    </rdfs:Class>
+                    </xs:appinfo>
+                  </xs:annotation>
+                  </xs:enumeration>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cjifyy1au002js5l3jqkl2th0' xml:lang='en-US'>
+    <xs:annotation>
+    <xs:documentation>
+      A critical reference range.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy1au002js5l3jqkl2th0'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#ReferenceRangeType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test Datas #1</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:ReferenceRangeType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test Datas #1"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='definition' type='xs:string' fixed='Test Dates'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='interval' type='s3m:mc-cjifyy110001vs5l3nh8dxoil'/> 
+          <xs:element maxOccurs='1' minOccurs='1' name='is-normal' type='xs:boolean' fixed='false'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cjifyy110001vs5l3nh8dxoil' xml:lang='en-US'>
+    <xs:annotation>
+    <xs:documentation>
+      Dates interval without any other constraints.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy110001vs5l3nh8dxoil'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdIntervalType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Interval of Dates #1</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdIntervalType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Interval of Dates #1"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='lower' type='xs:date'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='upper' type='xs:date'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='lower-included' type='xs:boolean' fixed='false'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='upper-included' type='xs:boolean' fixed='false'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='lower-bounded' type='xs:boolean' fixed='false'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='upper-bounded' type='xs:boolean' fixed='false'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:element name='ms-cjifyy1da002ms5l331oh4sgn' substitutionGroup='s3m:Items' type='s3m:mc-cjifyy1da002ms5l331oh4sgn'/>
+  <xs:complexType name='mc-cjifyy1da002ms5l331oh4sgn'> <!-- Adapter for: Test Ordinal #1 -->
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdAdapterType'>
+        <xs:sequence>
+          <xs:element  maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cjifyy1d9002ls5l3fut3m4j3'/> <!-- Reference to: Test Ordinal #1 -->
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name='mc-cjifyy1i4002rs5l3ro2fn3op' xml:lang='en-US'> 
+    <xs:annotation>
+      <xs:documentation>
+      Count of some thing to be counted.
+      </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy1i4002rs5l3ro2fn3op'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdCountType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test Count</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+        <sh:property>
+          <rdf:Description>
+          <sh:path rdf:resource="mc-cjifyy1i4002rs5l3ro2fn3op/xdcount-value"/>
+          <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+            <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+          </rdf:Description>
+        </sh:property>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdCountType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test Count"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='magnitude-status' type='s3m:MagnitudeStatus'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='error'  type='xs:int' default='0'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='accuracy' type='xs:int' default='0'/>
+          <xs:element maxOccurs='1' minOccurs='1'  name='xdcount-value' type='xs:int'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='xdcount-units' type='s3m:mc-cjifyxztt000bs5l31gxcw8b4'/> 
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:complexType name='mc-cjifyxztt000bs5l31gxcw8b4' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      A test units item
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyxztt000bs5l31gxcw8b4'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdStringType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test Units Item</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdStringType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test Units Item"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='xdstring-value'>
+              <xs:simpleType>
+                <xs:restriction base='xs:string'>
+                  <xs:enumeration value='No Value'>
+                  <xs:annotation>
+                    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyxztt000bs5l31gxcw8b4/xdstring-value/No%20Value'>
+      <rdfs:subPropertyOf rdf:resource='mc-cjifyxztt000bs5l31gxcw8b4'/>
+      <rdfs:label>No Value</rdfs:label>
+      <rdfs:isDefinedBy>https://www.s3model.com/tests/no</rdfs:isDefinedBy>
+    </rdfs:Class>
+                    </xs:appinfo>
+                  </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value='Some Value'>
+                  <xs:annotation>
+                    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyxztt000bs5l31gxcw8b4/xdstring-value/Some%20Value'>
+      <rdfs:subPropertyOf rdf:resource='mc-cjifyxztt000bs5l31gxcw8b4'/>
+      <rdfs:label>Some Value</rdfs:label>
+      <rdfs:isDefinedBy>https://www.s3model.com/tests/some</rdfs:isDefinedBy>
+    </rdfs:Class>
+                    </xs:appinfo>
+                  </xs:annotation>
+                  </xs:enumeration>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdstring-language' type='xs:language' default='en-US'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:element name='ms-cjifyy1i5002ss5l3czua0qo6' substitutionGroup='s3m:Items' type='s3m:mc-cjifyy1i5002ss5l3czua0qo6'/>
+  <xs:complexType name='mc-cjifyy1i5002ss5l3czua0qo6'> <!-- Adapter for: Test Count -->
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdAdapterType'>
+        <xs:sequence>
+          <xs:element  maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cjifyy1i4002rs5l3ro2fn3op'/> <!-- Reference to: Test Count -->
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name='mc-cjifyy1jr002ts5l3djpy8cbb' xml:lang='en-US'> 
+    <xs:annotation>
+      <xs:documentation>
+      A length quantity in centimeters or millimeters.
+      </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy1jr002ts5l3djpy8cbb'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdQuantityType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Length quantity #1</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+        <sh:property>
+          <rdf:Description>
+          <sh:path rdf:resource="mc-cjifyy1jr002ts5l3djpy8cbb/xdquantity-value"/>
+          <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+            <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+          </rdf:Description>
+        </sh:property>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdQuantityType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Length quantity #1"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='magnitude-status' type='s3m:MagnitudeStatus'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='error'  type='xs:int' default='0'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='accuracy' type='xs:int' default='0'/>
+          <xs:element maxOccurs='1' minOccurs='1'  name='xdquantity-value' type='xs:decimal'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='xdquantity-units' type='s3m:mc-cjifyxzsa0009s5l3ygxpojpp'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:complexType name='mc-cjifyxzsa0009s5l3ygxpojpp' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      Test units for lengths in centimeters or millimeters.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyxzsa0009s5l3ygxpojpp'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdStringType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test Units for Lengths #1</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdStringType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test Units for Lengths #1"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='xdstring-value'>
+              <xs:simpleType>
+                <xs:restriction base='xs:string'>
+                  <xs:enumeration value='mm'>
+                  <xs:annotation>
+                    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyxzsa0009s5l3ygxpojpp/xdstring-value/mm'>
+      <rdfs:subPropertyOf rdf:resource='mc-cjifyxzsa0009s5l3ygxpojpp'/>
+      <rdfs:label>mm</rdfs:label>
+      <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/UO_0000016</rdfs:isDefinedBy>
+    </rdfs:Class>
+                    </xs:appinfo>
+                  </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value='cm'>
+                  <xs:annotation>
+                    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyxzsa0009s5l3ygxpojpp/xdstring-value/cm'>
+      <rdfs:subPropertyOf rdf:resource='mc-cjifyxzsa0009s5l3ygxpojpp'/>
+      <rdfs:label>cm</rdfs:label>
+      <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/UO_0000015</rdfs:isDefinedBy>
+    </rdfs:Class>
+                    </xs:appinfo>
+                  </xs:annotation>
+                  </xs:enumeration>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdstring-language' type='xs:language' default='en-US'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:element name='ms-cjifyy1js002us5l3pcp52bs0' substitutionGroup='s3m:Items' type='s3m:mc-cjifyy1js002us5l3pcp52bs0'/>
+  <xs:complexType name='mc-cjifyy1js002us5l3pcp52bs0'> <!-- Adapter for: Length quantity #1 -->
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdAdapterType'>
+        <xs:sequence>
+          <xs:element  maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cjifyy1jr002ts5l3djpy8cbb'/> <!-- Reference to: Length quantity #1 -->
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name='mc-cjifyy1ly002vs5l3l0pnznc7' xml:lang='en-US'> 
+    <xs:annotation>
+      <xs:documentation>
+      The most basic proportion model.
+      </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy1ly002vs5l3l0pnznc7'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdRatioType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test proportion #1</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdRatioType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test proportion #1"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='magnitude-status' type='s3m:MagnitudeStatus'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='error'  type='xs:int' default='0'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='accuracy' type='xs:int' default='0'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='ratio-type' type='s3m:TypeOfRatio'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='numerator'>
+            <xs:simpleType>
+            <xs:restriction base='xs:float'>
+            </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='denominator'>
+            <xs:simpleType>
+            <xs:restriction base='xs:float'>
+            </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdratio-value' type='xs:float'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:element name='ms-cjifyy1lz002ws5l3qnu5d2sk' substitutionGroup='s3m:Items' type='s3m:mc-cjifyy1lz002ws5l3qnu5d2sk'/>
+  <xs:complexType name='mc-cjifyy1lz002ws5l3qnu5d2sk'> <!-- Adapter for: Test proportion #1 -->
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdAdapterType'>
+        <xs:sequence>
+          <xs:element  maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cjifyy1ly002vs5l3l0pnznc7'/> <!-- Reference to: Test proportion #1 -->
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name='mc-cjifyy1ne002xs5l31yyt1w4a' xml:lang='en-US'> 
+    <xs:annotation>
+      <xs:documentation>
+      The most basic rate model.
+      </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy1ne002xs5l31yyt1w4a'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdRatioType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test rate #1</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdRatioType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test rate #1"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='magnitude-status' type='s3m:MagnitudeStatus'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='error'  type='xs:int' default='0'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='accuracy' type='xs:int' default='0'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='ratio-type' type='s3m:TypeOfRatio'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='numerator'>
+            <xs:simpleType>
+            <xs:restriction base='xs:float'>
+            </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='denominator'>
+            <xs:simpleType>
+            <xs:restriction base='xs:float'>
+            </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdratio-value' type='xs:float'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:element name='ms-cjifyy1nf002ys5l3tyehnzgn' substitutionGroup='s3m:Items' type='s3m:mc-cjifyy1nf002ys5l3tyehnzgn'/>
+  <xs:complexType name='mc-cjifyy1nf002ys5l3tyehnzgn'> <!-- Adapter for: Test rate #1 -->
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdAdapterType'>
+        <xs:sequence>
+          <xs:element  maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cjifyy1ne002xs5l31yyt1w4a'/> <!-- Reference to: Test rate #1 -->
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name='mc-cjifyy1ox002zs5l3n313fccq' xml:lang='en-US'> 
+    <xs:annotation>
+      <xs:documentation>
+      The most basic ratio model.
+      </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy1ox002zs5l3n313fccq'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdRatioType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test ratio #1</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdRatioType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test ratio #1"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='magnitude-status' type='s3m:MagnitudeStatus'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='error'  type='xs:int' default='0'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='accuracy' type='xs:int' default='0'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='ratio-type' type='s3m:TypeOfRatio'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='numerator'>
+            <xs:simpleType>
+            <xs:restriction base='xs:float'>
+            </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='denominator'>
+            <xs:simpleType>
+            <xs:restriction base='xs:float'>
+            </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdratio-value' type='xs:float'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:element name='ms-cjifyy1oy0030s5l3pbj6hbvc' substitutionGroup='s3m:Items' type='s3m:mc-cjifyy1oy0030s5l3pbj6hbvc'/>
+  <xs:complexType name='mc-cjifyy1oy0030s5l3pbj6hbvc'> <!-- Adapter for: Test ratio #1 -->
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdAdapterType'>
+        <xs:sequence>
+          <xs:element  maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cjifyy1ox002zs5l3n313fccq'/> <!-- Reference to: Test ratio #1 -->
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name='mc-cjifyy1u00037s5l3z3fmmuer' xml:lang='en-US'>
+    <xs:annotation>
+      <xs:documentation>
+      Allow date only
+      </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy1u00037s5l3z3fmmuer'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdTemporalType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test Date Only</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdTemporalType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test Date Only"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdtemporal-date' type='xs:date'/>
+          <xs:element maxOccurs='0' minOccurs='0' name='xdtemporal-time' type='xs:time'/>
+          <xs:element maxOccurs='0' minOccurs='0' name='xdtemporal-datetime' type='xs:dateTime'/>
+          <xs:element maxOccurs='0' minOccurs='0' name='xdtemporal-day' type='xs:gDay'/>
+          <xs:element maxOccurs='0' minOccurs='0' name='xdtemporal-month' type='xs:gMonth'/>
+          <xs:element maxOccurs='0' minOccurs='0' name='xdtemporal-year' type='xs:gYear'/>
+          <xs:element maxOccurs='0' minOccurs='0' name='xdtemporal-year-month' type='xs:gYearMonth'/>
+          <xs:element maxOccurs='0' minOccurs='0' name='xdtemporal-month-day' type='xs:gMonthDay'/>
+          <xs:element maxOccurs='0' minOccurs='0' name='xdtemporal-duration' type='xs:duration'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:element name='ms-cjifyy1u10038s5l3vo1hdzy6' substitutionGroup='s3m:Items' type='s3m:mc-cjifyy1u10038s5l3vo1hdzy6'/>
+  <xs:complexType name='mc-cjifyy1u10038s5l3vo1hdzy6'> <!-- Adapter for: Test Date Only -->
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdAdapterType'>
+        <xs:sequence>
+          <xs:element  maxOccurs='unbounded' minOccurs='0' ref='s3m:ms-cjifyy1u00037s5l3z3fmmuer'/> <!-- Reference to: Test Date Only -->
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name='mc-cjifyy22m003as5l3vj25wrtm' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      demo
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy22m003as5l3vj25wrtm'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#PartyType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Demo - DM Subject</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/ns/s3m/demo'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:PartyType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Demo - DM Subject"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='party-name' type='xs:string'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cji1yqq62003zlkl36cpaus61' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      demo
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cji1yqq62003zlkl36cpaus61'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#PartyType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Demo - DM Provider</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/ns/s3m/demo'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:PartyType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Demo - DM Provider"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='party-name' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='party-details' type='s3m:mc-cji1yqp82003xlkl3uitdka7k'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cji1yqp82003xlkl3uitdka7k'> 
+    <xs:annotation>
+    <xs:documentation>
+      Testing a Party
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cji1yqp82003xlkl3uitdka7k'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#ClusterType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Party Details Cluster</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/ns/s3m/demo'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:ClusterType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Party Details Cluster"/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cji1yqntc0028lkl3z4r4lber'/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy0os001es5l32xsu8x85'/>
+        </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cji1yqqod004clkl3tkc165sw' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      Additional organizations participating in this episode of care.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cji1yqqod004clkl3tkc165sw'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#ParticipationType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test Participation</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/ns/s3m/demo'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:ParticipationType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test Participation"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='performer' type='s3m:mc-cji1yqqio0049lkl3x2yy3ms4'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='function' type='s3m:mc-cjifyy0fh0011s5l3emhsc861'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='mode' type='s3m:mc-cjifyy0h00013s5l3i7sy9qta'/> 
+          <xs:element maxOccurs='1' minOccurs='0' name='start' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='end' type='xs:dateTime'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cji1yqqio0049lkl3x2yy3ms4' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      This is a test Party used as the Subject in Enry 01.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cji1yqqio0049lkl3x2yy3ms4'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#PartyType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test Party 01</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:PartyType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test Party 01"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='party-name' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='party-ref' type='s3m:mc-cji1yqnkl001zlkl3fhd78fza'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cji1yqnkl001zlkl3fhd78fza' xml:lang='en-US'>
+    <xs:annotation>
+    <xs:documentation>
+      A Test link with a relation of 'occurs in' defined by  http://purl.obolibrary.org/obo/BFO_0000066
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cji1yqnkl001zlkl3fhd78fza'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdLinkType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>A Test Link</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/tests'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdLinkType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="A Test Link"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='link' type='xs:anyURI' fixed='https://datainsights.tech/'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='relation' type='xs:string' fixed='occurs   in'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='relation-uri' type='xs:anyURI' fixed='http://purl.obolibrary.org/obo/BFO_0000066'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:complexType name='mc-cjifyy0fh0011s5l3emhsc861' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      A simple string for participation function.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy0fh0011s5l3emhsc861'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdStringType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Participation Function String</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='http%3A//www.w3.org/ns/shacl'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdStringType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Participation Function String"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='xdstring-value'>
+              <xs:simpleType>
+                <xs:restriction base='xs:string'>
+                  <xs:minLength value='1'/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdstring-language' type='xs:language' default='en-US'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:complexType name='mc-cjifyy0h00013s5l3i7sy9qta' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      A simple string for participation mode.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy0h00013s5l3i7sy9qta'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdStringType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Participation Mode String</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='http%3A//www.w3.org/ns/shacl'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdStringType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Participation Mode String"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='xdstring-value'>
+              <xs:simpleType>
+                <xs:restriction base='xs:string'>
+                  <xs:minLength value='1'/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdstring-language' type='xs:language' default='en-US'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:complexType name='mc-cjifyy08d000rs5l3m7c2nkyx' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      Protocol ID string with a minimum length of one.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy08d000rs5l3m7c2nkyx'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdStringType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>DM protocol ID string</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='http%3A//www.w3.org/ns/shacl'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdStringType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="DM protocol ID string"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='xdstring-value'>
+              <xs:simpleType>
+                <xs:restriction base='xs:string'>
+                  <xs:minLength value='1'/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdstring-language' type='xs:language' default='en-US'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cji1yqnpb0023lkl37horu6jm' xml:lang='en-US'>
+    <xs:annotation>
+    <xs:documentation>
+      A Test link with a relation of 'occurs in' defined by  http://purl.obolibrary.org/obo/BFO_0000066
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cji1yqnpb0023lkl37horu6jm'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdLinkType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>DM Workflow link</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='http%3A//www.w3.org/ns/shacl'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdLinkType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="DM Workflow link"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='link' type='xs:anyURI' fixed='https://datainsights.tech/'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='relation' type='xs:string' fixed='occurs   in'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='relation-uri' type='xs:anyURI' fixed='http://purl.obolibrary.org/obo/BFO_0000066'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cji1yqqsd004elkl3kmdwzvaz' xml:lang='en-US'>
+    <xs:annotation>
+    <xs:documentation>
+      testing an audit model
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cji1yqqsd004elkl3kmdwzvaz'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#AuditType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test Audit</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/ns/s3m/demo'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:AuditType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test Audit"/>
+          <xs:element maxOccurs='1' minOccurs='1' name='system-id' type='s3m:mc-cjifyxzze000fs5l3bvfc2a6v'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='system-user' type='s3m:mc-cji1yqqio0049lkl3x2yy3ms4'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='location' type='s3m:mc-cjifyy1xq0039s5l3pl6xhnx8'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='timestamp' type='xs:dateTime'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:complexType name='mc-cjifyxzze000fs5l3bvfc2a6v' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      String w/Exact Length of 25 and requires location.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyxzze000fs5l3bvfc2a6v'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdStringType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Audit System ID Test</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='http%3A//www.w3.org/ns/shacl'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdStringType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Audit System ID Test"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='xdstring-value'>
+              <xs:simpleType>
+                <xs:restriction base='xs:string'>
+                  <xs:length value='25'/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdstring-language' type='xs:language' default='en-US'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cjifyy1xq0039s5l3pl6xhnx8'> 
+    <xs:annotation>
+    <xs:documentation>
+      Testing an Audit model
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy1xq0039s5l3pl6xhnx8'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#ClusterType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Audit Location Cluster</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='http%3A//www.w3.org/ns/shacl'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:ClusterType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Audit Location Cluster"/>
+      <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ms-cjifyy0mb001cs5l3gnn3iz16'/>
+        </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cji1yqqq7004dlkl3d82s6cn7' xml:lang='en-US'>
+    <xs:annotation>
+    <xs:documentation>
+      test attestation view
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cji1yqqq7004dlkl3d82s6cn7'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#AttestationType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Test Attestation</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='https%3A//www.s3model.com/ns/s3m/demo'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:AttestationType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Test Attestation"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='view' type='s3m:mc-cjifyy1re0033s5l3qulvgmyu'/> 
+          <xs:element maxOccurs='1' minOccurs='0' name='proof' type='s3m:mc-cjifyy1qa0031s5l3e1y4ev79'/> 
+          <xs:element maxOccurs='1' minOccurs='0' name='reason' type='s3m:mc-cjifyxzvu000ds5l3rm00ac5d'/> 
+          <xs:element maxOccurs='1' minOccurs='0' name='committer' type='s3m:mc-cji1yqqio0049lkl3x2yy3ms4'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='committed' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' default='true' name='pending' type='xs:boolean'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cjifyy1re0033s5l3qulvgmyu' xml:lang='en-US'>
+    <xs:annotation>
+    <xs:documentation>
+      A view model for an attestation.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy1re0033s5l3qulvgmyu'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdFileType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Attested View File</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='http%3A//www.w3.org/ns/shacl'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdFileType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Attested View File"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='size' type='xs:int'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='encoding' type='xs:string' default='utf-8'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdfile-language' type='xs:language' default='en-US'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='formalism' type='xs:string' default=''/>
+          <xs:element maxOccurs='1' minOccurs='0' name='media-type' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='compression-type' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='hash-result' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='hash-function' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='alt-txt' type='xs:string' default='Linked file.'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='uri' type='xs:anyURI'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+  <xs:complexType name='mc-cjifyy1qa0031s5l3e1y4ev79' xml:lang='en-US'>
+    <xs:annotation>
+    <xs:documentation>
+      A proof model for an attestation.
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyy1qa0031s5l3e1y4ev79'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdFileType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Attested Proof File</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='http%3A//www.w3.org/ns/shacl'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdFileType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Attested Proof File"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='size' type='xs:int'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='encoding' type='xs:string' default='utf-8'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdfile-language' type='xs:language' default='en-US'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='formalism' type='xs:string' default=''/>
+          <xs:element maxOccurs='1' minOccurs='0' name='media-type' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='compression-type' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='hash-result' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='hash-function' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='alt-txt' type='xs:string' default='Linked file.'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='uri' type='xs:anyURI'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+  <xs:complexType name='mc-cjifyxzvu000ds5l3rm00ac5d' xml:lang='en-US'> 
+    <xs:annotation>
+    <xs:documentation>
+      Simple String
+    </xs:documentation>
+    <xs:appinfo>
+    <rdfs:Class rdf:about='mc-cjifyxzvu000ds5l3rm00ac5d'>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model_3_1_0.xsd#XdStringType'/>
+    <rdfs:subClassOf rdf:resource='https://www.s3model.com/ns/s3m/s3model/RMC'/>
+    <rdfs:label>Attestation Reason String</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource='http%3A//www.w3.org/ns/shacl'/>
+    </rdfs:Class>
+    </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base='s3m:XdStringType'>
+        <xs:sequence>
+          <xs:element maxOccurs='1' minOccurs='1' name='label' type='xs:string' fixed="Attestation Reason String"/>
+          <xs:element maxOccurs='1' minOccurs='0' name='act' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='s3m:ExceptionalValue'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vtb' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='vte' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='tr' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='modified' type='xs:dateTime'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='latitude' type='s3m:lattype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='longitude' type='s3m:lontype' nillable='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='xdstring-value' type='xs:string'/>
+          <xs:element maxOccurs='1' minOccurs='0' name='xdstring-language' type='xs:language' default='en-US'/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+<!-- Substitution Groups -->
+  <xs:element name="ms-cji1yqnn60021lkl3wvadadzf" substitutionGroup="s3m:XdLink" type="s3m:mc-cji1yqnn60021lkl3wvadadzf"/>
+  <xs:element name="ms-cji1yqp7q003wlkl39ge4nc11" substitutionGroup="s3m:Item" type="s3m:mc-cji1yqp7q003wlkl39ge4nc11"/>
+  <xs:element name="ms-cjifyxzkz0003s5l3wsz79e1t" substitutionGroup="s3m:XdAdapter-value" type="s3m:mc-cjifyxzkz0003s5l3wsz79e1t"/>
+  <xs:element name="ms-cji1yqntc0027lkl3i7govfgy" substitutionGroup="s3m:XdAdapter-value" type="s3m:mc-cji1yqntc0027lkl3i7govfgy"/>
+  <xs:element name="ms-cjifyy0m9001bs5l33ekvwsem" substitutionGroup="s3m:XdAdapter-value" type="s3m:mc-cjifyy0m9001bs5l33ekvwsem"/>
+  <xs:element name="ms-cjifyy0or001ds5l3nxas23ma" substitutionGroup="s3m:XdAdapter-value" type="s3m:mc-cjifyy0or001ds5l3nxas23ma"/>
+  <xs:element name="ms-cjifyy0pz001fs5l3uk2fg75k" substitutionGroup="s3m:XdAdapter-value" type="s3m:mc-cjifyy0pz001fs5l3uk2fg75k"/>
+  <xs:element name="ms-cjifyy0r8001hs5l3zbstr8ct" substitutionGroup="s3m:XdAdapter-value" type="s3m:mc-cjifyy0r8001hs5l3zbstr8ct"/>
+  <xs:element name="ms-cjifyy1d9002ls5l3fut3m4j3" substitutionGroup="s3m:XdAdapter-value" type="s3m:mc-cjifyy1d9002ls5l3fut3m4j3"/>
+  <xs:element name="ms-cjifyy1au002js5l3jqkl2th0" substitutionGroup="s3m:ReferenceRange" type="s3m:mc-cjifyy1au002js5l3jqkl2th0"/>
+  <xs:element name="ms-cjifyy110001vs5l3nh8dxoil" substitutionGroup="s3m:XdInterval" type="s3m:mc-cjifyy110001vs5l3nh8dxoil"/>
+  <xs:element name="ms-cjifyy1i4002rs5l3ro2fn3op" substitutionGroup="s3m:XdAdapter-value" type="s3m:mc-cjifyy1i4002rs5l3ro2fn3op"/>
+  <xs:element name="ms-cjifyy1jr002ts5l3djpy8cbb" substitutionGroup="s3m:XdAdapter-value" type="s3m:mc-cjifyy1jr002ts5l3djpy8cbb"/>
+  <xs:element name="ms-cjifyy1ly002vs5l3l0pnznc7" substitutionGroup="s3m:XdAdapter-value" type="s3m:mc-cjifyy1ly002vs5l3l0pnznc7"/>
+  <xs:element name="ms-cjifyy1ne002xs5l31yyt1w4a" substitutionGroup="s3m:XdAdapter-value" type="s3m:mc-cjifyy1ne002xs5l31yyt1w4a"/>
+  <xs:element name="ms-cjifyy1ox002zs5l3n313fccq" substitutionGroup="s3m:XdAdapter-value" type="s3m:mc-cjifyy1ox002zs5l3n313fccq"/>
+  <xs:element name="ms-cjifyy1u00037s5l3z3fmmuer" substitutionGroup="s3m:XdAdapter-value" type="s3m:mc-cjifyy1u00037s5l3z3fmmuer"/>
+  <xs:element name="ms-cji1yqqod004clkl3tkc165sw" substitutionGroup="s3m:Participation" type="s3m:mc-cji1yqqod004clkl3tkc165sw"/>
+  <xs:element name="ms-cji1yqqsd004elkl3kmdwzvaz" substitutionGroup="s3m:Audit" type="s3m:mc-cji1yqqsd004elkl3kmdwzvaz"/>
+
+<!-- RDF for contained Reusable Model Components -->
+  <xs:annotation>
+  <xs:appinfo>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cji1yqnn60021lkl3wvadadzf"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cji1yqp7q003wlkl39ge4nc11"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyxzkz0003s5l3wsz79e1t"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cji1yqntc0027lkl3i7govfgy"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy0m9001bs5l33ekvwsem"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy0or001ds5l3nxas23ma"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy0pz001fs5l3uk2fg75k"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy0r8001hs5l3zbstr8ct"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy1d9002ls5l3fut3m4j3"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy1au002js5l3jqkl2th0"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy110001vs5l3nh8dxoil"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy1i4002rs5l3ro2fn3op"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyxztt000bs5l31gxcw8b4"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy1jr002ts5l3djpy8cbb"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyxzsa0009s5l3ygxpojpp"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy1ly002vs5l3l0pnznc7"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy1ne002xs5l31yyt1w4a"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy1ox002zs5l3n313fccq"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy1u00037s5l3z3fmmuer"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy22m003as5l3vj25wrtm"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cji1yqq62003zlkl36cpaus61"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cji1yqp82003xlkl3uitdka7k"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cji1yqqod004clkl3tkc165sw"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cji1yqqio0049lkl3x2yy3ms4"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cji1yqnkl001zlkl3fhd78fza"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy0fh0011s5l3emhsc861"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy0h00013s5l3i7sy9qta"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy08d000rs5l3m7c2nkyx"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cji1yqnpb0023lkl37horu6jm"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cji1yqqsd004elkl3kmdwzvaz"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyxzze000fs5l3bvfc2a6v"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy1xq0039s5l3pl6xhnx8"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cji1yqqq7004dlkl3d82s6cn7"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy1re0033s5l3qulvgmyu"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyy1qa0031s5l3e1y4ev79"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="dm-cjff70c8904bblzl3ujhclwu0">
+        <s3m:containsRMC rdf:resource="mc-cjifyxzvu000ds5l3rm00ac5d"/>
+      </rdf:Description>
+  </xs:appinfo>
+  </xs:annotation>
+
+</xs:schema>

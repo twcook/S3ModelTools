@@ -1,0 +1,62 @@
+{% extends "dmgen/dmgen_base.html" %}
+
+{% block content %}
+<h2> {{ partys|length }} Party Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'pty_create' %}">Create New Party Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for pty in partys %}
+            <tr>
+                <td>{{ pty.project }}</td>
+                <td>
+                    <a href="{% url 'pty_form' pk=pty.id %}">{{ pty.label }}</a>
+                </td> 
+                <td class="list-delete-btn">
+                    <a href="{% url 'pty_delete' pk=pty.id %}">Delete</a>
+                </td>
+                {% if not pty.published %}
+                  <td>
+                      <a href="{% url 'pty_publish' pk=pty.id %}">Publish</a> 
+                    </td>  
+                {% else %}
+                  <td >
+                      <b>
+                          <i>Published</i>
+                        </b>
+                    </td>
+                {% endif %}
+                 <td>
+                     <a href="{% url 'pty_copy' pk=pty.id %}">Copy</a> 
+                    </td> 
+                <td>{{ pty.updated }}</td>
+                <td>{{ pty.edited_by }}</td>
+                <td>{{ pty.created }}</td>
+                <td>{{ pty.creator }}</td>
+                <td>{{ pty.ct_id }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

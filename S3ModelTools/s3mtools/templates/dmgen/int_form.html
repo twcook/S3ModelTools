@@ -1,0 +1,71 @@
+{% extends "dmgen/dmgen_form_base.html" %}
+{% block content %}
+<h1>Interval Details</h1>
+
+<form action="" method="post">
+	{% csrf_token %}
+    <p>
+    <h2>System Info</h2>	
+ 	{% block system %}
+	 	 <p>
+	    {% if form.published.value == True %}
+	      <b>{{ form.label.value }}: is Published and cannot be edited.</b>
+	    {% elif form.label.value is None %}
+	      <b>Creating a new Interval model</b>  
+	    {% endif %}
+	    </p>
+	    {{ form.project.label }}: {{ form.project.help_text }} 
+	    <br/>
+	    {{ form.project }} 
+    {% endblock %}
+    </p>
+
+     <h2>Metadata</h2>
+    {% block metadata %}
+        <b>{{ form.label.label }}:</b> {{ form.label.help_text }} <br/>	     
+		{{ form.label }}<br/>
+        <b>{{ form.description.label }}:</b> {{ form.description.help_text }} <br/>	     
+		{{ form.description }}<br/>
+        <b>{{ form.pred_obj.label }}:</b> {{ form.pred_obj.help_text }} <br/>	     
+		{{ form.pred_obj }}<br/>
+    {% endblock %}
+    
+    <h2>Details</h2>
+    {% block details %}
+        <b>{{ form.require_vtb.label }}:</b> {{ form.require_vtb.help_text }} <br/>	     
+		{{ form.require_vtb }}<br/>
+        <b>{{ form.require_vte.label }}:</b> {{ form.require_vte.help_text }} <br/>	     
+		{{ form.require_vte }}<br/>
+        <b>{{ form.require_tr.label }}:</b> {{ form.require_tr.help_text }} <br/>	     
+		{{ form.require_tr }}<br/>
+        <b>{{ form.require_mod.label }}:</b> {{ form.require_mod.help_text }} <br/>	     
+		{{ form.require_mod }}<br/>
+        <b>{{ form.require_location.label }}:</b> {{ form.require_location.help_text }} <br/>	     
+		{{ form.require_location }}<br/>
+        <b>{{ form.require_act.label }}:</b> {{ form.require_act.help_text }} <br/>	     
+		{{ form.require_act }}<br/>
+
+        <b>{{ form.lower.label }}:</b> {{ form.lower.help_text }} <br/>	     
+		{{ form.lower }}<br/>
+        <b>{{ form.upper.label }}:</b> {{ form.upper.help_text }} <br/>	     
+		{{ form.upper }}<br/>
+        <b>{{ form.interval_type.label }}:</b> {{ form.interval_type.help_text }} <br/>	     
+		{{ form.interval_type }}<br/>
+        <b>{{ form.lower_included.label }}:</b> {{ form.lower_included.help_text }} <br/>	     
+		{{ form.lower_included }}<br/>
+        <b>{{ form.upper_included.label }}:</b> {{ form.upper_included.help_text }} <br/>	     
+		{{ form.upper_included }}<br/>
+        <b>{{ form.lower_bounded.label }}:</b> {{ form.lower_bounded.help_text }} <br/>	     
+		{{ form.lower_bounded }}<br/>
+        <b>{{ form.upper_bounded.label }}:</b> {{ form.upper_bounded.help_text }} <br/>	     
+		{{ form.upper_bounded }}<br/>
+        <b>{{ form.units_name.label }}:</b> {{ form.units_name.help_text }} <br/>	     
+		{{ form.units_name }}<br/>
+        <b>{{ form.units_uri.label }}:</b> {{ form.units_uri.help_text }} <br/>	     
+		{{ form.units_uri }}<br/>
+    {% endblock %}
+
+    <input type="submit" value="Save" />
+</form>
+
+{% endblock %}

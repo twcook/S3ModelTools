@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+{% load staticfiles i18n %} {% load account %}
+
+<head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="expires" content="Thu, 01 Jan 2030 11:12:01 GMT" />
+  <meta name="google-site-verification" content="4e7WasArmoFJJP4-_acUT9txcKasTzw0cMwUT-j0gOM" />
+  <meta name="author" content="Tim" />
+  <meta name="keywords" content="Semantic Web, Healthcare, HIT, S3Model, PHR, EMR, EHR, DM, S3Model, model driven" />
+  <meta http-equiv="Cache-control" content="public" , max-age="2592000" expires=/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S3Model Tools Suite</title>
+  <link type="text/css" rel="stylesheet" href="{% static 'dmgen/css/main.css' %}" />
+  <link rel="shortcut icon" href="{% static 'dmgen/favicon.ico' %}" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <div class="tools-header">
+      {% if user.is_authenticated %}
+      <h3>Welcome: {% user_display user %}</h3>
+      {% else %}
+      <h3>Please register or login.</h3>
+      {% endif %}
+    </div>
+
+    <!-- Navigation -->
+    <nav class="tools-nav">
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li>
+          <a href="{% url 'mod_form' pk=modeler.id %}">{% user_display user %} Profile</a>
+        </li>
+        {% if user.is_staff %}
+        <li>
+          <a href="/admin">Admin Tools</a>
+        </li>
+        {% endif %} {% if user.is_superuser %}
+        <li>
+          <a href="/api/v1/">API</a>
+        </li>
+        {% endif %}
+        <li>
+          <a href="#">Translator</a>
+        </li>
+        <li>
+          <a href="{% url 'account_logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li>
+          <a href="{% url 'account_login' %}">Login</a>
+        </li>
+        <li>
+          <a href="{% url 'account_signup' %}">Register</a>
+        </li>
+        {% endif %}
+      </ul>
+      </p>
+    </nav>
+
+    <!-- Tools Content -->
+    <section class="tools-content">
+      <div class="tools-sidebar">
+        <ul>
+          <li>
+            <a href="{% url 'dm_list' %}">Data Models</a>
+          </li>
+          <li>
+            <a href="{% url 'att_list' %}">Attestations</a>
+          </li>
+          <li>
+            <a href="{% url 'aud_list' %}">Audits</a>
+          </li>
+          <li>
+            <a href="{% url 'bool_list' %}">Booleans</a>
+          </li>
+          <li>
+            <a href="{% url 'clu_list' %}">Clusters</a>
+          </li>
+          <li>
+            <a href="{% url 'cnt_list' %}">Counts</a>
+          </li>
+          <li>
+            <a href="{% url 'fil_list' %}">Files</a>
+          </li>
+          <li>
+            <a href="{% url 'flt_list' %}">Floats</a>
+          </li>
+          <li>
+            <a href="{% url 'int_list' %}">Intervals</a>
+          </li>
+          <li>
+            <a href="{% url 'lnk_list' %}">Links</a>
+          </li>
+          <li>
+            <a href="{% url 'ord_list' %}">Ordinals</a>
+          </li>
+          <li>
+            <a href="{% url 'ptn_list' %}">Participations</a>
+          </li>
+          <li>
+            <a href="{% url 'pty_list' %}">Partys</a>
+          </li>
+          <li>
+            <a href="{% url 'qty_list' %}">Quantitys</a>
+          </li>
+          <li>
+            <a href="{% url 'rat_list' %}">Ratios</a>
+          </li>
+          <li>
+            <a href="{% url 'rfr_list' %}">Reference Ranges</a>
+          </li>
+          <li>
+            <a href="{% url 'str_list' %}">Strings</a>
+          </li>
+          <li>
+            <a href="{% url 'tmp_list' %}">Temporals</a>
+          </li>
+          <li>
+            <a href="{% url 'unt_list' %}">Units</a>
+          </li>
+          <!--           <li><a href="{% url 'dmd_list' %}">Translator DMDs</a></li>
+          <li><a href="{% url 'rec_list' %}">Translator Records</a></li>
+ -->
+        </ul>
+      </div>
+      <div class="tools-main">
+        <p>Search for an existing Data Model or select a component model from the sidebar to list the available options.</p>
+        <p>
+          <form class="search-wrapper cf">
+            <input type="text" placeholder="Search here..." required>
+            <button type="submit">Search</button>
+          </form>
+        </p>
+      </div>
+    </section>
+    <footer>
+      <p>Please file S3Model Tools bug reports
+        <a href="https://github.com/DataInsightsInc/S3Modeltools/issues" target='_blank'> here </a>. © Copyright 2015-2018
+        <a href="https://datainsights.tech" target='_blank'>Data Insights, Inc.</a> · All Rights Reserved</p>
+    </footer>
+  </div>
+</body>
+
+</html>

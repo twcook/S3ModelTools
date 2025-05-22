@@ -1,0 +1,10 @@
+====================
+Blockchain & S3Model
+====================
+
+While the hype-cycle for *blockchain* is very high and proclaimed as the solution for everything. It is not. Blockchain doesn't address the
+underlying data modeling and semantics issue at all. The blockchain is a higher-level solution to a different problem.
+
+**S3Model and using blockchain are fully compatible.**
+
+*More to come about the S3Model aware Blockchain implementation.*

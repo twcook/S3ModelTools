@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Translator &mdash; S3Model Tools Suite</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Graphical Modeling" href="emf.html" />
+    <link rel="prev" title="Model Generator" href="dmgen.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> S3Model Tools
+          
+
+          
+            
+            <img src="_static/SmallLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s3model.html">What is S3Model Modeling?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dmgen.html">Model Generator</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Translator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#purpose">Purpose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-process">The Process</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="emf.html">Graphical Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blockchain.html">Blockchain &amp; S3Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="training.html">Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tour.html">Tour</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">S3Model Tools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Translator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/translator.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="translator">
+<span id="id1"></span><h1>Translator<a class="headerlink" href="#translator" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>The Translator tool is your entry point into the model-driven, low-code world of information
+management. Effectively, it allows you to create <em>computable</em> metadata for your datasets.
+It generates RDF for the model and the data as well as XML or JSON data if desired. The consistency in structured data reduces
+software source code by up to 80% through the ability to reuse code across all models.</p>
+<p>The open source tool <a class="reference external" href="https://datainsights.tech/S3ModelTranslator">S3Model Translator</a> allows you to transition existing datasets into the linked data, sharable model eco-system. However, it does not allow you to reuse components across data models in the way that the S3Model Tools Translator tool does.</p>
+<p>The <em>Translator</em> is the next step towards the evolution to <strong>S3Model</strong> information management.
+It provides an analysis and the creation of <em>reusable</em> eXtended Datatypes of existing CSV datasets so that you are
+genuinely bringing existing data into the <em>S3Model Universe</em>. This process provides for fine-grained model definitions
+that give enterprises a flexible, modular approach to becoming operationally <em>S3Model</em>. See <a class="reference internal" href="s3model.html#s3model"><span class="std std-ref">What is S3Model Modeling?</span></a></p>
+</div>
+<div class="section" id="the-process">
+<h2>The Process<a class="headerlink" href="#the-process" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The primary process is first to define a Data Model Definition and import a CSV file.</p></li>
+<li><p>Next, select the DMD and select Process CSV from the menu.</p></li>
+<li><p>That step creates an eXtended Datatype for each column in the CSV.</p></li>
+<li><p>You now need to edit each of the eXtended Datatypes so that the information is as complete as possible.</p></li>
+<li><p>Once the eXtended Datatypes are complete, go back to the DMD, select it and then ‘Generate a Data Model’.</p></li>
+<li><p>Now, these eXtended Datatypes are available for you to use as you begin the <em>model-backed</em> approach to your information management.</p></li>
+</ul>
+<p>See our <a class="reference internal" href="training.html#training"><span class="std std-ref">Training</span></a> offerings fo gain a firm foundation in using the tools.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="emf.html" class="btn btn-neutral float-right" title="Graphical Modeling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dmgen.html" class="btn btn-neutral float-left" title="Model Generator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Data Insights, Inc.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

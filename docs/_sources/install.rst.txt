@@ -1,0 +1,10 @@
+
+.. _install:
+
+============
+Installation
+============
+
+S3Model Tools is a cloud based service.
+
+Enterprise installations will be performed by trained Data Insights, Inc. experts.

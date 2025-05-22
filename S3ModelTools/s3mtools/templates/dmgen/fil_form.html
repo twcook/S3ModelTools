@@ -1,0 +1,69 @@
+{% extends "dmgen/dmgen_form_base.html" %}
+{% block content %}
+<h1>File Details</h1>
+
+<form action="" method="post">
+	{% csrf_token %}
+    <p>
+    <h2>System Info</h2>	
+ 	{% block system %}
+	 	 <p>
+	    {% if form.published.value == True %}
+	      <b>{{ form.label.value }}: is Published and cannot be edited.</b>
+	    {% elif form.label.value is None %}
+	      <b>Creating a new File model</b>  
+	    {% endif %}
+	    </p>
+	    {{ form.project.label }}: {{ form.project.help_text }} 
+	    <br/>
+	    {{ form.project }} 
+	    <br/>
+	    {{ form.seq.label }}: {{ form.seq.help_text }}
+	    <br/>
+	    {{ form.seq }}
+	    <br/>
+	    {{ form.ui_type.label }}: {{ form.ui_type.help_text }}
+	    <br/>
+	    {{ form.ui_type }}
+    {% endblock %}
+    </p>
+
+     <h2>Metadata</h2>
+    {% block metadata %}
+        <b>{{ form.label.label }}:</b> {{ form.label.help_text }} <br/>	     
+		{{ form.label }}<br/>
+        <b>{{ form.description.label }}:</b> {{ form.description.help_text }} <br/>	     
+		{{ form.description }}<br/>
+        <b>{{ form.pred_obj.label }}:</b> {{ form.pred_obj.help_text }} <br/>	     
+		{{ form.pred_obj }}<br/>
+    {% endblock %}
+    
+    <h2>Details</h2>
+    {% block details %}
+        <b>{{ form.require_vtb.label }}:</b> {{ form.require_vtb.help_text }} <br/>	     
+		{{ form.require_vtb }}<br/>
+        <b>{{ form.require_vte.label }}:</b> {{ form.require_vte.help_text }} <br/>	     
+		{{ form.require_vte }}<br/>
+        <b>{{ form.require_tr.label }}:</b> {{ form.require_tr.help_text }} <br/>	     
+		{{ form.require_tr }}<br/>
+        <b>{{ form.require_mod.label }}:</b> {{ form.require_mod.help_text }} <br/>	     
+		{{ form.require_mod }}<br/>
+        <b>{{ form.require_location.label }}:</b> {{ form.require_location.help_text }} <br/>	     
+		{{ form.require_location }}<br/>
+        <b>{{ form.require_act.label }}:</b> {{ form.require_act.help_text }} <br/>	     
+		{{ form.require_act }}<br/>
+
+        <b>{{ form.media_type.label }}:</b> {{ form.media_type.help_text }} <br/>	     
+		{{ form.media_type }}<br/>
+        <b>{{ form.encoding.label }}:</b> {{ form.encoding.help_text }} <br/>	     
+		{{ form.encoding }}<br/>
+        <b>{{ form.language.label }}:</b> {{ form.language.help_text }} <br/>	     
+		{{ form.language }}<br/>
+        <b>{{ form.content_mode.label }}:</b> {{ form.content_mode.help_text }} <br/>	     
+		{{ form.content_mode }}<br/>
+    {% endblock %}
+
+    <input type="submit" value="Save" />
+</form>
+
+{% endblock %}

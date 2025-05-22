@@ -1,0 +1,124 @@
+{% extends "dmgen/dmgen_form_base.html" %} {% block content %}
+<div class="dmgen-form-info">
+	<h3>Boolean Model Details</h3>
+	{% if form.published.value == True %}
+	<b>{{ form.label.value }}: is Published and cannot be edited.</b>
+	{% elif form.label.value is None %}
+	<b>Creating a new Boolean model</b>
+	{% else %}
+	<span>
+		<b>Editing: </b>{{ form.label.value }}
+	</span> {% endif %}
+</div>
+<div class="dmgen-header">
+	<ul>
+		<li>
+			<a href="{% url 'home' %}">Home</a>
+		</li>
+		<li>
+			<a href="{% url 'tools' %}">Tools</a>
+		</li>
+		<li>
+			<a href="{% url 'bool_list' %}">List of Boolean Models</a>
+		</li>
+	</ul>
+</div>
+
+<form action="" method="post">
+	{% csrf_token %}
+
+	<h3>System Info</h3>
+	{% block system %}
+	<div class="dmgen-form-sysinfo">
+
+		<div class="tooltip">
+			{{ form.project.label }}: {{ form.project }}
+			<span class="tooltiptext">{{ form.project.help_text }}</span>
+		</div>
+		<div class="tooltip">
+			{{ form.seq.label }}: {{ form.seq }}
+			<span class="tooltiptext">{{ form.seq.help_text }}</span>
+		</div>
+		<div class="tooltip">
+			{{ form.ui_type.label }}: {{ form.ui_type }}
+			<span class="tooltiptext">{{ form.ui_type.help_text }}</span>
+		</div>
+	</div>
+	{% endblock %}
+	<hr/>
+	<h3>Metadata</h3>
+	{% block metadata %}
+	<div class="dmgen-form-metadata">
+		<span class="tooltip">
+			<b>{{ form.label.label }}:</b> {{ form.label }}
+			<span class="tooltiptext">{{ form.label.help_text }}</span>
+		</span>
+
+		<b>Requirements Flags:</b>
+		<div class="reqflags">
+			<span class="tooltip">
+				<b>{{ form.require_vtb.label }}:</b> {{ form.require_vtb }}
+				<span class="tooltiptext">{{ form.require_vtb.help_text }}</span>
+			</span>
+			<span class="tooltip">
+				<b>{{ form.require_vte.label }}:</b> {{ form.require_vte }}
+				<span class="tooltiptext">{{ form.require_vte.help_text }}</span>
+			</span>
+			<span class="tooltip">
+				<b>{{ form.require_tr.label }}:</b> {{ form.require_tr }}
+				<span class="tooltiptext">{{ form.require_tr.help_text }}</span>
+			</span>
+			<span class="tooltip">
+				<b>{{ form.require_mod.label }}:</b> {{ form.require_mod }}
+				<span class="tooltiptext">{{ form.require_mod.help_text }}</span>
+			</span>
+			<span class="tooltip">
+				<b>{{ form.require_location.label }}:</b> {{ form.require_location }}
+				<span class="tooltiptext">{{ form.require_location.help_text }}</span>
+			</span>
+			<span class="tooltip">
+				<b>{{ form.require_act.label }}:</b> {{ form.require_act }}
+				<span class="tooltiptext">{{ form.require_act.help_text }}</span>
+			</span>
+		</div>
+
+		<br/>
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.description.label }}:</b>
+			</span>
+			{{ form.description }}
+			<span class="tooltiptext">{{ form.description.help_text }}</span>
+		</div>
+		<br/>
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.pred_obj.label }}:</b>
+			</span>
+			{{ form.pred_obj }}
+			<span class="tooltiptext">{{ form.pred_obj.help_text }}</span>
+		</div>
+	</div>
+	{% endblock %}
+	<hr/>
+	<h3>Component Details</h3>
+	{% block details %}
+	<div class="tooltip">
+		<span style="display: block">
+			<b>{{ form.trues.label }}:</b>
+		</span>
+		{{ form.trues }}
+		<span class="tooltiptext">{{ form.trues.help_text }}</span>
+	</div>
+	<div class="tooltip">
+		<span style="display: block">
+			<b>{{ form.falses.label }}:</b>
+		</span> {{ form.falses }}
+		<span class="tooltiptext">{{ form.falses.help_text }}</span>
+	</div>
+	{% endblock %}
+	<br/>
+	<input type="submit" value="Save" />
+</form>
+
+{% endblock %}

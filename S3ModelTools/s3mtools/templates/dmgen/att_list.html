@@ -1,0 +1,62 @@
+{% extends "dmgen/dmgen_base.html" %}
+
+{% block content %}
+<h2> {{ attestations|length }} Attestation Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'att_create' %}">Create New Attestation Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for att in attestations %}
+            <tr>
+            	<td>{{ att.project }}</td>
+            	<td>
+                    <a href="{% url 'att_form' pk=att.id %}">{{ att.label }}</a>
+                </td> 
+            	<td class="list-delete-btn">
+                    <a href="{% url 'att_delete' pk=att.id %}">Delete</a>
+                </td>
+                {% if not att.published %}
+                  <td>
+                      <a href="{% url 'att_publish' pk=att.id %}">Publish</a> 
+                    </td>  
+                {% else %}
+                  <td >
+                      <b>
+                          <i>Published</i>
+                      </b>
+                  </td>
+                {% endif %}
+                <td>
+                    <a href="{% url 'att_copy' pk=att.id %}">Copy</a> 
+                </td> 
+                <td>{{ att.updated }}</td>
+                <td>{{ att.edited_by }}</td>
+                <td>{{ att.created }}</td>
+                <td>{{ att.creator }}</td>
+                <td>{{ att.ct_id }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

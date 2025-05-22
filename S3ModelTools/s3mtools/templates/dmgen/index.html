@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load staticfiles i18n %}
+  {% load account %}
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta http-equiv="expires" content="Thu, 01 Jan 2015 11:12:01 GMT"/>
+    <meta name="google-site-verification" content="4e7WasArmoFJJP4-_acUT9txcKasTzw0cMwUT-j0gOM" />
+    <meta name="author" content="Tim" />
+    <meta name="keywords" content="Semantic Web, Healthcare, HIT, S3Model, PHR, EMR, EHR, DM, S3Model, model driven"/>
+    <meta http-equiv="Cache-control" content="public", max-age="2592000" expires=/>
+    <title>S3Model Tools Suite</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'dmgen/css/main.css' %}" />
+    <link rel="shortcut icon" href="{% static 'dmgen/favicon.ico' %}" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Navigation -->
+      <nav class="main-nav">
+        <ul>
+          <li>
+            {% if user.is_authenticated %}
+              <a href="{% url 'mod_form'  pk=modeler.id %}">My Profile</a>
+            {% else %}
+              <a href="#">Home</a>
+            {% endif %}
+          </li>
+          <li>
+            {% if user.is_authenticated %}
+              {% if user.is_staff %}
+                <a href="/admin">Admin Tools</a>
+              {% endif %}
+            {% else %}
+              <a href="#">About</a>
+            {% endif %}
+            </li>
+          <li>
+            {% if user.is_authenticated %}
+              <a href="{% url 'tools' %}">Tools</a>
+            {% else %}
+              <a href="#">Services</a>
+            {% endif %}
+            </li>
+          <li>
+            {% if user.is_authenticated %}
+              <a href="{% url 'account_logout' %}">Logout</a>
+            {% else %}
+              <a href="{% url 'account_login' %}">Member Login</a>
+            {% endif %}
+
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Top Container -->
+      <section class="top-container">
+        <header class="showcase">
+          <h1>S3Model Tools</h1>
+          <p>Cleanup your messy data, add meaning &amp; improve data quality.</p>
+          <a href="https://datainsights.tech/S3Modeltools" class="btn">Read the docs</a>
+        </header>
+        <div class="top-box top-box-a">
+          <h4>Membership</h4>
+          <p class="price">Free!</p>
+          <a href="{% url 'account_signup' %}" class="btn">Signup Now</a>
+        </div>
+        <div class="top-box top-box-b">
+          <h4>Pro Membership</h4>
+          <p class="price">Contact Us</p>
+          <a href="" class="btn">Learn More</a>
+        </div>
+      </section>
+
+      <!-- Boxes Section -->
+      <section class="boxes">
+        <div class="box">
+          <i class="fas fa-chart-pie fa-4x"></i>
+          <h3>Analytics</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, expedita?</p>
+        </div>
+        <div class="box">
+          <i class="fas fa-globe fa-4x"></i>
+          <h3>Marketing</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, expedita?</p>
+        </div>
+        <div class="box">
+          <i class="fas fa-cog fa-4x"></i>
+          <h3>Development</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, expedita?</p>
+        </div>
+        <div class="box">
+          <i class="fas fa-users fa-4x"></i>
+          <h3>Support</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, expedita?</p>
+        </div>
+      </section>
+
+
+      <!-- Footer -->
+      <footer>
+        <p>Data Insights, Inc. &copy; 2019</p>
+      </footer>
+
+    </div>
+    <!-- Wrapper Ends -->
+  </body>
+</html>

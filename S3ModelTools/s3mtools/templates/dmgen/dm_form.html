@@ -1,0 +1,257 @@
+{% extends "dmgen/dmgen_form_base.html" %}
+{% block content %}
+<div class="dmgen-form-info">
+		<h3>DataModel Model Details</h3>
+		{% if form.published.value == True %}
+		<b>{{ form.title.value }}: is Published and cannot be edited.</b>
+		{% elif form.title.value is None %}
+		<b>Creating a new DataModel model</b>
+		{% else %}
+		<span>
+			<b>Editing: </b>{{ form.title.value }}
+		</span>
+		{% endif %}
+	</div>
+	<div class="dmgen-header">
+		<ul>
+			<li>
+				<a href="{% url 'home' %}">Home</a>
+			</li>
+			<li>
+				<a href="{% url 'tools' %}">Tools</a>
+			</li>
+			<li>
+				<a href="{% url 'dm_list' %}">List of DataModel Models</a>
+			</li>
+		</ul>
+	</div>
+
+
+<form action="" method="post">
+		{% csrf_token %}
+	<h3>System Info</h3>
+	{% block system %}
+	<div class="dmgen-form-sysinfo">
+		<div class="tooltip">
+			{{ form.project.label }}: {{ form.project }}
+			<span class="tooltiptext">{{ form.project.help_text }}</span>
+		</div>
+	</div>
+    {% endblock %}
+	<hr/>
+
+
+ 	<h3>Metadata</h3>
+	{% block metadata %}
+	<div class="dmgen-form-metadata">
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.title.label }}:</b>
+			</span>
+			{{ form.title }}
+			<span class="tooltiptext">{{ form.title.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.description.label }}:</b>
+			</span>
+			{{ form.description }}
+			<span class="tooltiptext">{{ form.description.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.pred_obj.label }}:</b>
+			</span>
+			{{ form.pred_obj }}
+			<span class="tooltiptext">{{ form.pred_obj.help_text }}</span>
+		</div>
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.about.label }}:</b>
+			</span>
+			{{ form.about }}
+			<span class="tooltiptext">{{ form.about.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.author.label }}:</b>
+			</span>
+			{{ form.author }}
+			<span class="tooltiptext">{{ form.author.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.contrib.label }}:</b>
+			</span>
+			{{ form.contrib }}
+			<span class="tooltiptext">{{ form.contrib.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.dc_subject.label }}:</b>
+			</span>
+			{{ form.dc_subject }}
+			<span class="tooltiptext">{{ form.dc_subject.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.source.label }}:</b>
+			</span>
+			{{ form.source }}
+			<span class="tooltiptext">{{ form.source.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.rights.label }}:</b>
+			</span>
+			{{ form.rights }}
+			<span class="tooltiptext">{{ form.rights.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.relation.label }}:</b>
+			</span>
+			{{ form.relation }}
+			<span class="tooltiptext">{{ form.relation.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.coverage.label }}:</b>
+			</span>
+			{{ form.coverage }}
+			<span class="tooltiptext">{{ form.coverage.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.publisher.label }}:</b>
+			</span>
+			{{ form.publisher }}
+			<span class="tooltiptext">{{ form.publisher.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.dc_language.label }}:</b>
+			</span>
+			{{ form.dc_language }}
+			<span class="tooltiptext">{{ form.dc_language.help_text }}</span>
+		</div>
+
+	</div>
+	{% endblock %}
+
+	<hr/>
+	<h3>Component Details</h3>
+	{% block details %}
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.encoding.label }}:</b>
+			</span>
+			{{ form.encoding }}
+			<span class="tooltiptext">{{ form.encoding.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.state.label }}:</b>
+			</span>
+			{{ form.state }}
+			<span class="tooltiptext">{{ form.state.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.links.label }}:</b>
+			</span>
+			{{ form.links }}
+			<span class="tooltiptext">{{ form.links.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.acs.label }}:</b>
+			</span>
+			{{ form.acs }}
+			<span class="tooltiptext">{{ form.acs.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.attestation.label }}:</b>
+			</span>
+			{{ form.attestation }}
+			<span class="tooltiptext">{{ form.attestation.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.audit.label }}:</b>
+			</span>
+			{{ form.audit }}
+			<span class="tooltiptext">{{ form.audit.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.workflow.label }}:</b>
+			</span>
+			{{ form.workflow }}
+			<span class="tooltiptext">{{ form.workflow.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.protocol.label }}:</b>
+			</span>
+			{{ form.protocol }}
+			<span class="tooltiptext">{{ form.protocol.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.participations.label }}:</b>
+			</span>
+			{{ form.participations }}
+			<span class="tooltiptext">{{ form.participations.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.provider.label }}:</b>
+			</span>
+			{{ form.provider }}
+			<span class="tooltiptext">{{ form.provider.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.subject.label }}:</b>
+			</span>
+			{{ form.subject }}
+			<span class="tooltiptext">{{ form.subject.help_text }}</span>
+		</div>
+
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.data.label }}:</b>
+			</span>
+			{{ form.data }}
+			<span class="tooltiptext">{{ form.data.help_text }}</span>
+		</div>
+    {% endblock %}
+	<br/>
+
+	<input type="submit" value="Save" />
+</form>
+
+{% endblock %}

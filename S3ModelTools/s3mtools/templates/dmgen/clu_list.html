@@ -1,0 +1,62 @@
+{% extends "dmgen/dmgen_base.html" %}
+
+{% block content %}
+<h2> {{ clusters|length }} Cluster Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'clu_create' %}">Create New Cluster Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for clu in clusters %}
+        <tr>
+            <td>{{ clu.project }}</td>
+            <td>
+                <a href="{% url 'clu_form' pk=clu.id %}">{{ clu.label }}</a>
+            </td> 
+            <td class="list-delete-btn">
+                <a href="{% url 'clu_delete' pk=clu.id %}">Delete</a>
+            </td>
+            {% if not clu.published %}
+                <td>
+                    <a href="{% url 'clu_publish' pk=clu.id %}">Publish</a> 
+                </td>  
+            {% else %}
+                <td >
+                    <b>
+                        <i>Published</i>
+                    </b>
+                </td>
+            {% endif %}
+            <td>
+                <a href="{% url 'clu_copy' pk=clu.id %}">Copy</a> 
+            </td> 
+            <td>{{ clu.updated }}</td>
+            <td>{{ clu.edited_by }}</td>
+            <td>{{ clu.created }}</td>
+            <td>{{ clu.creator }}</td>
+            <td>{{ clu.ct_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "dmgen/dmgen_base.html" %}
+
+{% block content %}
+<h2> {{ ordinals|length }} Ordinal Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'ord_create' %}">Create New Ordinal Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        
+        {% for ord in ordinals %}
+        <tr>
+            <td>{{ ord.project }}</td>
+            <td>
+                <a href="{% url 'ord_form' pk=ord.id %}">{{ ord.label }}</a>
+            </td> 
+            <td class="list-delete-btn">
+                <a href="{% url 'ord_delete' pk=ord.id %}">Delete</a>
+            </td>
+            {% if not ord.published %}
+                <td>
+                    <a href="{% url 'ord_publish' pk=ord.id %}">Publish</a> 
+                </td>  
+            {% else %}
+                <td >
+                    <b>
+                        <i>Published</i>
+                    </b>
+                </td>
+            {% endif %}
+            <td>
+                <a href="{% url 'ord_copy' pk=ord.id %}">Copy</a> 
+            </td> 
+            <td>{{ ord.updated }}</td>
+            <td>{{ ord.edited_by }}</td>
+            <td>{{ ord.created }}</td>
+            <td>{{ ord.creator }}</td>
+            <td>{{ ord.ct_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

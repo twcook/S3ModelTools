@@ -1,0 +1,340 @@
+{
+  "https://www.s3model.com/ns/s3m/:dm-cjff70c8904bblzl3ujhclwu0": {
+    "@http://www.w3.org/2001/XMLSchema-instance:schemaLocation": "https://www.s3model.com/ns/s3m/  https://dmgen.s3model.com/dmlib/dm-cjff70c8904bblzl3ujhclwu0.xsd",
+    "@xmlns": {
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "xs": "http://www.w3.org/2001/XMLSchema",
+      "dc": "http://purl.org/dc/elements/1.1/",
+      "sawsdlrdf": "http://www.w3.org/ns/sawsdl#",
+      "sch": "http://purl.oclc.org/dsdl/schematron",
+      "vc": "http://www.w3.org/2007/XMLSchema-versioning",
+      "xsi": "http://www.w3.org/2001/XMLSchema-instance",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "s3m": "https://www.s3model.com/ns/s3m/",
+      "sh": "http://www.w3.org/ns/shacl"
+    },
+    "label": "Demo Data Model",
+    "dm-language": "en-US",
+    "dm-encoding": "utf-8",
+    "current-state": null,
+    "https://www.s3model.com/ns/s3m/:ms-cji1yqp7q003wlkl39ge4nc11": {
+      "label": "Demo - Cluster",
+      "https://www.s3model.com/ns/s3m/:ms-cjifyxzl00004s5l3yakli9a9": {
+        "https://www.s3model.com/ns/s3m/:ms-cjifyxzkz0003s5l3wsz79e1t": {
+          "label": "Boolean Test",
+          "vtb": "2006-02-03T00:38:37",
+          "vte": "2015-06-30T05:11:33",
+          "tr": "1996-01-04T22:31:17Z",
+          "modified": "1996-01-04T22:31:17Z",
+          "true-value": "True"
+        }
+      },
+      "https://www.s3model.com/ns/s3m/:ms-cji1yqntc0028lkl3z4r4lber": {
+        "https://www.s3model.com/ns/s3m/:ms-cji1yqntc0027lkl3i7govfgy": {
+          "label": "Test Link in a Cluster",
+          "latitude": "-39.0",
+          "longitude": "107.0",
+          "link": "https://Infotropictools.com",
+          "relation": "part of",
+          "relation-uri": "http://purl.obolibrary.org/obo/BFO_0000050"
+        }
+      },
+      "https://www.s3model.com/ns/s3m/:ms-cjifyy0mb001cs5l3gnn3iz16": {
+        "https://www.s3model.com/ns/s3m/:ms-cjifyy0m9001bs5l33ekvwsem": {
+          "label": "Test - Enumerated String",
+          "xdstring-value": "Two",
+          "xdstring-language": "en-US"
+        }
+      },
+      "https://www.s3model.com/ns/s3m/:ms-cjifyy0os001es5l32xsu8x85": {
+        "https://www.s3model.com/ns/s3m/:ms-cjifyy0or001ds5l3nxas23ma": {
+          "label": "Test - Simple String",
+          "xdstring-value": "DefaultString",
+          "xdstring-language": "en-US"
+        }
+      },
+      "https://www.s3model.com/ns/s3m/:ms-cjifyy0q0001gs5l3sc8wqpzd": {
+        "https://www.s3model.com/ns/s3m/:ms-cjifyy0pz001fs5l3uk2fg75k": {
+          "label": "Test - String w/Exact Length",
+          "xdstring-value": "DefaultString",
+          "xdstring-language": "en-US"
+        }
+      },
+      "https://www.s3model.com/ns/s3m/:ms-cjifyy0r9001is5l3zwytdypk": {
+        "https://www.s3model.com/ns/s3m/:ms-cjifyy0r8001hs5l3zbstr8ct": {
+          "label": "Test - String w/Min/Max Length",
+          "xdstring-value": "DefaultString",
+          "xdstring-language": "en-US"
+        }
+      },
+      "https://www.s3model.com/ns/s3m/:ms-cjifyy1da002ms5l331oh4sgn": {
+        "https://www.s3model.com/ns/s3m/:ms-cjifyy1d9002ls5l3fut3m4j3": {
+          "label": "Test Ordinal #1",
+          "https://www.s3model.com/ns/s3m/:ms-cjifyy1au002js5l3jqkl2th0": {
+            "label": "Test Datas #1",
+            "vtb": "1975-08-14T03:50:23",
+            "vte": "1982-02-13T21:07:41",
+            "definition": "Test Dates",
+            "interval": {
+              "label": "Interval of Dates #1",
+              "lower": {
+                "invl-date": {
+                  "@http://www.w3.org/2001/XMLSchema-instance:nil": "true"
+                }
+              },
+              "upper": {
+                "invl-date": {
+                  "@http://www.w3.org/2001/XMLSchema-instance:nil": "true"
+                }
+              },
+              "lower-included": "false",
+              "upper-included": "false",
+              "lower-bounded": "false",
+              "upper-bounded": "false"
+            },
+            "is-normal": "false"
+          },
+          "ordinal": "0",
+          "symbol": "Severe"
+        }
+      },
+      "https://www.s3model.com/ns/s3m/:ms-cjifyy1i5002ss5l3czua0qo6": {
+        "https://www.s3model.com/ns/s3m/:ms-cjifyy1i4002rs5l3ro2fn3op": {
+          "label": "Test Count",
+          "magnitude-status": "equal",
+          "error": "0",
+          "accuracy": "0",
+          "xdcount-value": "105873",
+          "xdcount-units": {
+            "label": "Test Units Item",
+            "xdstring-value": "No Value"
+          }
+        }
+      },
+      "https://www.s3model.com/ns/s3m/:ms-cjifyy1js002us5l3pcp52bs0": {
+        "https://www.s3model.com/ns/s3m/:ms-cjifyy1jr002ts5l3djpy8cbb": {
+          "label": "Length quantity #1",
+          "magnitude-status": "equal",
+          "error": "0",
+          "accuracy": "0",
+          "xdquantity-value": "8392.461342546765",
+          "xdquantity-units": {
+            "label": "Test Units for Lengths #1",
+            "xdstring-value": "mm"
+          }
+        }
+      },
+      "https://www.s3model.com/ns/s3m/:ms-cjifyy1lz002ws5l3qnu5d2sk": {
+        "https://www.s3model.com/ns/s3m/:ms-cjifyy1ly002vs5l3l0pnznc7": {
+          "label": "Test proportion #1",
+          "magnitude-status": "equal",
+          "error": "0",
+          "accuracy": "0",
+          "ratio-type": "proportion",
+          "numerator": "999661.013243529014289379119873046875",
+          "denominator": "-797226.73777052364312112331390380859375",
+          "xdratio-value": "-1.25392309"
+        }
+      },
+      "https://www.s3model.com/ns/s3m/:ms-cjifyy1nf002ys5l3tyehnzgn": {
+        "https://www.s3model.com/ns/s3m/:ms-cjifyy1ne002xs5l31yyt1w4a": {
+          "label": "Test rate #1",
+          "magnitude-status": "equal",
+          "error": "0",
+          "accuracy": "0",
+          "ratio-type": "rate",
+          "numerator": "-451353.988534018048085272312164306640625",
+          "denominator": "-154323.771678065997548401355743408203125",
+          "xdratio-value": "2.92472108"
+        }
+      },
+      "https://www.s3model.com/ns/s3m/:ms-cjifyy1oy0030s5l3pbj6hbvc": {
+        "https://www.s3model.com/ns/s3m/:ms-cjifyy1ox002zs5l3n313fccq": {
+          "label": "Test ratio #1",
+          "magnitude-status": "equal",
+          "error": "0",
+          "accuracy": "0",
+          "ratio-type": "ratio",
+          "numerator": "-381499.55598377925343811511993408203125",
+          "denominator": "-369235.4613668285310268402099609375",
+          "xdratio-value": "1.03321483"
+        }
+      },
+      "https://www.s3model.com/ns/s3m/:ms-cjifyy1u10038s5l3vo1hdzy6": {
+        "https://www.s3model.com/ns/s3m/:ms-cjifyy1u00037s5l3z3fmmuer": {
+          "label": "Test Date Only",
+          "xdtemporal-date": "1994-11-24"
+        }
+      }
+    },
+    "subject": {
+      "label": "Demo - DM Subject",
+      "party-name": "A. Sample Name"
+    },
+    "provider": {
+      "label": "Demo - DM Provider",
+      "party-name": "A. Sample Name",
+      "party-details": {
+        "label": "Party Details Cluster",
+        "https://www.s3model.com/ns/s3m/:ms-cji1yqntc0028lkl3z4r4lber": {
+          "https://www.s3model.com/ns/s3m/:ms-cji1yqntc0027lkl3i7govfgy": {
+            "label": "Test Link in a Cluster",
+            "latitude": "84.0",
+            "longitude": "51.0",
+            "link": "https://Infotropictools.com",
+            "relation": "part of",
+            "relation-uri": "http://purl.obolibrary.org/obo/BFO_0000050"
+          }
+        },
+        "https://www.s3model.com/ns/s3m/:ms-cjifyy0os001es5l32xsu8x85": {
+          "https://www.s3model.com/ns/s3m/:ms-cjifyy0or001ds5l3nxas23ma": {
+            "label": "Test - Simple String",
+            "xdstring-value": "DefaultString",
+            "xdstring-language": "en-US"
+          }
+        }
+      }
+    },
+    "https://www.s3model.com/ns/s3m/:ms-cji1yqqod004clkl3tkc165sw": {
+      "label": "Test Participation",
+      "performer": {
+        "label": "Test Party 01",
+        "party-name": "A. Sample Name",
+        "party-ref": {
+          "label": "A Test Link",
+          "link": "https://Infotropictools.com",
+          "relation": "occurs   in",
+          "relation-uri": "http://purl.obolibrary.org/obo/BFO_0000066"
+        }
+      },
+      "function": {
+        "label": "Participation Function String",
+        "vtb": "2011-03-13T04:42:36",
+        "vte": "2015-10-20T23:47:41",
+        "tr": "2009-06-14T17:27:49Z",
+        "modified": "2009-06-14T17:27:49Z",
+        "latitude": "-38.0",
+        "longitude": "118.0",
+        "xdstring-value": "Enter the participation function.",
+        "xdstring-language": "en-US"
+      },
+      "mode": {
+        "label": "Participation Mode String",
+        "vtb": "1974-08-05T22:04:33",
+        "vte": "2005-04-29T05:37:06",
+        "tr": "2012-10-27T02:49:33Z",
+        "modified": "2012-10-27T02:49:33Z",
+        "latitude": "-70.0",
+        "longitude": "-50.0",
+        "xdstring-value": "Enter the participation mode.",
+        "xdstring-language": "en-US"
+      },
+      "start": "1997-04-25T08:19:47Z",
+      "end": "2015-12-25T07:16:49Z"
+    },
+    "protocol": {
+      "label": "DM protocol ID string",
+      "latitude": "50.0",
+      "longitude": "-116.0",
+      "xdstring-value": "DefaultString",
+      "xdstring-language": "en-US"
+    },
+    "workflow": {
+      "label": "DM Workflow link",
+      "link": "https://Infotropictools.com",
+      "relation": "occurs   in",
+      "relation-uri": "http://purl.obolibrary.org/obo/BFO_0000066"
+    },
+    "https://www.s3model.com/ns/s3m/:ms-cji1yqqsd004elkl3kmdwzvaz": {
+      "label": "Test Audit",
+      "system-id": {
+        "label": "Audit System ID Test",
+        "latitude": "-28.0",
+        "longitude": "-123.0",
+        "xdstring-value": "DefaultString",
+        "xdstring-language": "en-US"
+      },
+      "system-user": {
+        "label": "Test Party 01",
+        "party-name": "A. Sample Name",
+        "party-ref": {
+          "label": "A Test Link",
+          "link": "https://Infotropictools.com",
+          "relation": "occurs   in",
+          "relation-uri": "http://purl.obolibrary.org/obo/BFO_0000066"
+        }
+      },
+      "location": {
+        "label": "Audit Location Cluster",
+        "https://www.s3model.com/ns/s3m/:ms-cjifyy0mb001cs5l3gnn3iz16": {
+          "https://www.s3model.com/ns/s3m/:ms-cjifyy0m9001bs5l33ekvwsem": {
+            "label": "Test - Enumerated String",
+            "xdstring-value": "One",
+            "xdstring-language": "en-US"
+          }
+        }
+      },
+      "timestamp": "1987-04-04T14:59:49Z"
+    },
+    "attestation": {
+      "label": "Test Attestation",
+      "view": {
+        "label": "Attested View File",
+        "vtb": "1981-01-22T01:24:39",
+        "vte": "2007-09-17T00:04:31",
+        "tr": "1983-09-17T03:08:34Z",
+        "modified": "1983-09-17T03:08:34Z",
+        "size": "64536",
+        "encoding": "utf-8",
+        "xdfile-language": "en-US",
+        "media-type": "png",
+        "compression-type": "gz",
+        "hash-result": "dshfsoud6y3rwpef838rhf983trgf9e93w8rytgf",
+        "hash-function": "MD5",
+        "alt-txt": "Fake entry data.",
+        "uri": "http://www.mlhim.org/fake_media.png"
+      },
+      "proof": {
+        "label": "Attested Proof File",
+        "vtb": "2014-02-17T11:18:02",
+        "vte": "2014-11-19T00:12:47",
+        "tr": "1991-04-01T21:57:50Z",
+        "modified": "1991-04-01T21:57:50Z",
+        "size": "64536",
+        "encoding": "utf-8",
+        "xdfile-language": "en-US",
+        "media-type": "png",
+        "compression-type": "gz",
+        "hash-result": "dshfsoud6y3rwpef838rhf983trgf9e93w8rytgf",
+        "hash-function": "MD5",
+        "alt-txt": "Fake entry data.",
+        "uri": "http://www.mlhim.org/fake_media.png"
+      },
+      "reason": {
+        "label": "Attestation Reason String",
+        "xdstring-value": "DefaultString",
+        "xdstring-language": "en-US"
+      },
+      "committer": {
+        "label": "Test Party 01",
+        "party-name": "A. Sample Name",
+        "party-ref": {
+          "label": "A Test Link",
+          "link": "https://Infotropictools.com",
+          "relation": "occurs   in",
+          "relation-uri": "http://purl.obolibrary.org/obo/BFO_0000066"
+        }
+      },
+      "committed": "1977-11-04T02:19:08Z",
+      "pending": "true"
+    },
+    "https://www.s3model.com/ns/s3m/:ms-cji1yqnn60021lkl3wvadadzf": {
+      "label": "DM External Link",
+      "link": "https://Infotropictools.com",
+      "relation": "occurs   in",
+      "relation-uri": "http://purl.obolibrary.org/obo/BFO_0000066"
+    }
+  }
+}

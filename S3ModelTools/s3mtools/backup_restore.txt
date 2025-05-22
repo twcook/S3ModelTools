@@ -1,0 +1,9 @@
+See s3mtools.cfg for uswer name and password
+
+Backup:
+pg_dump dmgen -U dctuser -h localhost -f ~/DII/S3MToolsDB_backup/dmgen_db.sql
+
+Restore: psql -U <username> -h localhost -d <dbname> -1 -f <filename>.sql
+
+Example:
+ psql -U dctuser -h localhost -d dmgen -f ~/DII/S3MToolsDB_backup/dmgen_db.sql

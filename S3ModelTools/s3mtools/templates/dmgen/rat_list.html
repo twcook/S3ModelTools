@@ -1,0 +1,62 @@
+{% extends "dmgen/dmgen_base.html" %}
+
+{% block content %}
+<h2> {{ ratios|length }} Ratio Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'rat_create' %}">Create New Ratio Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for rat in ratios %}
+            <tr>
+                <td>{{ rat.project }}</td>
+                <td>
+                    <a href="{% url 'rat_form' pk=rat.id %}">{{ rat.label }}</a>
+                </td> 
+                <td class="list-delete-btn">
+                    <a href="{% url 'rat_delete' pk=rat.id %}">Delete</a>
+                </td>
+                {% if not rat.published %}
+                  <td>
+                      <a href="{% url 'rat_publish' pk=rat.id %}">Publish</a> 
+                    </td>  
+                {% else %}
+                  <td >
+                      <b>
+                          <i>Published</i>
+                        </b>
+                    </td>
+                {% endif %}
+                 <td>
+                     <a href="{% url 'rat_copy' pk=rat.id %}">Copy</a> 
+                    </td> 
+                <td>{{ rat.updated }}</td>
+                <td>{{ rat.edited_by }}</td>
+                <td>{{ rat.created }}</td>
+                <td>{{ rat.creator }}</td>
+                <td>{{ rat.ct_id }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

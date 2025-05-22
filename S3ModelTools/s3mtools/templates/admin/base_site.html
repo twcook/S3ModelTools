@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+{% block title %}{{ title }} | {{ site_title|default:_('S3Model Tools 1.1.0-beta') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'home' %}">S3Model Tools Admin 1.1.0-beta</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<link href="{% static 'dmgen/css/main.css' %}" rel="stylesheet">
+{% block content %}
+
+
+<h1>Delete Record Confirmation</h1>
+
+	<p>Are you sure you want to delete the dmd record: <b> {{ object }} </b> ?</p>
+
+	<form action="" method="POST">
+	  {% csrf_token %}
+	  <input type="submit" action="" value="Yes, delete." />
+	  <button onclick="window.history.back();" class="btn btn-default" type="button">Cancel</button>
+	</form>
+
+{% endblock %}

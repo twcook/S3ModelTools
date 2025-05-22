@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Training &mdash; S3Model Tools Suite</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tour" href="tour.html" />
+    <link rel="prev" title="Blockchain &amp; S3Model" href="blockchain.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> S3Model Tools
+          
+
+          
+            
+            <img src="_static/SmallLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s3model.html">What is S3Model Modeling?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dmgen.html">Model Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translator.html">Translator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emf.html">Graphical Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blockchain.html">Blockchain &amp; S3Model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-1">Module 1:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-information-and-knowledge">Data, Information, and Knowledge:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#types-of-data-vs-datatypes">Types of data vs. datatypes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#standards">Standards:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ontologies-controlled-vocabularies">Ontologies &amp; Controlled Vocabularies:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linked-data">Linked Data:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-2">Module 2:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#determining-concept-granularity">Determining Concept Granularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeling-existing-forms">Modeling Existing Forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s3model-tools-1">S3Model Tools (1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s3model-tools-2">S3Model Tools (2)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tour.html">Tour</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">S3Model Tools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Training</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/training.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="training">
+<span id="id1"></span><h1>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h1>
+<p>Understanding how to separate the structure and semantics of data when creating models is essential to moving to a S3Model environment.
+The syllabus for each model is listed below.</p>
+<div class="section" id="module-1">
+<h2>Module 1:<a class="headerlink" href="#module-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-information-and-knowledge">
+<h3>Data, Information, and Knowledge:<a class="headerlink" href="#data-information-and-knowledge" title="Permalink to this headline">¶</a></h3>
+<p>Transforming data into knowledge requires understanding the importance of and how to collect all of the additional meaning of the data. Sometimes this is called metadata. In other instances, it is called context or semantics. In this lesson, we establish processes to collect this information and discuss the importance of making this information computable.</p>
+</div>
+<div class="section" id="types-of-data-vs-datatypes">
+<h3>Types of data vs. datatypes:<a class="headerlink" href="#types-of-data-vs-datatypes" title="Permalink to this headline">¶</a></h3>
+<p>There exists some confusion about the importance of the distinction between the two terms datatypes and types of data. In this lesson, we clarify these terms and then discuss how to analyze any real-world situation where a domain expert might want to create a computable model for some concept.</p>
+</div>
+<div class="section" id="standards">
+<h3>Standards:<a class="headerlink" href="#standards" title="Permalink to this headline">¶</a></h3>
+<p>In this lesson, we discuss how data standards are created and why there are complications with the implementation of many of them.</p>
+</div>
+<div class="section" id="ontologies-controlled-vocabularies">
+<h3>Ontologies &amp; Controlled Vocabularies:<a class="headerlink" href="#ontologies-controlled-vocabularies" title="Permalink to this headline">¶</a></h3>
+<p>Ontologies and controlled vocabularies are almost never complete nor are they universally accurate. However, they do provide a useful tool in our ability to share meaning. In this lesson, we discuss how and when to use these tools as well as discover some of the caveats to their use.</p>
+</div>
+<div class="section" id="linked-data">
+<h3>Linked Data:<a class="headerlink" href="#linked-data" title="Permalink to this headline">¶</a></h3>
+<p>Linked Data is the term used to describe a method of exposing and connecting data from different sources. This approach is useful as part of the Semantic Web as well as inside of an enterprise information system. In this lesson, we discuss the tools and processes required to be successful in building and using linked data systems.</p>
+</div>
+</div>
+<div class="section" id="module-2">
+<h2>Module 2:<a class="headerlink" href="#module-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="determining-concept-granularity">
+<h3>Determining Concept Granularity<a class="headerlink" href="#determining-concept-granularity" title="Permalink to this headline">¶</a></h3>
+<p>When beginning the process of S3Model modeling, the first step is to determine what concepts you are going to model. In this lesson, we use the <a class="reference external" href="https://datainsights.tech/S3ModelTranslator/index.html">S3Model Translator</a> tool to create some basic data models with semantics.</p>
+</div>
+<div class="section" id="modeling-existing-forms">
+<h3>Modeling Existing Forms<a class="headerlink" href="#modeling-existing-forms" title="Permalink to this headline">¶</a></h3>
+<p>Many times the concepts we wish to model are already defined by paper or web forms. In this lesson, we explore creating data models from existing  forms.  This lesson goes in depth in utilizing what was learned about datatypes and converting what we see on the form into the correct datatypes, the constraints and user interface options.</p>
+</div>
+<div class="section" id="s3model-tools-1">
+<h3>S3Model Tools (1)<a class="headerlink" href="#s3model-tools-1" title="Permalink to this headline">¶</a></h3>
+<p>In this lesson, we take the above work and translate it into executable models using the <a class="reference external" href="http://datainsights.tech/S3ModelTools/index.html">S3Model Tools Suite</a>.</p>
+</div>
+<div class="section" id="s3model-tools-2">
+<h3>S3Model Tools (2)<a class="headerlink" href="#s3model-tools-2" title="Permalink to this headline">¶</a></h3>
+<p>In this lesson, we similarly use the <a class="reference external" href="http://datainsights.tech/S3ModelTools/translator.html">Translator</a> to how we used the standalone S3ModelTranslator to create models from existing data. This lesson also demonstrates the power of reusable components in the S3Model Tools Suite.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tour.html" class="btn btn-neutral float-right" title="Tour" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="blockchain.html" class="btn btn-neutral float-left" title="Blockchain &amp; S3Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Data Insights, Inc.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

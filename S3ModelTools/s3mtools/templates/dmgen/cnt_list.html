@@ -1,0 +1,62 @@
+{% extends "dmgen/dmgen_base.html" %}
+{% block content %}
+<h2> {{ counts|length }} Count Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'cnt_create' %}">Create New Count Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for cnt in counts %}
+        <tr>
+            <td>{{ cnt.project }}</td>
+            <td>
+                <a href="{% url 'cnt_form' pk=cnt.id %}">{{ cnt.label }}</a>
+            </td> 
+            <td class="list-delete-btn">
+                <a href="{% url 'cnt_delete' pk=cnt.id %}">Delete</a>
+            </td>
+            {% if not cnt.published %}
+                <td>
+                    <a href="{% url 'cnt_publish' pk=cnt.id %}">Publish</a> 
+                </td>  
+            {% else %}
+                <td >
+                    <b>
+                        <i>Published</i>
+                    </b>
+                </td>
+            {% endif %}
+                <td>
+                    <a href="{% url 'cnt_copy' pk=cnt.id %}">Copy</a> 
+                </td> 
+            <td>{{ cnt.updated }}</td>
+            <td>{{ cnt.edited_by }}</td>
+            <td>{{ cnt.created }}</td>
+            <td>{{ cnt.creator }}</td>
+            <td>{{ cnt.ct_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </p>
+{% endblock %}

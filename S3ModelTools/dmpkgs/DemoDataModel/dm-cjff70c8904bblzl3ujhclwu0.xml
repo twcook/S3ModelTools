@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s3m:dm-cjff70c8904bblzl3ujhclwu0
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:sawsdlrdf="http://www.w3.org/ns/sawsdl#"
+  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:s3m="https://www.s3model.com/ns/s3m/"
+  xmlns:sh="http://www.w3.org/ns/shacl"
+xsi:schemaLocation="https://www.s3model.com/ns/s3m/  https://dmgen.s3model.com/dmlib/dm-cjff70c8904bblzl3ujhclwu0.xsd">
+<label>Demo Data Model</label>
+<dm-language>en-US</dm-language>
+<dm-encoding>utf-8</dm-encoding>
+<current-state></current-state>
+  <s3m:ms-cji1yqp7q003wlkl39ge4nc11>
+    <label>Demo - Cluster</label>
+    <s3m:ms-cjifyxzl00004s5l3yakli9a9>
+      <s3m:ms-cjifyxzkz0003s5l3wsz79e1t>
+        <label>Boolean Test</label>
+        <vtb>2006-02-03T00:38:37</vtb>
+        <vte>2015-06-30T05:11:33</vte>
+        <tr>1996-01-04T22:31:17Z</tr>
+        <modified>1996-01-04T22:31:17Z</modified>
+        <true-value>True</true-value>
+      </s3m:ms-cjifyxzkz0003s5l3wsz79e1t>
+    </s3m:ms-cjifyxzl00004s5l3yakli9a9>
+    <s3m:ms-cji1yqntc0028lkl3z4r4lber>
+      <s3m:ms-cji1yqntc0027lkl3i7govfgy>
+        <label>Test Link in a Cluster</label>
+        <latitude>-39.0</latitude>
+        <longitude>107.0</longitude>
+        <link>https://Infotropictools.com</link>
+        <relation>part of</relation>
+        <relation-uri>http://purl.obolibrary.org/obo/BFO_0000050</relation-uri>
+      </s3m:ms-cji1yqntc0027lkl3i7govfgy>
+    </s3m:ms-cji1yqntc0028lkl3z4r4lber>
+    <s3m:ms-cjifyy0mb001cs5l3gnn3iz16>
+      <s3m:ms-cjifyy0m9001bs5l33ekvwsem>
+        <label>Test - Enumerated String</label>
+        <xdstring-value>Two</xdstring-value>
+        <xdstring-language>en-US</xdstring-language>
+      </s3m:ms-cjifyy0m9001bs5l33ekvwsem>
+    </s3m:ms-cjifyy0mb001cs5l3gnn3iz16>
+    <s3m:ms-cjifyy0os001es5l32xsu8x85>
+      <s3m:ms-cjifyy0or001ds5l3nxas23ma>
+        <label>Test - Simple String</label>
+        <xdstring-value>DefaultString</xdstring-value>
+        <xdstring-language>en-US</xdstring-language>
+      </s3m:ms-cjifyy0or001ds5l3nxas23ma>
+    </s3m:ms-cjifyy0os001es5l32xsu8x85>
+    <s3m:ms-cjifyy0q0001gs5l3sc8wqpzd>
+      <s3m:ms-cjifyy0pz001fs5l3uk2fg75k>
+        <label>Test - String w/Exact Length</label>
+        <xdstring-value>DefaultString</xdstring-value>
+        <xdstring-language>en-US</xdstring-language>
+      </s3m:ms-cjifyy0pz001fs5l3uk2fg75k>
+    </s3m:ms-cjifyy0q0001gs5l3sc8wqpzd>
+    <s3m:ms-cjifyy0r9001is5l3zwytdypk>
+      <s3m:ms-cjifyy0r8001hs5l3zbstr8ct>
+        <label>Test - String w/Min/Max Length</label>
+        <xdstring-value>DefaultString</xdstring-value>
+        <xdstring-language>en-US</xdstring-language>
+      </s3m:ms-cjifyy0r8001hs5l3zbstr8ct>
+    </s3m:ms-cjifyy0r9001is5l3zwytdypk>
+    <s3m:ms-cjifyy1da002ms5l331oh4sgn>
+      <s3m:ms-cjifyy1d9002ls5l3fut3m4j3>
+        <label>Test Ordinal #1</label>
+      <s3m:ms-cjifyy1au002js5l3jqkl2th0> 
+          <label>Test Datas #1</label>
+          <vtb>1975-08-14T03:50:23</vtb>
+          <vte>1982-02-13T21:07:41</vte>
+          <definition>Test Dates</definition>
+          <interval>
+            <label>Interval of Dates #1</label>
+            <lower>
+              <invl-date xsi:nil='true'/>
+            </lower>
+            <upper>
+              <invl-date xsi:nil='true'/>
+            </upper>
+            <lower-included>false</lower-included>
+            <upper-included>false</upper-included>
+            <lower-bounded>false</lower-bounded>
+            <upper-bounded>false</upper-bounded>
+          </interval>
+          <is-normal>false</is-normal>
+        </s3m:ms-cjifyy1au002js5l3jqkl2th0>
+        <ordinal>0</ordinal>
+        <symbol>Severe</symbol>
+      </s3m:ms-cjifyy1d9002ls5l3fut3m4j3>
+    </s3m:ms-cjifyy1da002ms5l331oh4sgn>
+    <s3m:ms-cjifyy1i5002ss5l3czua0qo6>
+      <s3m:ms-cjifyy1i4002rs5l3ro2fn3op>
+        <label>Test Count</label>
+        <magnitude-status>equal</magnitude-status>
+        <error>0</error>
+        <accuracy>0</accuracy>
+        <xdcount-value>105873</xdcount-value>
+        <xdcount-units>
+          <label>Test Units Item</label>
+          <xdstring-value>No Value</xdstring-value>
+        </xdcount-units>
+      </s3m:ms-cjifyy1i4002rs5l3ro2fn3op>
+    </s3m:ms-cjifyy1i5002ss5l3czua0qo6>
+    <s3m:ms-cjifyy1js002us5l3pcp52bs0>
+      <s3m:ms-cjifyy1jr002ts5l3djpy8cbb> 
+        <label>Length quantity #1</label>
+        <magnitude-status>equal</magnitude-status>
+        <error>0</error>
+        <accuracy>0</accuracy>
+          <xdquantity-value>8392.461342546765</xdquantity-value>
+        <xdquantity-units>
+          <label>Test Units for Lengths #1</label>
+          <xdstring-value>mm</xdstring-value>
+        </xdquantity-units>
+      </s3m:ms-cjifyy1jr002ts5l3djpy8cbb>
+    </s3m:ms-cjifyy1js002us5l3pcp52bs0>
+    <s3m:ms-cjifyy1lz002ws5l3qnu5d2sk>
+      <s3m:ms-cjifyy1ly002vs5l3l0pnznc7>
+        <label>Test proportion #1</label>
+        <magnitude-status>equal</magnitude-status>
+        <error>0</error>
+        <accuracy>0</accuracy>
+        <ratio-type>proportion</ratio-type>
+        <numerator>999661.013243529014289379119873046875</numerator>
+        <denominator>-797226.73777052364312112331390380859375</denominator>
+          <xdratio-value>-1.25392309</xdratio-value>
+      </s3m:ms-cjifyy1ly002vs5l3l0pnznc7>
+    </s3m:ms-cjifyy1lz002ws5l3qnu5d2sk>
+    <s3m:ms-cjifyy1nf002ys5l3tyehnzgn>
+      <s3m:ms-cjifyy1ne002xs5l31yyt1w4a>
+        <label>Test rate #1</label>
+        <magnitude-status>equal</magnitude-status>
+        <error>0</error>
+        <accuracy>0</accuracy>
+        <ratio-type>rate</ratio-type>
+        <numerator>-451353.988534018048085272312164306640625</numerator>
+        <denominator>-154323.771678065997548401355743408203125</denominator>
+          <xdratio-value>2.92472108</xdratio-value>
+      </s3m:ms-cjifyy1ne002xs5l31yyt1w4a>
+    </s3m:ms-cjifyy1nf002ys5l3tyehnzgn>
+    <s3m:ms-cjifyy1oy0030s5l3pbj6hbvc>
+      <s3m:ms-cjifyy1ox002zs5l3n313fccq>
+        <label>Test ratio #1</label>
+        <magnitude-status>equal</magnitude-status>
+        <error>0</error>
+        <accuracy>0</accuracy>
+        <ratio-type>ratio</ratio-type>
+        <numerator>-381499.55598377925343811511993408203125</numerator>
+        <denominator>-369235.4613668285310268402099609375</denominator>
+          <xdratio-value>1.03321483</xdratio-value>
+      </s3m:ms-cjifyy1ox002zs5l3n313fccq>
+    </s3m:ms-cjifyy1oy0030s5l3pbj6hbvc>
+    <s3m:ms-cjifyy1u10038s5l3vo1hdzy6>
+      <s3m:ms-cjifyy1u00037s5l3z3fmmuer>
+        <label>Test Date Only</label>
+        <xdtemporal-date>1994-11-24</xdtemporal-date>
+      </s3m:ms-cjifyy1u00037s5l3z3fmmuer>
+    </s3m:ms-cjifyy1u10038s5l3vo1hdzy6>
+  </s3m:ms-cji1yqp7q003wlkl39ge4nc11>
+<subject>
+    <label>Demo - DM Subject</label>
+    <party-name>A. Sample Name</party-name>
+</subject>
+<provider>
+    <label>Demo - DM Provider</label>
+    <party-name>A. Sample Name</party-name>
+  <party-details>
+      <label>Party Details Cluster</label>
+      <s3m:ms-cji1yqntc0028lkl3z4r4lber>
+        <s3m:ms-cji1yqntc0027lkl3i7govfgy>
+          <label>Test Link in a Cluster</label>
+          <latitude>84.0</latitude>
+          <longitude>51.0</longitude>
+          <link>https://Infotropictools.com</link>
+          <relation>part of</relation>
+          <relation-uri>http://purl.obolibrary.org/obo/BFO_0000050</relation-uri>
+        </s3m:ms-cji1yqntc0027lkl3i7govfgy>
+      </s3m:ms-cji1yqntc0028lkl3z4r4lber>
+      <s3m:ms-cjifyy0os001es5l32xsu8x85>
+        <s3m:ms-cjifyy0or001ds5l3nxas23ma>
+          <label>Test - Simple String</label>
+          <xdstring-value>DefaultString</xdstring-value>
+          <xdstring-language>en-US</xdstring-language>
+        </s3m:ms-cjifyy0or001ds5l3nxas23ma>
+      </s3m:ms-cjifyy0os001es5l32xsu8x85>
+  </party-details>
+</provider>
+  <s3m:ms-cji1yqqod004clkl3tkc165sw>
+  <label>Test Participation</label>
+  <performer>
+      <label>Test Party 01</label>
+      <party-name>A. Sample Name</party-name>
+    <party-ref>
+        <label>A Test Link</label>
+        <link>https://Infotropictools.com</link>
+        <relation>occurs   in</relation>
+        <relation-uri>http://purl.obolibrary.org/obo/BFO_0000066</relation-uri>
+    </party-ref>
+  </performer>
+  <function>
+      <label>Participation Function String</label>
+      <vtb>2011-03-13T04:42:36</vtb>
+      <vte>2015-10-20T23:47:41</vte>
+      <tr>2009-06-14T17:27:49Z</tr>
+      <modified>2009-06-14T17:27:49Z</modified>
+      <latitude>-38.0</latitude>
+      <longitude>118.0</longitude>
+      <xdstring-value>Enter the participation function.</xdstring-value>
+      <xdstring-language>en-US</xdstring-language>
+  </function>
+  <mode>
+      <label>Participation Mode String</label>
+      <vtb>1974-08-05T22:04:33</vtb>
+      <vte>2005-04-29T05:37:06</vte>
+      <tr>2012-10-27T02:49:33Z</tr>
+      <modified>2012-10-27T02:49:33Z</modified>
+      <latitude>-70.0</latitude>
+      <longitude>-50.0</longitude>
+      <xdstring-value>Enter the participation mode.</xdstring-value>
+      <xdstring-language>en-US</xdstring-language>
+  </mode>
+    <start>1997-04-25T08:19:47Z</start>
+    <end>2015-12-25T07:16:49Z</end>
+  </s3m:ms-cji1yqqod004clkl3tkc165sw>
+<protocol>
+    <label>DM protocol ID string</label>
+    <latitude>50.0</latitude>
+    <longitude>-116.0</longitude>
+    <xdstring-value>DefaultString</xdstring-value>
+    <xdstring-language>en-US</xdstring-language>
+</protocol>
+<workflow>
+    <label>DM Workflow link</label>
+    <link>https://Infotropictools.com</link>
+    <relation>occurs   in</relation>
+    <relation-uri>http://purl.obolibrary.org/obo/BFO_0000066</relation-uri>
+</workflow>
+  <s3m:ms-cji1yqqsd004elkl3kmdwzvaz>
+  <label>Test Audit</label>
+  <system-id>
+      <label>Audit System ID Test</label>
+      <latitude>-28.0</latitude>
+      <longitude>-123.0</longitude>
+      <xdstring-value>DefaultString</xdstring-value>
+      <xdstring-language>en-US</xdstring-language>
+  </system-id>
+  <system-user>
+      <label>Test Party 01</label>
+      <party-name>A. Sample Name</party-name>
+    <party-ref>
+        <label>A Test Link</label>
+        <link>https://Infotropictools.com</link>
+        <relation>occurs   in</relation>
+        <relation-uri>http://purl.obolibrary.org/obo/BFO_0000066</relation-uri>
+    </party-ref>
+  </system-user>
+  <location>
+      <label>Audit Location Cluster</label>
+      <s3m:ms-cjifyy0mb001cs5l3gnn3iz16>
+        <s3m:ms-cjifyy0m9001bs5l33ekvwsem>
+          <label>Test - Enumerated String</label>
+          <xdstring-value>One</xdstring-value>
+          <xdstring-language>en-US</xdstring-language>
+        </s3m:ms-cjifyy0m9001bs5l33ekvwsem>
+      </s3m:ms-cjifyy0mb001cs5l3gnn3iz16>
+  </location>
+    <timestamp>1987-04-04T14:59:49Z</timestamp>
+  </s3m:ms-cji1yqqsd004elkl3kmdwzvaz>
+<attestation>
+<label>Test Attestation</label>
+  <view>
+      <label>Attested View File</label>
+      <vtb>1981-01-22T01:24:39</vtb>
+      <vte>2007-09-17T00:04:31</vte>
+      <tr>1983-09-17T03:08:34Z</tr>
+      <modified>1983-09-17T03:08:34Z</modified>
+      <size>64536</size>
+      <encoding>utf-8</encoding>
+      <xdfile-language>en-US</xdfile-language>
+      <media-type>png</media-type>
+      <compression-type>gz</compression-type>
+      <hash-result>dshfsoud6y3rwpef838rhf983trgf9e93w8rytgf</hash-result>
+      <hash-function>MD5</hash-function>
+      <alt-txt>Fake entry data.</alt-txt>
+      <uri>http://www.mlhim.org/fake_media.png</uri>
+  </view>
+  <proof>
+      <label>Attested Proof File</label>
+      <vtb>2014-02-17T11:18:02</vtb>
+      <vte>2014-11-19T00:12:47</vte>
+      <tr>1991-04-01T21:57:50Z</tr>
+      <modified>1991-04-01T21:57:50Z</modified>
+      <size>64536</size>
+      <encoding>utf-8</encoding>
+      <xdfile-language>en-US</xdfile-language>
+      <media-type>png</media-type>
+      <compression-type>gz</compression-type>
+      <hash-result>dshfsoud6y3rwpef838rhf983trgf9e93w8rytgf</hash-result>
+      <hash-function>MD5</hash-function>
+      <alt-txt>Fake entry data.</alt-txt>
+      <uri>http://www.mlhim.org/fake_media.png</uri>
+  </proof>
+  <reason>
+      <label>Attestation Reason String</label>
+      <xdstring-value>DefaultString</xdstring-value>
+      <xdstring-language>en-US</xdstring-language>
+  </reason>
+  <committer>
+      <label>Test Party 01</label>
+      <party-name>A. Sample Name</party-name>
+    <party-ref>
+        <label>A Test Link</label>
+        <link>https://Infotropictools.com</link>
+        <relation>occurs   in</relation>
+        <relation-uri>http://purl.obolibrary.org/obo/BFO_0000066</relation-uri>
+    </party-ref>
+  </committer>
+    <committed>1977-11-04T02:19:08Z</committed>
+    <pending>true</pending>
+</attestation>
+  <s3m:ms-cji1yqnn60021lkl3wvadadzf>
+    <label>DM External Link</label>
+    <link>https://Infotropictools.com</link>
+    <relation>occurs   in</relation>
+    <relation-uri>http://purl.obolibrary.org/obo/BFO_0000066</relation-uri>
+  </s3m:ms-cji1yqnn60021lkl3wvadadzf>
+</s3m:dm-cjff70c8904bblzl3ujhclwu0>

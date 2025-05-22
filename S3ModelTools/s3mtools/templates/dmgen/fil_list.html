@@ -1,0 +1,62 @@
+{% extends "dmgen/dmgen_base.html" %}
+
+{% block content %}
+<h2> {{ files|length }} File Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'fil_create' %}">Create New File Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for fil in files %}
+        <tr>
+            <td>{{ fil.project }}</td>
+            <td>
+                <a href="{% url 'fil_form' pk=fil.id %}">{{ fil.label }}</a>
+            </td> 
+            <td class="list-delete-btn">
+                <a href="{% url 'fil_delete' pk=fil.id %}">Delete</a>
+            </td>
+            {% if not fil.published %}
+                <td>
+                    <a href="{% url 'fil_publish' pk=fil.id %}">Publish</a> 
+                </td>  
+            {% else %}
+                <td >
+                    <b>
+                        <i>Published</i>
+                    </b>
+                </td>
+            {% endif %}
+            <td>
+                <a href="{% url 'fil_copy' pk=fil.id %}">Copy</a> 
+            </td> 
+            <td>{{ fil.updated }}</td>
+            <td>{{ fil.edited_by }}</td>
+            <td>{{ fil.created }}</td>
+            <td>{{ fil.creator }}</td>
+            <td>{{ fil.ct_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

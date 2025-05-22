@@ -1,0 +1,48 @@
+{% extends "dmgen/dmgen_form_base.html" %}
+{% block content %}
+<h1>Party Details</h1>
+
+<form action="" method="post">
+	{% csrf_token %}
+    <p>
+    <h2>System Info</h2>	
+ 	{% block system %}
+	 	 <p>
+	    {% if form.published.value == True %}
+	      <b>{{ form.label.value }}: is Published and cannot be edited.</b>
+	    {% elif form.label.value is None %}
+	      <b>Creating a new Party model</b>  
+	    {% endif %}
+	    </p>
+	    {{ form.project.label }}: {{ form.project.help_text }} 
+	    <br/>
+	    {{ form.project }} 
+	    <br/>
+	    {{ form.seq.label }}: {{ form.seq.help_text }}
+	    <br/>
+	    {{ form.seq }}
+    {% endblock %}
+    </p>
+
+     <h2>Metadata</h2>
+    {% block metadata %}
+        <b>{{ form.label.label }}:</b> {{ form.label.help_text }} <br/>	     
+		{{ form.label }}<br/>
+        <b>{{ form.description.label }}:</b> {{ form.description.help_text }} <br/>	     
+		{{ form.description }}<br/>
+        <b>{{ form.pred_obj.label }}:</b> {{ form.pred_obj.help_text }} <br/>	     
+		{{ form.pred_obj }}<br/>
+    {% endblock %}
+    
+    <h2>Details</h2>
+    {% block details %}
+        <b>{{ form.external_ref.label }}:</b> {{ form.external_ref.help_text }} <br/>	     
+		{{ form.external_ref }}<br/>
+        <b>{{ form.details.label }}:</b> {{ form.details.help_text }} <br/>	     
+		{{ form.details }}<br/>
+    {% endblock %}
+
+    <input type="submit" value="Save" />
+</form>
+
+{% endblock %}

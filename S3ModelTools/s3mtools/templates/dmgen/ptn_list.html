@@ -1,0 +1,62 @@
+{% extends "dmgen/dmgen_base.html" %}
+
+{% block content %}
+<h2> {{ participations|length }} Participation Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'ptn_create' %}">Create New Participation Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for ptn in participations %}
+            <tr>
+                <td>{{ ptn.project }}</td>
+                <td>
+                    <a href="{% url 'ptn_form' pk=ptn.id %}">{{ ptn.label }}</a>
+                </td> 
+                <td class="list-delete-btn">
+                    <a href="{% url 'ptn_delete' pk=ptn.id %}">Delete</a>
+                </td>
+                {% if not ptn.published %}
+                  <td>
+                      <a href="{% url 'ptn_publish' pk=ptn.id %}">Publish</a> 
+                    </td>  
+                {% else %}
+                  <td >
+                      <b>
+                          <i>Published</i>
+                        </b>
+                    </td>
+                {% endif %}
+                 <td>
+                     <a href="{% url 'ptn_copy' pk=ptn.id %}">Copy</a> 
+                    </td> 
+                <td>{{ ptn.updated }}</td>
+                <td>{{ ptn.edited_by }}</td>
+                <td>{{ ptn.created }}</td>
+                <td>{{ ptn.creator }}</td>
+                <td>{{ ptn.ct_id }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

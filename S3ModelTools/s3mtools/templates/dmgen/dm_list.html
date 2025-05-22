@@ -1,0 +1,62 @@
+{% extends "dmgen/dmgen_base.html" %}
+
+{% block content %}
+<h2> {{ datamodels|length }} Datamodel Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'dm_create' %}">Create New Datamodel Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for dm in datamodels %}
+        <tr>
+            <td>{{ dm.project }}</td>
+            <td>
+                <a href="{% url 'dm_form' pk=dm.id %}">{{ dm.title }}</a>
+            </td> 
+            <td class="list-delete-btn">
+                <a href="{% url 'dm_delete' pk=dm.id %}">Delete</a>
+            </td>
+            {% if not dm.published %}
+                <td>
+                    <a href="{% url 'dm_generate' pk=dm.id %}">Generate Pkg.</a> 
+                </td>  
+            {% else %}
+                <td >
+                    <b>
+                        <i>Generated</i>
+                    </b>
+                </td>
+            {% endif %}
+            <td>
+                <a href="{% url 'dm_copy' pk=dm.id %}">Copy</a> 
+            </td> 
+            <td>{{ dm.updated }}</td>
+            <td>{{ dm.edited_by }}</td>
+            <td>{{ dm.created }}</td>
+            <td>{{ dm.creator }}</td>
+            <td>{{ dm.ct_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

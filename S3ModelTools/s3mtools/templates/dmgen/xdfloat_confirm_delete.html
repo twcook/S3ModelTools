@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<link href="{% static 'dmgen/css/main.css' %}" rel="stylesheet">
+{% block content %}
+
+
+<h1>Delete Float Confirmation</h1>
+{% if object.published %}
+	<h1>{{ object }}</h1>
+    cannot be deleted because it has been published.
+{% else %}
+	<p>Are you sure you want to delete: <b> {{ object }} </b> ?</p>
+
+	<form action="" method="POST">
+	  {% csrf_token %}
+	  <input type="submit" action="" value="Yes, delete." />
+	  <button onclick="window.history.back();" class="btn btn-default" type="button">Cancel</button>
+	</form>
+{% endif %}
+{% endblock %}

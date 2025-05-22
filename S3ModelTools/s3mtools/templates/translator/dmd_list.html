@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<link href="{% static 'dmgen/css/main.css' %}" rel="stylesheet">
+{% block content %}
+    <h2>Data Model Definitions</h2>
+    <a href="{% url 'dm_create' %}">Create a new data model definition.</a>
+    <table>
+    	<tr><th>Project</th><th>Title</th><th>Action</th></tr>
+        {% for dmd in dmds %}
+            <tr>
+            	<th>{{ dmd.project }}</th>
+            	<th><a href="{% url 'dmd_form' pk=dmd.id %}">{{ dmd.title }}</a></th> 
+            	<th><a href="{% url 'dmd_delete' pk=dmd.id %}">Delete</a></th>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

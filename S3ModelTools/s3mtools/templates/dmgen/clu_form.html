@@ -1,0 +1,146 @@
+{% extends "dmgen/dmgen_form_base.html" %}
+{% block content %}
+	<div class="dmgen-form-info">
+		<h3>Cluster Model Details</h3>
+		{% if form.published.value == True %}
+		<b>{{ form.label.value }}: is Published and cannot be edited.</b>
+		{% elif form.label.value is None %}
+		<b>Creating a new Cluster model</b>
+		{% else %}
+		<span>
+			<b>Editing: </b>{{ form.label.value }}
+		</span> {% endif %}
+	</div>
+	<div class="dmgen-header">
+		<ul>
+			<li>
+				<a href="{% url 'home' %}">Home</a>
+			</li>
+			<li>
+				<a href="{% url 'tools' %}">Tools</a>
+			</li>
+			<li>
+				<a href="{% url 'clu_list' %}">List of Cluster Models</a>
+			</li>
+		</ul>
+	</div>
+	
+	
+<form action="" method="post">
+	{% csrf_token %}
+
+	<h3>System Info</h3>	
+ 	{% block system %}
+	 <div class="dmgen-form-sysinfo">
+
+		<div class="tooltip">
+			{{ form.project.label }}: {{ form.project }}
+			<span class="tooltiptext">{{ form.project.help_text }}</span>
+		</div>
+		<div class="tooltip">
+			{{ form.seq.label }}: {{ form.seq }}
+			<span class="tooltiptext">{{ form.seq.help_text }}</span>
+		</div>
+	</div>
+	{% endblock %}
+	<hr/>
+
+	<h3>Metadata</h3>
+	{% block metadata %}
+	<div class="dmgen-form-metadata">
+		<span class="tooltip">
+			<b>{{ form.label.label }}:</b> {{ form.label }}
+			<span class="tooltiptext">{{ form.label.help_text }}</span>
+		</span>
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.description.label }}:</b>
+			</span>
+			{{ form.description }}
+			<span class="tooltiptext">{{ form.description.help_text }}</span>
+		</div>
+		
+		<div class="tooltip">
+			<span style="display: block">
+				<b>{{ form.pred_obj.label }}:</b>
+			</span>
+			{{ form.pred_obj }}
+			<span class="tooltiptext">{{ form.pred_obj.help_text }}</span>
+		</div>
+	</div>
+	{% endblock %}
+
+	<hr/>
+	<h3>Component Details</h3>
+    {% block details %}
+		<span class="tooltip">
+			<b>{{ form.clusters.label }}:</b> {{ form.clusters }}
+			<span class="tooltiptext">{{ form.clusters.help_text }}</span>
+		</span>
+		<br/>
+		<span class="tooltip">
+			<b>{{ form.xdboolean.label }}:</b> {{ form.xdboolean }}
+			<span class="tooltiptext">{{ form.xdboolean.help_text }}</span>
+		</span>
+		<br/>
+
+		<span class="tooltip">
+			<b>{{ form.xdlink.label }}:</b> {{ form.xdlink }}
+			<span class="tooltiptext">{{ form.xdlink.help_text }}</span>
+		</span>
+		<br/>
+
+		<span class="tooltip">
+			<b>{{ form.xdstring.label }}:</b> {{ form.xdstring }}
+			<span class="tooltiptext">{{ form.xdstring.help_text }}</span>
+		</span>
+		<br/>
+
+		<span class="tooltip">
+			<b>{{ form.xdfile.label }}:</b> {{ form.xdfile }}
+			<span class="tooltiptext">{{ form.xdfile.help_text }}</span>
+		</span>
+		<br/>
+
+		<span class="tooltip">
+			<b>{{ form.xdordinal.label }}:</b> {{ form.xdordinal }}
+			<span class="tooltiptext">{{ form.xdordinal.help_text }}</span>
+		</span>
+		<br/>
+
+		<span class="tooltip">
+			<b>{{ form.xdcount.label }}:</b> {{ form.xdcount }}
+			<span class="tooltiptext">{{ form.xdcount.help_text }}</span>
+		</span>
+		<br/>
+
+		<span class="tooltip">
+			<b>{{ form.xdquantity.label }}:</b> {{ form.xdquantity }}
+			<span class="tooltiptext">{{ form.xdquantity.help_text }}</span>
+		</span>
+		<br/>
+
+		<span class="tooltip">
+			<b>{{ form.xdratio.label }}:</b> {{ form.xdratio }}
+			<span class="tooltiptext">{{ form.xdratio.help_text }}</span>
+		</span>
+		<br/>
+
+		<span class="tooltip">
+			<b>{{ form.xdfloat.label }}:</b> {{ form.xdfloat }}
+			<span class="tooltiptext">{{ form.xdfloat.help_text }}</span>
+		</span>
+		<br/>
+
+		<span class="tooltip">
+			<b>{{ form.xdtemporal.label }}:</b> {{ form.xdtemporal }}
+			<span class="tooltiptext">{{ form.xdtemporal.help_text }}</span>
+		</span>
+
+    {% endblock %}
+	<br/>
+
+    <input type="submit" value="Save" />
+</form>
+
+{% endblock %}

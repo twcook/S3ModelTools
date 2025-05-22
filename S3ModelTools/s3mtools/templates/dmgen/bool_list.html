@@ -1,0 +1,63 @@
+{% extends "dmgen/dmgen_base.html" %} 
+{% block content %}
+<h2> {{ booleans|length }} Boolean Models</h2>
+
+<div class="dmgen-header">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tools' %}">Tools</a>
+        </li>
+        <li>
+            <a href="{% url 'bool_create' %}">Create New Boolean Model</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dmgen-list">
+    <table>
+        <tr>
+            <th align="center">Project</th>
+            <th align="center">Label</th>
+            <th align="center" colspan="3">Actions</th>
+            <th align="center" colspan="2">Last Updated/By</th>
+            <th align="center" colspan="2">Created/By</th>
+            <th align="center">ID</th>
+        </tr>
+        {% for bool in booleans %}
+        <tr>
+            <td>{{ bool.project }}</td>
+            <td>
+                <a href="{% url 'bool_form' pk=bool.id %}">{{ bool.label }}</a>
+            </td>
+
+            <td class="list-delete-btn">
+                <a href="{% url 'bool_delete' pk=bool.id %}">Delete</a>
+            </td>
+            {% if not bool.published %}
+            <td>
+                <a href="{% url 'bool_publish' pk=bool.id %}">Publish</a>
+            </td>
+            {% else %}
+            <td>
+                <b>
+                    <i>Published</i>
+                </b>
+            </td>
+            {% endif %}
+            <td>
+                <a href="{% url 'bool_copy' pk=bool.id %}">Copy</a>
+            </td>
+
+            <td>{{ bool.updated }}</td>
+            <td>{{ bool.edited_by }}</td>
+            <td>{{ bool.created }}</td>
+            <td>{{ bool.creator }}</td>
+            <td>{{ bool.ct_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

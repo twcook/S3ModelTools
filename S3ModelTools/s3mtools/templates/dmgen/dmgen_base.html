@@ -1,0 +1,54 @@
+<html>
+<head>
+{% load staticfiles %}
+{{ form.media.css }}
+
+
+<link href="{% static 'dmgen/css/main.css' %}" rel="stylesheet">
+<link rel="shortcut icon" href="{% static 'dmgen/favicon.ico' %}" />
+
+</head>
+<body>
+{% if messages %}
+<ul class="messagelist">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}> {{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %} 
+
+{% if form.errors %} 
+{% for field in form %} 
+{% for error in field.errors %}
+<div class="alert alert-danger">
+    <p style="background-color: #c60707">
+        <b>
+            <i>{{ field.label }}</i>
+        </b> :
+        <strong>{{ error|escape }}</strong>
+    </p>
+</div>
+{% endfor %} 
+{% endfor %} 
+{% for error in form.non_field_errors %}
+<div class="alert alert-danger">
+    <p style="background-color: #c60707">
+        <strong>{{ error|escape }}</strong>
+    </p>
+</div>
+{% endfor %} 
+{% endif %} 
+
+{% block content %}
+<h3>System Info</h3>
+{% block system %}{% endblock %}
+<h3>Metadata</h3>
+{% block metadata %}{% endblock %}
+<h3>Details</h3>
+{% block details %}{% endblock %} {% endblock %}
+
+<script type="text/javascript" src="{% static 'js/jquery.js' %}" />
+
+{{ form.media.js }}
+</body>
+</html>
