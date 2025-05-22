@@ -6,10 +6,10 @@
   xmlns:s3m="https://www.s3model.com/ns/s3m/"
   targetNamespace="https://www.s3model.com/ns/s3m/"> 
   <xs:annotation>
-    <xs:documentation xml:lang="en-us">This work is Copyright 2016 - 2023 Timothy W. Cook, All Rights Reserved. 
+    <xs:documentation xml:lang="en-us">This work is Copyright 2016 - 2025 Timothy W. Cook, All Rights Reserved. 
       This is the Shareable, Structured, Semantic Model (S3Model) reference model (RM) implementation in XML Schema. 
-      The S3Model RM consists of the core datatypes and structures for domain concept models, called Data Models (DMs). 
-      The DMs are composed of Model Components (MCs) that are expressed as constraints on the RM components. 
+      The S3Model RM consists of the core datatypes (CMCs) and structures (RMCs) for domain concept models, called Data Models (DMs). 
+      The DMs are composed of Restricted Model Components (RMCs) that are expressed as constraints on the RM components aka. CMCs. 
       For the core semantics see the accompanying file s3model.owl. 
    </xs:documentation>
     <xs:appinfo>
