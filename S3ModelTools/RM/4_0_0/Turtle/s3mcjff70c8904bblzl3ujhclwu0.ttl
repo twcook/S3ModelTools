@@ -1,0 +1,84 @@
+# Example SHACL Shapes for a S3M Data Model.
+# Filenames are  'S3M' + the cuid() of the dataModel.
+
+
+PREFIX : <https://www.s3model.com/ns/s3m/s3mcjff70c8904bblzl3ujhclwu0/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  owl: <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd: <http://www.w3.org/2001/XMLSchema>
+PREFIX  dc: <http://purl.org/dc/elements/1.1/>
+PREFIX  s3m: <https://www.s3model.com/ns/s3m/>
+PREFIX  sh: <http://www.w3.org/ns/shacl>
+PREFIX schema: <http://schema.org/> 
+
+# Include the RM Ontology 
+<https://www.s3model.com/ns/s3m/> owl:imports <file://.s3model_4_0_0.ttl> .
+
+# define the metadata
+
+:md a s3m:MetaDataShape ;
+    schema:author "Timothy W. Cook" ;
+    schema:license <http://creativecommons.org/licenses/by/3.0/> ;
+    schema:publisher "Timothy W. Cook" ;
+    schema:datePublished "01-01-2021"^^xsd:date ;
+    schema:fileFormat "text/turtle" .
+
+
+s3m:cjff70c8904bblzl3ujhclwu0 a s3m:DataModelShape ;
+    s3m:cuid "cjff70c8904bblzl3ujhclwu0"@en ;
+    s3m:metaData :md ;
+    s3m:dataModelLabel "Demo Data Model" ;
+    s3m:dmLanguage "en-US" ;
+    s3m:dmEncoding "UTF-8" ;
+    s3m:currentState "Unknown" ;
+    s3m:structure :cji1yqp7q003wlkl39ge4nc11 ;
+    s3m:subject  :cjifyy22m003as5l3vj25wrtm ;
+    s3m:provider :cji1yqq62003zlkl36cpaus61 ;
+    s3m:participation (:cji1yqqod004clkl3tkc165sw) ;
+    s3m:protocol :cjifyy08d000rs5l3m7c2nkyx ;
+    s3m:workflow :cji1yqnpb0023lkl37horu6jm ;
+    s3m:acsLink :cji1yqnpb0023lkl37horu6kl ;
+    s3m:audit (:cji1yqqsd004elkl3kmdwzvaz) ;
+    s3m:attestation :cji1yqqq7004dlkl3d82s6cn7 ;
+    s3m:links (:cji1yqnn60021lkl3wvadadzf) .
+
+# Subject
+:cjifyy22m003as5l3vj25wrtm rdfs:subClassOf s3m:Party ;
+  s3m:PartyLabel "Enter the name of the Subject" .
+# Provider
+:cji1yqq62003zlkl36cpaus61 rdfs:subClassOf s3m:Party ;
+  s3m:PartyLabel "Enter the name of the Provider" .
+# Participation
+:cji1yqqod004clkl3tkc165sw rdfs:subClassOf s3m:Participation ;
+  s3m:ParticipationLabel "Enter the name of the Paticipation model." .
+# Protocol
+:cjifyy08d000rs5l3m7c2nkyx rdfs:subClassOf s3m:XdString ;
+  s3m:XdLabel "Enter the name of the model." .
+# Workflow
+:cji1yqnpb0023lkl37horu6jm rdfs:subClassOf s3m:XdLink ;
+  s3m:XdLabel "Enter the name of the model." .
+# ACS Link
+:cji1yqnpb0023lkl37horu6kl rdfs:subClassOf s3m:XdLink ;
+  s3m:XdLabel "Enter the name of the model." .
+# Audits
+:cji1yqqsd004elkl3kmdwzvaz rdfs:subClassOf s3m:Audit ;
+  s3m:AuditLabel "Enter the name of the Audit model." .
+
+# Attestation
+:cji1yqqq7004dlkl3d82s6cn7 rdfs:subClassOf s3m:Attestation ;
+  s3m:AttestationLabel "Enter the name of the Attestation model." .
+
+# Links
+:cji1yqnn60021lkl3wvadadzf rdfs:subClassOf s3m:XdLink ;
+  s3m:XdLabel "Enter the name of the model." .
+ 
+# Structure
+:cji1yqp7q003wlkl39ge4nc11 rdfs:subClassOf s3m:Cluster ;
+  s3m:ClusterLabel "Enter the name of the Structure model." ;
+  s3m:items (:cjifyxzkz0003s5l3wsz79e1t ) .
+
+  :cjifyxzkz0003s5l3wsz79e1t rdfs:subClassOf s3m:XdBoolean ;
+    s3m:XdLabel "Boolean Test" ;
+    s3m:trueValues ("Yes" "True") ;
+    s3m:falseValues ("No" "False") .

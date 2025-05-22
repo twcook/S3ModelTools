@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"  
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:s3m="https://www.s3model.com/ns/s3m/"
+  xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns 
+  http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+   
+  <!-- XdAnyType elements -->
+  <key id="d0" for="node" attr.name="label" attr.type="string"></key>
+  <key id="d1" for="node" attr.name="act" attr.type="string"></key>
+  <key id="d2" for="node" attr.name="vtb" attr.type="string"></key>
+  <key id="d3" for="node" attr.name="vte" attr.type="string"></key>
+  <key id="d4" for="node" attr.name="tr" attr.type="string"></key>
+  <key id="d5" for="node" attr.name="latitude" attr.type="float"></key>
+  <key id="d6" for="node" attr.name="longitude" attr.type="float"></key>
+  <!-- XdBooleanType elements -->  
+  <key id="d7" for="node" attr.name="true-value" attr.type="string"></key>
+  <key id="d8" for="node" attr.name="false-value" attr.type="string"></key>
+  <!-- XdLinkType elements -->  
+  <key id="d9" for="node" attr.name="link" attr.type="string"></key>
+  <key id="d10" for="node" attr.name="relation" attr.type="string"></key>
+  <key id="d11" for="node" attr.name="relation-uri" attr.type="string"></key>  
+  <!-- XdStringType elements -->  
+  <key id="d12" for="node" attr.name="string-value" attr.type="string"></key>
+  <key id="d13" for="node" attr.name="string-language" attr.type="string"></key>
+  <!-- XdFileType elements -->  
+  <key id="d14" for="node" attr.name="size" attr.type="int"></key>
+  <key id="d15" for="node" attr.name="encoding" attr.type="string"></key>
+  <key id="d16" for="node" attr.name="xdfile-language" attr.type="string"></key>
+  <key id="d17" for="node" attr.name="formalism" attr.type="string"></key>
+  <key id="d18" for="node" attr.name="media-type" attr.type="string"></key>
+  <key id="d19" for="node" attr.name="compression-type" attr.type="string"></key>
+  <key id="d20" for="node" attr.name="hash-result" attr.type="string"></key>
+  <key id="d21" for="node" attr.name="hash-function" attr.type="string"></key>
+  <key id="d22" for="node" attr.name="alt-txt" attr.type="string"></key>
+  <key id="d23" for="node" attr.name="uri" attr.type="string"></key>
+  <key id="d24" for="node" attr.name="media-content" attr.type="string"></key>
+  <!-- XdOrderedType elements -->  
+  <key id="d25" for="node" attr.name="reference-range" attr.type="string"></key>
+  <key id="d26" for="node" attr.name="normal-status" attr.type="string"></key>  
+  <!-- XdOrdinalType elements -->  
+  <key id="d27" for="node" attr.name="ordinal" attr.type="float"></key>
+  <key id="d28" for="node" attr.name="symbol" attr.type="string"></key>
+  <!-- XdQuantifiedType elements -->  
+  <key id="d29" for="node" attr.name="magnitude-status" attr.type="string"></key>
+  <key id="d30" for="node" attr.name="error" attr.type="int"></key>
+  <key id="d31" for="node" attr.name="accuracy" attr.type="float"></key>
+  <!-- XdCountType elements -->  
+  <key id="d32" for="node" attr.name="xdcount-value" attr.type="int"></key>
+  <key id="d33" for="node" attr.name="xdcount-units" attr.type="string"></key>
+  <!-- XdQuantityType elements -->  
+  <key id="d34" for="node" attr.name="xdquantity-value" attr.type="float"></key>
+  <key id="d35" for="node" attr.name="xdquantity-units" attr.type="string"></key>
+  <!-- XdFloatType elements -->  
+  <key id="d36" for="node" attr.name="xdfloat-value" attr.type="float"></key>
+  <key id="d37" for="node" attr.name="xdfloat-units" attr.type="string"></key>
+  <!-- XdTemporalType elements -->  
+  <key id="d38" for="node" attr.name="xdtemporal-date" attr.type="string"></key>
+  <key id="d39" for="node" attr.name="xdtemporal-time" attr.type="string"></key>
+  <key id="d40" for="node" attr.name="xdtemporal-datetime" attr.type="string"></key>
+  <key id="d41" for="node" attr.name="xdtemporal-day" attr.type="string"></key>
+  <key id="d42" for="node" attr.name="xdtemporal-month" attr.type="string"></key>
+  <key id="d43" for="node" attr.name="xdtemporal-year" attr.type="string"></key>
+  <key id="d44" for="node" attr.name="xdtemporal-year-month" attr.type="string"></key>
+  <key id="d45" for="node" attr.name="xdtemporal-month-day" attr.type="string"></key>
+  <key id="d46" for="node" attr.name="xdtemporal-duration" attr.type="string"></key>
+  <!-- XdIntervalType elements -->  
+  <key id="d47" for="node" attr.name="lower" attr.type="string"></key>
+  <key id="d48" for="node" attr.name="upper" attr.type="string"></key>  
+  <key id="d49" for="node" attr.name="lower-included" attr.type="string"></key>  
+  <key id="d50" for="node" attr.name="upper-included" attr.type="string"></key>
+  <key id="d51" for="node" attr.name="lower-bounded" attr.type="string"></key>    
+  <key id="d52" for="node" attr.name="upper-bounded" attr.type="string"></key>  
+  <key id="d53" for="node" attr.name="interval-units" attr.type="string"></key>
+  <key id="d54" for="node" attr.name="units-name" attr.type="string"></key>
+  <key id="d55" for="node" attr.name="units-uri" attr.type="string"></key>
+  <!-- ReferenceRangeType elements -->  
+  <key id="d56" for="node" attr.name="definition" attr.type="string"></key>
+  <key id="d57" for="node" attr.name="interval" attr.type="string"></key>
+  <key id="d58" for="node" attr.name="is-normal" attr.type="boolean"></key>
+  <!-- AuditType elements -->  
+  <key id="d59" for="node" attr.name="label" attr.type="string"></key>
+  <key id="d60" for="node" attr.name="system-id" attr.type="string"></key>
+  <key id="d61" for="node" attr.name="system-user" attr.type="string"></key>
+  <key id="d62" for="node" attr.name="location" attr.type="string"></key>
+  <key id="d63" for="node" attr.name="timestamp" attr.type="string"></key>
+  <!-- PartyType elements -->  
+  <key id="d64" for="node" attr.name="label" attr.type="string"></key>
+  <key id="d65" for="node" attr.name="party-name" attr.type="string"></key>
+  <key id="d66" for="node" attr.name="party-ref" attr.type="string"></key>
+  <key id="d67" for="node" attr.name="party-details" attr.type="string"></key>
+  <!-- AttestationType elements -->  
+  <key id="d68" for="node" attr.name="label" attr.type="string"></key>
+  <key id="d69" for="node" attr.name="view" attr.type="string"></key>
+  <key id="d70" for="node" attr.name="proof" attr.type="string"></key>
+  <key id="d71" for="node" attr.name="reason" attr.type="string"></key>
+  <key id="d72" for="node" attr.name="committer" attr.type="string"></key>
+  <key id="d73" for="node" attr.name="committed" attr.type="string"></key>
+  <key id="d74" for="node" attr.name="pending" attr.type="boolean"></key>
+  <!-- ParticipationType elements -->  
+  <key id="d75" for="node" attr.name="label" attr.type="string"></key>
+  <key id="d76" for="node" attr.name="performer" attr.type="string"></key>
+  <key id="d77" for="node" attr.name="function" attr.type="string"></key>
+  <key id="d78" for="node" attr.name="mode" attr.type="string"></key>
+  <key id="d79" for="node" attr.name="start" attr.type="string"></key>
+  <key id="d80" for="node" attr.name="end" attr.type="string"></key>
+  <!-- ExceptionalValueType elements -->  
+  <key id="d81" for="node" attr.name="ev-name" attr.type="string"></key>
+  <!-- ClusterType elements -->  
+  <key id="d82" for="node" attr.name="label" attr.type="string"></key>
+  <key id="d83" for="node" attr.name="items" attr.type="string"></key>
+  <!-- DMType elements -->  
+  <key id="d84" for="node" attr.name="label" attr.type="string"></key>
+  <key id="d85" for="node" attr.name="dm-language" attr.type="string"></key>
+  <key id="d86" for="node" attr.name="dm-encoding" attr.type="string"></key>
+  <key id="d87" for="node" attr.name="current-state" attr.type="string"></key>
+  <key id="d88" for="node" attr.name="item" attr.type="string"></key>
+  <key id="d89" for="node" attr.name="subject" attr.type="string"></key>
+  <key id="d90" for="node" attr.name="provider" attr.type="string"></key>
+  <key id="d91" for="node" attr.name="participation" attr.type="string"></key>
+  <key id="d92" for="node" attr.name="protocol" attr.type="string"></key>
+  <key id="d93" for="node" attr.name="workflow" attr.type="string"></key>
+  <key id="d94" for="node" attr.name="acs" attr.type="string"></key>
+  <key id="d95" for="node" attr.name="audit" attr.type="string"></key>
+  <key id="d96" for="node" attr.name="attestation" attr.type="string"></key>
+  <key id="d97" for="node" attr.name="links" attr.type="string"></key>
+
+  
+  
+  <graph id="S3Model"  edgedefault="directed">
+    <desc>This work is Copyright 2016 - 2023 Timothy W. Cook, All Rights Reserved. 
+      This is the Shareable, Structured, Semantic Model (S3Model) reference model (RM) implementation in GraphML.</desc>
+    <node id="XdAnyType">
+      <desc>Serves as the common ancestor of all eXtended data-types (Xd*) in S3Model.</desc>
+      <data key="d0"></data>
+      <data key="d1"></data>
+      <data key="d2"></data>
+      <data key="d3"></data>
+      <data key="d4"></data>
+      <data key="d5"></data>
+      <data key="d6"></data>
+    </node>
+    <node id="XdBooleanType">
+      <desc>An enumerated type which represents boolean decisions. 
+        Such as true/false or yes/no answers. Useful where it is essential to devise the meanings 
+        (often questions in subjective data) carefully so that the only allowed result values result 
+        in one the options; true or false but are presented to the user as a list of options. 
+        The possible choices for True or False are enumerations in the DM. 
+        The reference model defines 'true-value' and 'false-value' in an xs:choice so only one or the 
+        other may be present in the instance data. 
+        
+        The XdBooleanType should not be used as a replacement for enumerated choice types such as male/female, 
+        or similar choice sets. Such values should be modeled as XdStrings with enumerations and may reference 
+        a controlled vocabulary. In any case, the choice set often has more than two values. 
+        
+        The elements, 'true-value' and 'false-value' are contained in an xs:choice and only one or the other is 
+        instantiated in the instance data with its value coming from the enumerations defined in a Data Model.</desc>
+      <data key="d7"></data>
+      <data key="d8"></data>
+    </node>
+    <node id="XdLinkType">
+      <desc>Used to specify a Universal Resource Identifier. Set the pattern facet to accommodate your needs in the DM. Intended use is to provide a mechanism that can be used to link together Data Models. The relation element allows for the use of a descriptive
+        term for the link with an optional URI pointing to the source vocabulary. In most usecases the modeler will define all three of these using the 'fixed' attribute. Other usecases will have the 'relation' and 'relation-uri' elements fixed and the application will provide the 'link-value'.</desc>
+      <data key="d9"></data>
+      <data key="d10"></data>
+      <data key="d11"></data>
+    </node>
+    <node id="XdStringType">
+      <desc>The string data type can contain characters, line feeds, carriage returns, and tab characters. The use cases are for any free form text entry or for any enumerated lists. Additionally the minimum and maximum lengths may be set and regular expression patterns
+        may be specified.</desc>
+      <data key="d12"></data>
+      <data key="d13"></data>
+    </node>
+    <node id="XdFileType">
+      <desc>A type to use for encapsulated content (aka. files) for image, audio and other media types with a defined MIME type. This type provides a choice of embedding the content into the data or using a URL to point to the content.</desc>
+      <data key="d14"></data>
+      <data key="d15"></data>
+      <data key="d16"></data>
+      <data key="d17"></data>
+      <data key="d18"></data>
+      <data key="d19"></data>
+      <data key="d20"></data>
+      <data key="d21"></data>
+      <data key="d22"></data>
+      <data key="d23"></data>
+      <data key="d24"></data>
+    </node>
+    <node id="XdOrderedType">
+      <desc>Abstract type defining the concept of ordered values, which includes ordinals as well as true quantities. The implementations require the functions ‘&lt;’, '&gt;' and is_strictly_comparable_to ('==').</desc>
+      <data key="d25"></data>
+      <data key="d26"></data>
+    </node>
+    <node id="XdOrdinalType">
+      <desc>Models rankings and scores, e.g., pain, Apgar values, educational level, and the Likert Scale where there is;
+        
+        * implied ordering,
+        * no implication that the distance between each value is constant, and
+        * the total number of values is finite.
+        
+        Note that the term ‘ordinal’ in mathematics means natural numbers only. In this case, any decimal is allowed since negative, and zero values are used by medical and other professionals for centering values around a neutral point. Also, decimal values are sometimes used such as 0.5 or .25
+        
+        Examples of sets of ordinal values are;
+        
+        * -3, -2, -1, 0, 1, 2, 3 -- reflex response values
+        * 0, 1, 2 -- Apgar values
+        
+        Also used for recording any clinical or other data which is customarily recorded using symbolic values. Examples;
+        
+        * the results on a urinalysis strip, e.g. {neg, trace, +, ++, +++} are used for leukocytes, protein, nitrites etc;
+        * for non-haemolysed blood {neg, trace, moderate};
+        * for haemolysed blood {neg, trace, small, moderate, large}.
+        
+        Elements *ordinal* and *symbol* MUST have the same number of enumerations in the RMC.</desc>
+      <data key="d27"></data>
+      <data key="d28"></data>
+    </node>
+    <node id="XdQuantifiedType">
+      <desc>Abstract type defining the concept of true quantified values, i.e. values which are not only ordered, but which have a precise magnitude.</desc>
+      <data key="d29"></data>
+      <data key="d30"></data>
+      <data key="d31"></data>
+    </node>
+    <node id="XdCountType">
+      <desc>Countable quantities. Used for countable types such as pregnancies and steps (taken by a physiotherapy patient), number of cigarettes smoked in a day, etc. The thing(s) being counted must be represented in the units element. Misuse:Not used for amounts of physical entities (which all have standardized units).</desc>
+      <data key="d32"></data>
+      <data key="d33"></data>
+    </node>
+    <node id="XdQuantityType">
+      <desc>Quantified type representing specific quantities, i.e. quantities expressed as a magnitude and units. Can also be used for time durations, where it is more convenient to treat these as simply a number of individual seconds, minutes, hours, days, months, years, etc. when no temporal calculation is to be performed.</desc>
+      <data key="d34"></data>
+      <data key="d35"></data>
+    </node>
+    <node id="XdFloatType">
+      <desc>Quantified type representing specific a value as a floating point (64 bit) number and optional units. This is a xsd:double.</desc>
+      <data key="d36"></data>
+      <data key="d37"></data>
+    </node>
+    <node id="XdTemporalType">
+      <desc></desc>
+      <data key="d38"></data>
+      <data key="d39"></data>
+      <data key="d40"></data>
+      <data key="d41"></data>
+      <data key="d42"></data>
+      <data key="d43"></data>
+      <data key="d44"></data>
+      <data key="d45"></data>
+      <data key="d46"></data>
+    </node>
+    <node id="XdIntervalType">
+      <desc></desc>
+      <data key="d47"></data>
+      <data key="d48"></data>
+      <data key="d49"></data>
+      <data key="d50"></data>
+      <data key="d51"></data>
+      <data key="d52"></data>
+      <data key="d53"></data>
+      <data key="d54"></data>
+      <data key="d55"></data>
+    </node>
+    <node id="ReferenceRangeType">
+      <desc></desc>
+      <data key="d56"></data>
+      <data key="d57"></data>
+      <data key="d58"></data>
+    </node>
+    <node id="AuditType">
+      <desc></desc>
+      <data key="d59"></data>
+      <data key="d60"></data>
+      <data key="d61"></data>
+      <data key="d62"></data>
+      <data key="d63"></data>
+    </node>
+    <node id="PartyType">
+      <desc></desc>
+      <data key="d64"></data>
+      <data key="d65"></data>
+      <data key="d66"></data>
+      <data key="d67"></data>
+    </node>
+    <node id="AttestationType">
+      <desc></desc>
+      <data key="d68"></data>
+      <data key="d69"></data>
+      <data key="d70"></data>
+      <data key="d71"></data>
+      <data key="d72"></data>
+      <data key="d73"></data>
+      <data key="d74"></data>
+    </node>
+    <node id="ParticipationType">
+      <desc></desc>
+      <data key="d75"></data>
+      <data key="d76"></data>
+      <data key="d77"></data>
+      <data key="d78"></data>
+      <data key="d79"></data>
+      <data key="d80"></data>
+    </node>
+    <node id="ExceptionalValueType">
+      <desc></desc>
+       <data key="d81"></data>
+    </node>
+    <node id="ClusterType">
+      <desc></desc>
+      <data key="d82"></data>
+      <data key="d83"></data>
+    </node>
+    <node id="DMType">
+      <desc></desc>
+      <data key="d84"></data>
+      <data key="d85"></data>
+      <data key="d86"></data>
+      <data key="d87"></data>
+      <data key="d88"></data>
+      <data key="d89"></data>
+      <data key="d90"></data>
+      <data key="d91"></data>
+      <data key="d92"></data>
+      <data key="d93"></data>
+      <data key="d94"></data>
+      <data key="d95"></data>
+      <data key="d96"></data>
+      <data key="d97"></data>
+    </node>
+  </graph>
+</graphml>
