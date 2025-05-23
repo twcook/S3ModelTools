@@ -1,6 +1,6 @@
 """
 Extracts S3Model 3.1.0 data and creates RDF triples in RDF/XML
-Copyright (C) 2009-2025 Timothy W. Cook,, All Rights Reserved.
+Copyright (C) 2009-2025 Timothy W. Cook, All Rights Reserved.
 """
 import os
 import sys

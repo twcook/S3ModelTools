@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 """
 dm_semantics_extractor.py
-Copyright (C) 2016 - 2023 Timothy W. Cook, All Rights Reserved.
+Copyright (C) 2009 - 2023 Timothy W. Cook, All Rights Reserved.
 
 Extracts the semantics from S3Model DMs in the directory passed on the commandline and creates RDF triples in RDF/XML format. It reuses the filename and replaces 
 '.xml' with '.rdf'

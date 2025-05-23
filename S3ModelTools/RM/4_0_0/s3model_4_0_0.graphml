@@ -128,7 +128,7 @@
   
   
   <graph id="S3Model"  edgedefault="directed">
-    <desc>This work is Copyright 2016 - 2023 Timothy W. Cook, All Rights Reserved. 
+    <desc>This work is Copyright 2009 - 2023 Timothy W. Cook, All Rights Reserved. 
       This is the Shareable, Structured, Semantic Model (S3Model) reference model (RM) implementation in GraphML.</desc>
     <node id="XdAnyType">
       <desc>Serves as the common ancestor of all eXtended data-types (Xd*) in S3Model.</desc>

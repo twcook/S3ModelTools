@@ -7,7 +7,7 @@ data_semantics_extractor.py
 Extracts S3Model 3.1.0 (and later) data and creates RDF triples in RDF/XML
 This script must be executed after the dm_semantics_extractor.py script.
 
-Copyright (C) 2016 - 2023 Timothy W. Cook, All Rights Reserved.
+Copyright (C) 2009-2025 Timothy W. Cook, All Rights Reserved.
 """
 import os
 import sys

@@ -30,7 +30,7 @@ def analyze_csv(modeladmin, request, queryset):
             for hdr in reader.fieldnames:
                 hdr = hdr.strip()
 
-                rec = Record(dmd=obj, header=hdr, label=hdr, dt_type='xdstring', description='Created by the Data Insights, Inc. Data Translator.')
+                rec = Record(dmd=obj, header=hdr, label=hdr, dt_type='xdstring', description='Created by the Timothy W. Cook Data Translator.')
                 rec.save()
 
         modeladmin.message_user(request, msg[0], msg[1])

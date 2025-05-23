@@ -5,7 +5,7 @@ data_gen.py
 Can be used to create multiple copies of DM based data files to use for examples or stress testing your RDF store.
 Pass the number of copies per example on the commandline.
     
-Copyright (C) 2016 - 2023 Timothy W. Cook, All Rights Reserved.
+Copyright (C) 2009-2025 Timothy W. Cook, All Rights Reserved.
 """
 import sys, getopt, csv
 from datetime import datetime
@@ -14,7 +14,7 @@ def main(count):
    print("""
     S3Model data generator for the semantics demo.
 
-    Copyright (C) 2016 - 2023 Timothy W. Cook, All Rights Reserved.
+    Copyright (C) 2009-2025 Timothy W. Cook, All Rights Reserved.
     See the file README.md for usage.
    """)
 

@@ -6,7 +6,7 @@ rm_semantics_extractor.py
 Extracts the semantics from S3Model RM and creates RDF triples in RDF/XML named the same as the input file 
 with a .rdf extension in place of the .xsd extension.
 
-Copyright (C) 2016 - 2023 Timothy W. Cook, All Rights Reserved.
+Copyright (C) 2009 - 2023 Timothy W. Cook, All Rights Reserved.
 
 """
 import os
